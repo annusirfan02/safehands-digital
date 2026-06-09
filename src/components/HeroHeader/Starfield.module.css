@@ -1,0 +1,81 @@
+/* ── Light theme: dark/navy stars so they stay visible on light bg ── */
+:global([data-theme='light']) .sky {
+  background:
+    radial-gradient(circle at 75% 30%, rgba(20, 33, 150, 0.05), transparent 45%),
+    radial-gradient(circle at 20% 80%, rgba(44, 70, 216, 0.04), transparent 50%);
+}
+:global([data-theme='light']) .star {
+  background: rgba(20, 33, 150, 0.55);
+  box-shadow: 0 0 4px rgba(20, 33, 150, 0.4);
+}
+:global([data-theme='light']) .shooter {
+  background: #142196;
+  box-shadow: 0 0 8px 1px rgba(20, 33, 150, 0.7);
+}
+:global([data-theme='light']) .shooter::after {
+  background: linear-gradient(to left, rgba(20, 33, 150, 0.85), transparent);
+}
+
+.sky {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 0;
+  /* subtle deep-space vignette */
+  background:
+    radial-gradient(circle at 75% 30%, rgba(140, 255, 80, 0.05), transparent 45%),
+    radial-gradient(circle at 20% 80%, rgba(91, 140, 255, 0.04), transparent 50%);
+}
+
+/* ── Static twinkling stars ──────────────────────────────────── */
+.star {
+  position: absolute;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.85);
+  box-shadow: 0 0 4px rgba(255, 255, 255, 0.6);
+  animation: twinkle 3.4s ease-in-out infinite;
+}
+
+@keyframes twinkle {
+  0%, 100% { opacity: 0.2; transform: scale(1); }
+  50%       { opacity: 0.9; transform: scale(1.6); }
+}
+
+/* ── Diagonal shooting stars (left → right) ──────────────────── */
+/* The element is ROTATED by its own --angle, then travels along its local
+   x-axis. Because the tail is horizontal in that rotated frame, the streak
+   always points exactly back along the diagonal path. */
+.shooter {
+  position: absolute;
+  width: 2px;
+  height: 2px;
+  border-radius: 50%;
+  background: #fff;
+  box-shadow: 0 0 8px 1px rgba(255, 255, 255, 0.9);
+  opacity: 0;
+  transform: rotate(var(--angle, 26deg)) translateX(0);
+  animation-name: shoot;
+  animation-timing-function: ease-in;
+  animation-iteration-count: infinite;
+}
+
+/* The streak/tail — trails behind along the local axis */
+.shooter::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  right: 2px;
+  width: var(--tail, 120px);
+  height: 1.5px;
+  transform: translateY(-50%);
+  transform-origin: right center;
+  background: linear-gradient(to left, rgba(255, 255, 255, 0.95), transparent);
+}
+
+@keyframes shoot {
+  0%   { opacity: 0; transform: rotate(var(--angle, 26deg)) translateX(0); }
+  8%   { opacity: 1; }
+  88%  { opacity: 1; }
+  100% { opacity: 0; transform: rotate(var(--angle, 26deg)) translateX(var(--distance, 900px)); }
+}

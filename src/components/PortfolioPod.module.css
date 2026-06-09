@@ -1,0 +1,566 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Space+Mono:wght@400;700&display=swap');
+
+/* ── Light theme overrides (the pod device stays dark on purpose) ── */
+:global([data-theme='light']) .section { background: var(--bg); color: var(--text); }
+:global([data-theme='light']) .bgText { color: rgba(16, 26, 61, 0.04); }
+:global([data-theme='light']) .starDot { background: rgba(20, 33, 150, 0.45); }
+:global([data-theme='light']) .h1 { color: var(--text); }
+:global([data-theme='light']) .h2 { color: rgba(16, 26, 61, 0.85); }
+:global([data-theme='light']) .subtitle { color: var(--muted); }
+:global([data-theme='light']) .badge {
+  background: rgba(20, 33, 150, 0.08);
+  border-color: rgba(20, 33, 150, 0.28);
+  color: var(--accent);
+}
+:global([data-theme='light']) .badgeDot { background: var(--accent); }
+:global([data-theme='light']) .bottomHint { color: var(--muted); }
+:global([data-theme='light']) .hintDot { background: var(--accent); }
+:global([data-theme='light']) .hintArrow { color: var(--accent); }
+
+/* ── Light theme: the POD DEVICE itself goes light ── */
+:global([data-theme='light']) .podContainer {
+  background: linear-gradient(160deg, #ffffff 0%, #eef1f8 100%);
+  border-color: var(--border);
+  box-shadow: 0 30px 70px var(--shadow), inset 0 1px 0 rgba(255, 255, 255, 0.8);
+}
+:global([data-theme='light']) .podLabel { color: var(--faint); }
+:global([data-theme='light']) .podDot { background: rgba(20, 33, 150, 0.2); }
+:global([data-theme='light']) .podDotActive { background: var(--accent); }
+:global([data-theme='light']) .podStatusBar { border-color: var(--border); }
+:global([data-theme='light']) .statusLeft { color: var(--accent); }
+:global([data-theme='light']) .statusDot { background: var(--accent); }
+:global([data-theme='light']) .statusRight { color: var(--faint); }
+:global([data-theme='light']) .sideBar { background: rgba(20, 33, 150, 0.07); }
+:global([data-theme='light']) .sideBarFill { background: var(--accent); }
+:global([data-theme='light']) .sideBarFillRight { background: var(--accent-2); }
+:global([data-theme='light']) .planetRing {
+  background:
+    radial-gradient(circle at 35% 35%, rgba(255, 255, 255, 0.9), transparent 60%),
+    linear-gradient(135deg, #eef1f8 0%, #dde3f0 100%);
+  border-color: var(--border);
+  box-shadow: 0 0 36px rgba(20, 33, 150, 0.18), inset 0 0 34px rgba(20, 33, 80, 0.10) !important;
+}
+:global([data-theme='light']) .planetInnerRing {
+  border-color: var(--border);
+  background: rgba(255, 255, 255, 0.5);
+}
+:global([data-theme='light']) .planetLabel { color: var(--muted); }
+:global([data-theme='light']) .scatterDot { background: rgba(20, 33, 150, 0.35); }
+:global([data-theme='light']) .listHeader { border-bottom-color: var(--border); }
+:global([data-theme='light']) .listTitle { color: var(--muted); }
+:global([data-theme='light']) .listReady { color: var(--accent); }
+:global([data-theme='light']) .serviceItem:hover {
+  border-color: var(--border);
+  background: rgba(20, 33, 150, 0.04);
+}
+:global([data-theme='light']) .serviceItemActive {
+  border-color: var(--border);
+  background: rgba(20, 33, 150, 0.05);
+}
+:global([data-theme='light']) .svcName { color: var(--text); }
+:global([data-theme='light']) .svcCode { color: var(--muted); }
+:global([data-theme='light']) .svcArrow { color: var(--muted); }
+:global([data-theme='light']) .serviceItem:hover .svcArrow { color: var(--accent); }
+
+/* ── Section ─────────────────────────────────────────────────── */
+.section {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 80px 20px 80px;
+  text-align: center;
+  overflow: hidden;
+  min-height: 100vh;
+  background: #030805;
+  font-family: 'Space Grotesk', sans-serif;
+  color: #fff;
+}
+
+/* ── BG text ─────────────────────────────────────────────────── */
+.bgText {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: clamp(80px, 18vw, 180px);
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  color: rgba(255, 255, 255, 0.024);
+  white-space: nowrap;
+  pointer-events: none;
+  font-family: 'Space Grotesk', sans-serif;
+  z-index: 0;
+  user-select: none;
+}
+
+/* ── Star dots ───────────────────────────────────────────────── */
+.starDot {
+  position: absolute;
+  width: 3px;
+  height: 3px;
+  background: rgba(255, 255, 255, 0.4);
+  border-radius: 50%;
+  animation: twinkle 3s ease-in-out infinite;
+  z-index: 0;
+}
+
+@keyframes twinkle {
+  0%, 100% { opacity: 0.15; transform: scale(1); }
+  50%       { opacity: 0.85; transform: scale(1.5); }
+}
+
+/* ── Badge ───────────────────────────────────────────────────── */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(140, 255, 80, 0.09);
+  border: 1px solid rgba(140, 255, 80, 0.28);
+  border-radius: 100px;
+  padding: 6px 16px;
+  font-family: 'Space Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  color: #8cff50;
+  margin-bottom: 28px;
+  position: relative;
+  z-index: 1;
+}
+
+.badgeDot {
+  width: 7px;
+  height: 7px;
+  background: #8cff50;
+  border-radius: 50%;
+  display: inline-block;
+  animation: pulse 1.8s ease-in-out infinite;
+  flex-shrink: 0;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50%       { opacity: 0.35; transform: scale(0.6); }
+}
+
+/* ── Headline ────────────────────────────────────────────────── */
+.headline {
+  position: relative;
+  z-index: 1;
+  margin-bottom: 18px;
+  perspective: 900px;
+}
+
+.h1 {
+  font-size: clamp(44px, 8vw, 82px);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 1;
+  text-transform: uppercase;
+  color: #fff;
+  font-family: 'Space Grotesk', sans-serif;
+}
+
+.h2 {
+  font-size: clamp(38px, 7vw, 74px);
+  font-weight: 400;
+  font-style: italic;
+  font-family: Georgia, serif;
+  letter-spacing: -0.01em;
+  line-height: 1.1;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+/* ── Subtitle ────────────────────────────────────────────────── */
+.subtitle {
+  font-size: 15px;
+  color: rgba(255, 255, 255, 0.44);
+  line-height: 1.75;
+  max-width: 460px;
+  margin-bottom: 44px;
+  position: relative;
+  z-index: 1;
+}
+
+/* ── Pod wrapper ─────────────────────────────────────────────── */
+.podWrapper {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  max-width: 420px;
+  cursor: pointer;
+}
+
+.podContainer {
+  background: linear-gradient(160deg, #0e1810 0%, #060a07 100%);
+  border: 1px solid rgba(255, 255, 255, 0.075);
+  border-radius: 24px;
+  overflow: hidden;
+  position: relative;
+  z-index: 1;
+  box-shadow:
+    0 0 70px rgba(0, 0, 0, 0.85),
+    inset 0 1px 0 rgba(255, 255, 255, 0.05);
+}
+
+/* ── Neon glow behind the pod (fades in on hover) ────────────── */
+.podGlow {
+  position: absolute;
+  inset: -4px;
+  border-radius: 28px;
+  opacity: 0;
+  filter: blur(28px);
+  z-index: 0;
+  pointer-events: none;
+  will-change: opacity;
+}
+
+/* ── Top bar ─────────────────────────────────────────────────── */
+.podTopBar {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 12px 20px 4px;
+}
+
+.podDots {
+  display: flex;
+  gap: 6px;
+}
+
+.podDot {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.18);
+  display: inline-block;
+}
+
+.podDotActive { background: #8cff50; }
+
+.podLabel {
+  font-family: 'Space Mono', monospace;
+  font-size: 10px;
+  color: rgba(255, 255, 255, 0.28);
+  letter-spacing: 0.12em;
+  margin-top: 6px;
+}
+
+/* ── Status bar ──────────────────────────────────────────────── */
+.podStatusBar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 18px;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.statusLeft {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-family: 'Space Mono', monospace;
+  font-size: 9px;
+  color: #8cff50;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.statusDot {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: #8cff50;
+  display: inline-block;
+  animation: pulse 1.8s ease-in-out infinite;
+}
+
+.statusRight {
+  font-family: 'Space Mono', monospace;
+  font-size: 9px;
+  color: rgba(255, 255, 255, 0.26);
+  letter-spacing: 0.1em;
+}
+
+/* ── Planet viewport ─────────────────────────────────────────── */
+.podViewport {
+  position: relative;
+  height: 290px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.sideBar {
+  position: absolute;
+  top: 18px;
+  bottom: 18px;
+  width: 3px;
+  border-radius: 2px;
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.sideBarLeft  { left: 14px; }
+.sideBarRight { right: 14px; }
+
+.sideBarFill {
+  width: 100%;
+  height: 40%;
+  border-radius: 2px;
+  background: #8cff50;
+  animation: barFill 2.5s ease-in-out infinite;
+}
+
+.sideBarFillRight {
+  background: #00d4ff;
+  animation-delay: 0.8s;
+}
+
+@keyframes barFill {
+  0%, 100% { height: 28%; }
+  50%       { height: 68%; }
+}
+
+/* ── Planet ──────────────────────────────────────────────────── */
+.planetCenter {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  position: relative;
+}
+
+.planetRing {
+  width: 228px;
+  height: 228px;
+  border-radius: 50%;
+  background:
+    radial-gradient(circle at 35% 35%, rgba(255,255,255,0.04), transparent 60%),
+    linear-gradient(135deg, #1a1f1a 0%, #0a0d0a 100%);
+  border: 2px solid rgba(255, 255, 255, 0.05);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: inset 0 0 40px rgba(0,0,0,0.6), 0 0 30px rgba(0,0,0,0.4);
+  transition: box-shadow 0.6s ease;
+  will-change: box-shadow;
+}
+
+.planetInnerRing {
+  width: 196px;
+  height: 196px;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.035);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.28);
+}
+
+.planetMount {
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  overflow: hidden;
+  animation: planetFloat 4.2s ease-in-out infinite;
+  will-change: transform;
+}
+
+/* Three.js canvas inside planetMount */
+.planetMount canvas {
+  border-radius: 50%;
+  display: block;
+}
+
+@keyframes planetFloat {
+  0%, 100% { transform: translateY(0px);  }
+  50%       { transform: translateY(-7px); }
+}
+
+.planetLabel {
+  font-family: 'Space Mono', monospace;
+  font-size: 9px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.36);
+  padding: 10px 0 14px;
+}
+
+.scatterDot {
+  position: absolute;
+  width: 3px;
+  height: 3px;
+  background: rgba(255, 255, 255, 0.4);
+  border-radius: 50%;
+  animation: twinkle 3s ease-in-out infinite;
+}
+
+/* ── Service list ────────────────────────────────────────────── */
+.serviceList {
+  flex-direction: column;
+  justify-content: flex-start;
+  padding: 10px 12px;
+  gap: 2px;
+  /* Same height as the planet viewport so the box never resizes */
+  height: 290px;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.listHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 6px 4px 8px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.055);
+  margin-bottom: 4px;
+  flex-shrink: 0;
+}
+
+.listTitle {
+  font-family: 'Space Mono', monospace;
+  font-size: 9px;
+  color: rgba(255, 255, 255, 0.32);
+  letter-spacing: 0.15em;
+}
+
+.listReady {
+  font-family: 'Space Mono', monospace;
+  font-size: 9px;
+  color: #8cff50;
+  letter-spacing: 0.1em;
+}
+
+/* ── Service items ───────────────────────────────────────────── */
+.serviceItem {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 7px 12px;
+  border-radius: 10px;
+  border: 1px solid transparent;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  flex: 1;
+  min-height: 0;
+  will-change: opacity, transform;
+  transition: border-color 0.22s ease, background 0.22s ease;
+}
+
+.serviceItem::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 10px;
+  opacity: 0;
+  background: var(--item-glow, transparent);
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+}
+
+.serviceItem:hover {
+  border-color: rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.028);
+}
+
+.serviceItem:hover::after { opacity: 0.08; }
+
+.serviceItemActive {
+  border-color: rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.038);
+}
+
+.serviceItemActive::after { opacity: 0.1; }
+
+.svcIcon {
+  width: 34px;
+  height: 34px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.svcIcon svg {
+  display: block;
+}
+
+.svcInfo { flex: 1; text-align: left; }
+
+.svcName {
+  font-family: 'Space Mono', monospace;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #fff;
+}
+
+.svcCode {
+  font-family: 'Space Mono', monospace;
+  font-size: 9px;
+  color: rgba(255, 255, 255, 0.28);
+  letter-spacing: 0.1em;
+  margin-top: 2px;
+}
+
+.activeIndicator {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  border: 1.5px solid;
+  flex-shrink: 0;
+}
+
+.svcArrow {
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.36);
+  transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.serviceItem:hover .svcArrow {
+  color: #fff;
+  transform: translateX(3px);
+}
+
+/* ── Bottom hint ─────────────────────────────────────────────── */
+.bottomHint {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-family: 'Space Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 0.15em;
+  color: rgba(255, 255, 255, 0.26);
+  margin-top: 32px;
+  position: relative;
+  z-index: 1;
+  text-transform: uppercase;
+}
+
+.hintDot {
+  width: 6px;
+  height: 6px;
+  background: #8cff50;
+  border-radius: 50%;
+  display: inline-block;
+  animation: pulse 1.8s ease-in-out infinite;
+}
+
+.hintArrow {
+  color: #8cff50;
+  display: inline-block;
+  animation: bounce 1.5s ease-in-out infinite;
+}
+
+@keyframes bounce {
+  0%, 100% { transform: translateY(0);  }
+  50%       { transform: translateY(5px); }
+}

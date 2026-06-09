@@ -1,0 +1,98 @@
+/* ── Light theme overrides ───────────────────────────────────── */
+:global([data-theme='light']) .summary { color: var(--muted); }
+:global([data-theme='light']) .summary strong { color: var(--accent); }
+:global([data-theme='light']) .query { color: var(--text); }
+:global([data-theme='light']) .card {
+  background: var(--surface-2);
+  border-color: var(--border);
+}
+:global([data-theme='light']) .card:hover {
+  border-color: var(--accent);
+  background: #fff;
+}
+:global([data-theme='light']) .category { background: var(--accent); color: #fff; }
+:global([data-theme='light']) .title { color: var(--text); }
+:global([data-theme='light']) .desc { color: var(--muted); }
+:global([data-theme='light']) .go { color: var(--accent); }
+
+.wrap {
+  width: 100%;
+}
+
+.summary {
+  font-family: 'Space Mono', monospace;
+  font-size: 12px;
+  letter-spacing: 0.04em;
+  color: rgba(255, 255, 255, 0.45);
+  margin-bottom: 16px;
+  text-align: left;
+}
+
+.summary strong { color: #8cff50; }
+.query { color: rgba(255, 255, 255, 0.8); }
+
+.list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.card {
+  display: block;
+  position: relative;
+  text-align: left;
+  text-decoration: none;
+  padding: 16px 18px;
+  border-radius: 14px;
+  background: linear-gradient(160deg, rgba(20, 26, 22, 0.85), rgba(8, 12, 9, 0.85));
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  transition: border-color 0.25s ease, transform 0.25s ease, background 0.25s ease;
+}
+
+.card:hover {
+  transform: translateY(-2px);
+  border-color: rgba(140, 255, 80, 0.4);
+  background: linear-gradient(160deg, rgba(24, 32, 26, 0.9), rgba(10, 14, 11, 0.9));
+}
+
+.head {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 6px;
+}
+
+.category {
+  font-family: 'Space Mono', monospace;
+  font-size: 9px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #04130a;
+  background: #8cff50;
+  padding: 3px 8px;
+  border-radius: 100px;
+  flex-shrink: 0;
+}
+
+.title {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 15px;
+  font-weight: 600;
+  color: #fff;
+}
+
+.desc {
+  font-size: 13px;
+  line-height: 1.55;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.go {
+  display: inline-block;
+  margin-top: 10px;
+  font-family: 'Space Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  color: #8cff50;
+}

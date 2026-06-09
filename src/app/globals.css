@@ -1,0 +1,48 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: #030805;
+  color: #fff;
+  overflow-x: hidden;
+}
+
+/* ─────────────────────────────────────────────────────────────
+   LIGHT THEME
+   Activated via [data-theme="light"] on <html>. Purely additive —
+   the dark theme above is never modified. Classy, subtle, blue-based
+   palette derived from the Safe Hands logo (#131E92 / #142196).
+   ───────────────────────────────────────────────────────────── */
+[data-theme='light'] {
+  --bg: #eef1f8;
+  --bg-2: #e4e9f5;
+  --surface: #ffffff;
+  --surface-2: #f5f7fc;
+  --text: #101a3d;
+  --muted: rgba(16, 26, 61, 0.58);
+  --faint: rgba(16, 26, 61, 0.30);
+  --accent: #142196;
+  --accent-2: #2c46d8;
+  --border: rgba(20, 33, 150, 0.14);
+  --shadow: rgba(20, 33, 80, 0.12);
+  color-scheme: light;
+}
+
+[data-theme='light'] body {
+  background: var(--bg);
+  color: var(--text);
+}
+
+/* Smooth cross-fade when switching themes (additive — no colour change) */
+body,
+section,
+footer {
+  transition: background-color 0.45s ease, color 0.45s ease;
+}
