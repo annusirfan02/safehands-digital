@@ -1,0 +1,242 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Space+Mono:wght@400;700&display=swap');
+
+/* ── Light theme overrides ───────────────────────────────────── */
+:global([data-theme='light']) .footer {
+  background: var(--bg-2);
+  color: var(--text);
+  border-top-color: var(--border);
+}
+:global([data-theme='light']) .glow {
+  background: radial-gradient(ellipse at center, rgba(20, 33, 150, 0.1), transparent 70%);
+}
+:global([data-theme='light']) .brandDot { background: var(--accent); box-shadow: 0 0 14px rgba(20, 33, 150, 0.4); }
+:global([data-theme='light']) .tagline { color: var(--muted); }
+:global([data-theme='light']) .nlInput {
+  background: #fff;
+  border-color: var(--border);
+  color: var(--text);
+}
+:global([data-theme='light']) .nlInput::placeholder { color: var(--faint); }
+:global([data-theme='light']) .nlInput:focus { border-color: var(--accent); }
+:global([data-theme='light']) .nlBtn { background: var(--accent); color: #fff; }
+:global([data-theme='light']) .subscribed { color: var(--accent); }
+:global([data-theme='light']) .linkTitle { color: var(--muted); }
+:global([data-theme='light']) .link { color: var(--text); }
+:global([data-theme='light']) .link:hover { color: var(--accent); }
+:global([data-theme='light']) .wordmark {
+  -webkit-text-stroke: 1px rgba(16, 26, 61, 0.1);
+  text-stroke: 1px rgba(16, 26, 61, 0.1);
+}
+:global([data-theme='light']) .bottom { border-top-color: var(--border); }
+:global([data-theme='light']) .copy { color: var(--faint); }
+:global([data-theme='light']) .social { border-color: var(--border); color: var(--muted); }
+:global([data-theme='light']) .social:hover { color: var(--accent); border-color: var(--accent); }
+:global([data-theme='light']) .legalLink { color: var(--faint); }
+:global([data-theme='light']) .legalLink:hover { color: var(--text); }
+
+.footer {
+  position: relative;
+  background: #020503;
+  color: #fff;
+  font-family: 'Space Grotesk', sans-serif;
+  padding: 80px 24px 36px;
+  overflow: hidden;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+/* ambient glow at the top */
+.glow {
+  position: absolute;
+  top: -160px;
+  left: 50%;
+  width: 700px;
+  height: 320px;
+  transform: translateX(-50%);
+  background: radial-gradient(ellipse at center, rgba(191, 254, 3, 0.12), transparent 70%);
+  pointer-events: none;
+}
+
+.inner {
+  position: relative;
+  z-index: 1;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* ── Top ─────────────────────────────────────────────────────── */
+.top {
+  display: grid;
+  grid-template-columns: 1.2fr 1.6fr;
+  gap: 60px;
+  padding-bottom: 56px;
+}
+
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 22px;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+}
+
+.brandDot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: #BFFE03;
+  box-shadow: 0 0 14px #BFFE03;
+}
+
+.tagline {
+  margin-top: 18px;
+  max-width: 380px;
+  font-size: 14.5px;
+  line-height: 1.7;
+  color: rgba(255, 255, 255, 0.45);
+}
+
+/* newsletter */
+.newsletter {
+  display: flex;
+  gap: 10px;
+  margin-top: 26px;
+  max-width: 400px;
+}
+
+.nlInput {
+  flex: 1;
+  padding: 13px 18px;
+  border-radius: 100px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  color: #fff;
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 14px;
+  outline: none;
+  transition: border-color 0.2s ease;
+}
+.nlInput::placeholder { color: rgba(255, 255, 255, 0.4); }
+.nlInput:focus { border-color: rgba(191, 254, 3, 0.5); }
+
+.nlBtn {
+  padding: 13px 24px;
+  border: none;
+  border-radius: 100px;
+  background: #BFFE03;
+  color: #04130a;
+  font-family: 'Space Mono', monospace;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.nlBtn:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(191, 254, 3, 0.4); }
+
+.subscribed {
+  font-family: 'Space Mono', monospace;
+  font-size: 13px;
+  color: #BFFE03;
+  padding: 13px 0;
+}
+
+/* link columns */
+.linksWrap {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+}
+
+.linkTitle {
+  font-family: 'Space Mono', monospace;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.4);
+  margin-bottom: 18px;
+}
+
+.linkCol ul { list-style: none; display: flex; flex-direction: column; gap: 12px; }
+
+.link {
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.7);
+  text-decoration: none;
+  transition: color 0.2s ease, padding-left 0.2s ease;
+}
+.link:hover { color: #BFFE03; padding-left: 4px; }
+
+/* ── Giant wordmark ──────────────────────────────────────────── */
+.wordmark {
+  font-size: clamp(60px, 16vw, 200px);
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  line-height: 1;
+  text-align: center;
+  color: transparent;
+  -webkit-text-stroke: 1px rgba(255, 255, 255, 0.06);
+  text-stroke: 1px rgba(255, 255, 255, 0.06);
+  user-select: none;
+  padding: 20px 0 10px;
+}
+
+/* ── Bottom bar ──────────────────────────────────────────────── */
+.bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  padding-top: 30px;
+  border-top: 1px solid rgba(255, 255, 255, 0.07);
+}
+
+.copy {
+  font-family: 'Space Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  color: rgba(255, 255, 255, 0.35);
+}
+
+.socials { display: flex; gap: 10px; }
+
+.social {
+  width: 38px;
+  height: 38px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: rgba(255, 255, 255, 0.65);
+  transition: color 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
+}
+.social:hover {
+  color: #BFFE03;
+  border-color: rgba(191, 254, 3, 0.5);
+  transform: translateY(-2px);
+}
+
+.legal { display: flex; gap: 18px; }
+
+.legalLink {
+  font-family: 'Space Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 0.06em;
+  color: rgba(255, 255, 255, 0.35);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+.legalLink:hover { color: #fff; }
+
+/* ── Responsive ──────────────────────────────────────────────── */
+@media (max-width: 860px) {
+  .top { grid-template-columns: 1fr; gap: 40px; }
+}
+
+@media (max-width: 560px) {
+  .linksWrap { grid-template-columns: 1fr 1fr; }
+  .newsletter { flex-direction: column; }
+  .bottom { flex-direction: column; align-items: flex-start; gap: 18px; }
+}

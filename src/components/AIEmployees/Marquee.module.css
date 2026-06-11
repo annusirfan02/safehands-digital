@@ -1,0 +1,43 @@
+.marquee {
+  overflow: hidden;
+  background: #BFFE03;
+  padding: 15px 0;
+  white-space: nowrap;
+}
+
+.track {
+  display: flex;
+  width: max-content;
+  animation: scroll 128s linear infinite;
+}
+
+@keyframes scroll {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+
+.item {
+  display: inline-flex;
+  align-items: center;
+  gap: 16px;
+  padding: 0 20px;
+  font-family: 'Space Mono', monospace;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  color: #0a1207;
+  white-space: nowrap;
+}
+.dot { font-size: 8px; }
+.arrow { font-size: 14px; opacity: 0.8; }
+
+/* Pause on hover (nice touch) */
+.marquee:hover .track { animation-play-state: paused; }
+
+/* ── Light theme: match the survey section's blue ── */
+:global([data-theme='light']) .marquee { background: #142196; }
+:global([data-theme='light']) .item { color: #fff; }
+
+@media (prefers-reduced-motion: reduce) {
+  .track { animation: none; }
+}

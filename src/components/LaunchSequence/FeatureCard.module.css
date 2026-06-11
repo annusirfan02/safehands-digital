@@ -1,0 +1,78 @@
+/* ── Light theme overrides ───────────────────────────────────── */
+:global([data-theme='light']) .card {
+  background: var(--surface);
+  border-color: var(--border);
+  box-shadow: 0 18px 50px var(--shadow);
+}
+:global([data-theme='light']) .title { color: var(--text); }
+:global([data-theme='light']) .desc { color: var(--muted); }
+
+.card {
+  position: relative;
+  width: 100%;
+  max-width: 360px;
+  padding: 24px 26px;
+  border-radius: 16px;
+  background: linear-gradient(160deg, rgba(20, 26, 22, 0.92) 0%, rgba(8, 12, 9, 0.92) 100%);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  box-shadow:
+    0 18px 50px rgba(0, 0, 0, 0.55),
+    inset 0 1px 0 rgba(255, 255, 255, 0.04);
+  backdrop-filter: blur(6px);
+  transition: border-color 0.35s ease, box-shadow 0.35s ease, transform 0.35s ease;
+  will-change: transform, opacity;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  border-color: color-mix(in srgb, var(--accent, #BFFE03) 45%, transparent);
+  box-shadow:
+    0 22px 60px rgba(0, 0, 0, 0.6),
+    0 0 30px color-mix(in srgb, var(--accent, #BFFE03) 22%, transparent),
+    inset 0 1px 0 rgba(255, 255, 255, 0.05);
+}
+
+.head {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 14px;
+}
+
+.icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  color: var(--accent, #BFFE03);
+  background: color-mix(in srgb, var(--accent, #BFFE03) 14%, transparent);
+  border: 1px solid color-mix(in srgb, var(--accent, #BFFE03) 30%, transparent);
+  flex-shrink: 0;
+}
+
+.stat {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 30px;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  line-height: 1;
+  color: var(--accent, #BFFE03);
+  text-shadow: 0 0 22px color-mix(in srgb, var(--accent, #BFFE03) 45%, transparent);
+}
+
+.title {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 17px;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  color: #fff;
+  margin-bottom: 8px;
+}
+
+.desc {
+  font-size: 13.5px;
+  line-height: 1.65;
+  color: rgba(255, 255, 255, 0.5);
+}

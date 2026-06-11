@@ -1,0 +1,16 @@
+.list {
+  background: #08090a;
+  padding: 30px 24px 110px;
+}
+
+:global([data-theme='light']) .list {
+  background: var(--bg);
+}
+
+.inner {
+  max-width: 1060px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}

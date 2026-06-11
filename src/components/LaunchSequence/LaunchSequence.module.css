@@ -1,0 +1,155 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Space+Mono:wght@400;700&display=swap');
+
+/* ── Light theme overrides ───────────────────────────────────── */
+:global([data-theme='light']) .section { background: var(--bg); color: var(--text); }
+:global([data-theme='light']) .bgText { color: rgba(16, 26, 61, 0.035); }
+:global([data-theme='light']) .label { color: var(--accent); }
+:global([data-theme='light']) .labelDot { background: var(--accent); box-shadow: 0 0 10px rgba(20, 33, 150, 0.4); }
+:global([data-theme='light']) .headingSolid { color: var(--text); }
+:global([data-theme='light']) .headingOutline {
+  -webkit-text-stroke: 1.5px rgba(16, 26, 61, 0.5);
+  text-stroke: 1.5px rgba(16, 26, 61, 0.5);
+}
+:global([data-theme='light']) .track { background: rgba(20, 33, 150, 0.12); }
+
+/* ── Section ─────────────────────────────────────────────────── */
+.section {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 120px 24px 140px;
+  background: #030805;
+  color: #fff;
+  font-family: 'Space Grotesk', sans-serif;
+  overflow: hidden;
+}
+
+/* Faint background watermark */
+.bgText {
+  position: absolute;
+  top: 8%;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: clamp(90px, 20vw, 240px);
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  color: rgba(255, 255, 255, 0.022);
+  white-space: nowrap;
+  pointer-events: none;
+  user-select: none;
+  z-index: 0;
+}
+
+/* ── Header ──────────────────────────────────────────────────── */
+.header {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  margin-bottom: 90px;
+}
+
+.label {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  font-family: 'Space Mono', monospace;
+  font-size: 12px;
+  letter-spacing: 0.42em;
+  text-transform: uppercase;
+  color: #BFFE03;
+  margin-bottom: 18px;
+}
+
+.labelDot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #BFFE03;
+  box-shadow: 0 0 10px #BFFE03;
+  animation: labelPulse 1.8s ease-in-out infinite;
+}
+
+@keyframes labelPulse {
+  0%, 100% { opacity: 1;    transform: scale(1); }
+  50%       { opacity: 0.4; transform: scale(0.6); }
+}
+
+.heading {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  line-height: 0.98;
+}
+
+.headingSolid {
+  font-size: clamp(44px, 8vw, 92px);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  text-transform: uppercase;
+  color: #fff;
+}
+
+.headingOutline {
+  font-size: clamp(44px, 8vw, 92px);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  text-transform: uppercase;
+  color: transparent;
+  -webkit-text-stroke: 1.5px rgba(255, 255, 255, 0.55);
+  text-stroke: 1.5px rgba(255, 255, 255, 0.55);
+}
+
+/* ── Timeline ────────────────────────────────────────────────── */
+.timeline {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: 1000px;
+}
+
+/* Central dim track */
+.track {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  width: 2px;
+  transform: translateX(-50%);
+  background: rgba(255, 255, 255, 0.07);
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+/* Coloured trail that fills as the ship descends */
+.trackFill {
+  position: absolute;
+  inset: 0;
+  transform-origin: top center;
+  background: linear-gradient(
+    to bottom,
+    #BFFE03 0%,
+    #a855f7 30%,
+    #ff8c1e 55%,
+    #2dd4bf 78%,
+    #c2cad6 100%
+  );
+  box-shadow: 0 0 16px rgba(191, 254, 3, 0.5);
+  will-change: transform;
+}
+
+/* ── Mobile ──────────────────────────────────────────────────── */
+@media (max-width: 820px) {
+  .section {
+    padding: 90px 18px 110px;
+  }
+
+  .header {
+    margin-bottom: 56px;
+  }
+
+  .track {
+    left: 28px;
+    transform: none;
+  }
+}

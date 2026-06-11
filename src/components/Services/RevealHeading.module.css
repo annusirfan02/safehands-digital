@@ -1,0 +1,18 @@
+/* ── Light theme: dark letters so the reveal is visible on light bg ── */
+:global([data-theme='light']) .heading { color: var(--text); }
+
+.heading {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: clamp(44px, 8vw, 84px);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  text-transform: uppercase;
+  line-height: 1;
+  color: #fff;
+}
+
+.letter {
+  display: inline-block;
+  white-space: pre;
+  will-change: opacity, transform;
+}

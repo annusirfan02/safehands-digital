@@ -1,0 +1,70 @@
+/* ── Light theme overrides ───────────────────────────────────── */
+:global([data-theme='light']) .lineOutline {
+  -webkit-text-stroke: 1.2px rgba(16, 26, 61, 0.5);
+  text-stroke: 1.2px rgba(16, 26, 61, 0.5);
+}
+:global([data-theme='light']) .lineSolid { color: var(--text); }
+:global([data-theme='light']) .quote { color: var(--faint); }
+/* word colour is set inline per-offering (themed readable variant) — keep it,
+   just soften the glow on light backgrounds */
+:global([data-theme='light']) .word { text-shadow: 0 0 22px currentColor; }
+
+.headline {
+  display: flex;
+  flex-direction: column;
+  line-height: 0.92;
+  text-transform: uppercase;
+  font-family: 'Space Grotesk', sans-serif;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+/* "WE BRING" — outlined italic serif (matches reference) */
+.lineOutline {
+  font-family: Georgia, 'Times New Roman', serif;
+  font-style: italic;
+  font-weight: 400;
+  font-size: clamp(34px, 5.4vw, 74px);
+  letter-spacing: 0.01em;
+  color: transparent;
+  -webkit-text-stroke: 1.2px rgba(255, 255, 255, 0.45);
+  text-stroke: 1.2px rgba(255, 255, 255, 0.45);
+}
+
+/* Middle cycling slot */
+.slot {
+  display: flex;
+  align-items: baseline;
+  font-size: clamp(38px, 6vw, 84px);
+  line-height: 0.95;
+  max-width: 100%;
+}
+
+.quote {
+  color: rgba(255, 255, 255, 0.25);
+  font-weight: 700;
+}
+
+.word {
+  display: inline-block;
+  padding: 0 0.04em;
+  white-space: nowrap;
+  text-shadow: 0 0 30px currentColor;
+  animation: wordIn 0.55s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: transform, opacity;
+}
+
+@keyframes wordIn {
+  0%   { opacity: 0; transform: translateY(0.42em) rotateX(-55deg); filter: blur(6px); }
+  100% { opacity: 1; transform: translateY(0) rotateX(0); filter: blur(0); }
+}
+
+/* "TO BRANDS." — solid white */
+.lineSolid {
+  font-size: clamp(38px, 6vw, 84px);
+  color: #fff;
+}
+
+@media (max-width: 820px) {
+  .headline { align-items: flex-start; }
+}

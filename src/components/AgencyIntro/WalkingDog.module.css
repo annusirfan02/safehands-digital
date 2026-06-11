@@ -1,0 +1,134 @@
+/* ── Full-viewport track: dog enters one screen corner, exits the other ── */
+.track {
+  position: relative;
+  left: 50%;
+  width: 100vw;
+  transform: translateX(-50%);
+  height: 140px;
+  margin-top: 30px;
+  overflow: hidden;       /* clip exactly at the viewport edges */
+  pointer-events: none;
+}
+
+/* The moving group: walks left → right across the whole screen, then loops */
+.walker {
+  position: absolute;
+  bottom: 4px;
+  left: 0;
+  width: 118px;           /* smaller dog */
+  transform: translateX(-180px);
+  animation: walkAcross 14s linear infinite;
+}
+
+@keyframes walkAcross {
+  0%   { transform: translateX(-180px); }
+  100% { transform: translateX(calc(100vw + 40px)); }
+}
+
+/* A gentle body bob while walking */
+.dog {
+  display: block;
+  width: 100%;
+  height: auto;
+  transform-origin: center bottom;
+  animation: bob 0.5s ease-in-out infinite;
+}
+
+@keyframes bob {
+  0%, 100% { transform: translateY(0); }
+  50%      { transform: translateY(-3px); }
+}
+
+/* ── Legs: alternating diagonal swing for a walk cycle ── */
+.legNearBack  { transform-origin: 59px 90px; animation: legSwingA 0.5s ease-in-out infinite; }
+.legFarFront  { transform-origin: 92px 88px; animation: legSwingA 0.5s ease-in-out infinite; }
+.legNearFront { transform-origin: 103px 90px; animation: legSwingB 0.5s ease-in-out infinite; }
+.legFarBack   { transform-origin: 46px 88px; animation: legSwingB 0.5s ease-in-out infinite; }
+
+@keyframes legSwingA {
+  0%, 100% { transform: rotate(18deg); }
+  50%      { transform: rotate(-18deg); }
+}
+@keyframes legSwingB {
+  0%, 100% { transform: rotate(-18deg); }
+  50%      { transform: rotate(18deg); }
+}
+
+/* ── Tail wag ── */
+.tail {
+  transform-origin: 28px 62px;
+  animation: wag 0.32s ease-in-out infinite;
+}
+@keyframes wag {
+  0%, 100% { transform: rotate(-9deg); }
+  50%      { transform: rotate(11deg); }
+}
+
+/* ── Head: tiny nod ── */
+.head {
+  transform-origin: 123px 62px;
+  animation: nod 1s ease-in-out infinite;
+}
+@keyframes nod {
+  0%, 100% { transform: rotate(-1.5deg); }
+  50%      { transform: rotate(1.5deg); }
+}
+
+/* ── Speech bubble that rides along ── */
+.bubble {
+  position: absolute;
+  left: 62%;
+  bottom: 80px;
+  transform: translateX(-50%);
+  white-space: nowrap;
+  background: #04130a;
+  color: #fff;
+  font-family: 'Space Mono', monospace;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  padding: 8px 14px;
+  border-radius: 100px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.22);
+  animation: bubbleFloat 1.6s ease-in-out infinite;
+}
+
+.bubbleAccent { color: #BFFE03; }
+
+.bubbleTail {
+  position: absolute;
+  left: 34px;
+  bottom: -5px;
+  width: 12px;
+  height: 12px;
+  background: #04130a;
+  border-radius: 0 0 4px 0;
+  transform: rotate(45deg);
+}
+
+@keyframes bubbleFloat {
+  0%, 100% { transform: translateX(-50%) translateY(0); }
+  50%      { transform: translateX(-50%) translateY(-4px); }
+}
+
+/* ── Respect reduced-motion: park the dog, no walking/wiggle ── */
+@media (prefers-reduced-motion: reduce) {
+  .walker { animation: none; transform: translateX(40px); }
+  .dog,
+  .legNearBack, .legFarFront, .legNearFront, .legFarBack,
+  .tail, .head, .bubble { animation: none; }
+}
+
+/* ── Light theme: white bubble with blue accent text (no neon) ── */
+:global([data-theme='light']) .bubble {
+  background: #ffffff;
+  color: #101a3d;
+  border: 1px solid rgba(20, 33, 150, 0.12);
+  box-shadow: 0 8px 24px rgba(20, 33, 80, 0.16);
+}
+:global([data-theme='light']) .bubbleAccent { color: #142196; }
+:global([data-theme='light']) .bubbleTail {
+  background: #ffffff;
+  border-right: 1px solid rgba(20, 33, 150, 0.12);
+  border-bottom: 1px solid rgba(20, 33, 150, 0.12);
+}

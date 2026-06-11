@@ -1,0 +1,217 @@
+.card {
+  display: block;
+  position: relative;
+  height: 230px;
+  border-radius: 16px;
+  text-decoration: none;
+  perspective: 1500px;
+  animation: cardIn 0.55s cubic-bezier(0.16, 1, 0.3, 1) both;
+  /* dark theme keeps the original accent; light theme swaps to the bubble palette */
+  --svc: var(--svc-dark);
+  --grad: var(--grad-dark);
+}
+
+:global([data-theme='light']) .card {
+  --svc: var(--svc-light);
+  --grad: var(--grad-light);
+}
+
+@keyframes cardIn {
+  0%   { opacity: 0; transform: translateY(22px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+/* 3D flip wrapper */
+.inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  transition: transform 0.7s cubic-bezier(0.4, 0.15, 0.2, 1);
+  will-change: transform;
+}
+
+.card:hover .inner,
+.card:focus-visible .inner {
+  transform: rotateY(180deg);
+}
+
+.front,
+.back {
+  position: absolute;
+  inset: 0;
+  border-radius: 16px;
+  overflow: hidden;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  padding: 22px;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ── Front (straight, light card with diagonal gloss) ─────────── */
+.front {
+  background: #ffffff;
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.45);
+}
+
+/* diagonal light sweep / soft shadow band (matches reference) */
+.front::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(123deg, transparent 36%, rgba(15, 18, 38, 0.10) 52%, transparent 70%);
+  pointer-events: none;
+}
+
+.topBar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: var(--grad, #7c5cff);
+}
+
+.frontTop {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  position: relative;
+  z-index: 1;
+}
+
+.icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  border-radius: 13px;
+  color: var(--svc, #7c5cff);
+  background: color-mix(in srgb, var(--svc) 14%, #ffffff);
+}
+
+.flipPill {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 5px 10px;
+  border-radius: 100px;
+  background: rgba(15, 18, 38, 0.06);
+  font-family: 'Space Mono', monospace;
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  color: rgba(15, 18, 38, 0.45);
+}
+
+.flipGlyph { font-size: 11px; }
+
+.frontBottom {
+  margin-top: auto;
+  position: relative;
+  z-index: 1;
+}
+
+.num {
+  display: block;
+  font-family: 'Space Mono', monospace;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  color: var(--svc, #7c5cff);
+  margin-bottom: 6px;
+}
+
+.name {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  color: #0b0e16;
+  line-height: 1.15;
+  max-width: 78%;
+}
+
+.arrowBtn {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  z-index: 2;
+  width: 38px;
+  height: 38px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: var(--svc, #7c5cff);
+  color: #fff;
+  font-size: 16px;
+  box-shadow: 0 6px 16px color-mix(in srgb, var(--svc) 45%, transparent);
+}
+
+/* ── Back (flipped, solid service colour) ─────────────────────── */
+.back {
+  transform: rotateY(180deg);
+  background: var(--svc, #7c5cff);
+  color: #fff;
+  justify-content: flex-start;
+}
+
+/* subtle depth on the back */
+.back::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 80% 0%, rgba(255, 255, 255, 0.18), transparent 55%);
+  pointer-events: none;
+}
+
+.backNum {
+  font-family: 'Space Mono', monospace;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.backName {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 19px;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  margin: 6px 0 10px;
+  position: relative;
+  z-index: 1;
+}
+
+.backDesc {
+  font-size: 13.5px;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.92);
+  position: relative;
+  z-index: 1;
+}
+
+.explore {
+  margin-top: auto;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: 'Space Mono', monospace;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  color: #fff;
+  position: relative;
+  z-index: 1;
+}
+
+.exploreArrow {
+  transition: transform 0.25s ease;
+}
+
+.card:hover .explore .exploreArrow {
+  transform: translateX(5px);
+}

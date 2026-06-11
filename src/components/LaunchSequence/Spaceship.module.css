@@ -1,0 +1,74 @@
+.ship {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 36px;
+  height: 56px;
+  z-index: 6;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* xPercent / y handled by GSAP */
+  will-change: transform;
+}
+
+/* Align to the left-shifted track on mobile */
+@media (max-width: 820px) {
+  .ship {
+    left: 28px;
+  }
+}
+
+.craft {
+  position: relative;
+  z-index: 2;
+  display: block;
+  filter: drop-shadow(0 4px 10px rgba(0, 0, 0, 0.5));
+  animation: shipWobble 3.4s ease-in-out infinite;
+}
+
+@keyframes shipWobble {
+  0%, 100% { transform: rotate(-2.5deg); }
+  50%       { transform: rotate(2.5deg); }
+}
+
+/* Soft neon halo */
+.halo {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 70px;
+  height: 70px;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(191, 254, 3, 0.4) 0%, rgba(191, 254, 3, 0) 70%);
+  z-index: 1;
+  animation: haloPulse 2.4s ease-in-out infinite;
+  pointer-events: none;
+}
+
+@keyframes haloPulse {
+  0%, 100% { opacity: 0.6; transform: translate(-50%, -50%) scale(0.9); }
+  50%       { opacity: 1;   transform: translate(-50%, -50%) scale(1.15); }
+}
+
+/* Exhaust plume above the rocket (it descends, so the trail points up) */
+.exhaust {
+  position: absolute;
+  top: -14px;
+  left: 50%;
+  width: 8px;
+  height: 22px;
+  transform: translateX(-50%);
+  border-radius: 50% 50% 40% 40%;
+  background: linear-gradient(to top, rgba(191, 254, 3, 0.9), rgba(0, 212, 255, 0.4), transparent);
+  filter: blur(1.5px);
+  z-index: 0;
+  animation: exhaustFlicker 0.45s ease-in-out infinite alternate;
+  pointer-events: none;
+}
+
+@keyframes exhaustFlicker {
+  0%   { opacity: 0.55; transform: translateX(-50%) scaleY(0.8); }
+  100% { opacity: 1;    transform: translateX(-50%) scaleY(1.15); }
+}

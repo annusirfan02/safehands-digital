@@ -1,0 +1,109 @@
+/* ── Light theme overrides ───────────────────────────────────── */
+:global([data-theme='light']) .disc {
+  background:
+    radial-gradient(circle at 34% 30%, rgba(20, 33, 150, 0.06), transparent 60%),
+    linear-gradient(155deg, #ffffff, #eef1f8);
+  border-color: var(--border);
+  box-shadow: 0 10px 26px var(--shadow);
+}
+:global([data-theme='light']) .icon { color: var(--muted); }
+:global([data-theme='light']) .label { color: var(--muted); }
+:global([data-theme='light']) .code { color: var(--faint); }
+:global([data-theme='light']) .active .icon { color: var(--accent); }
+:global([data-theme='light']) .active .label { color: var(--text); }
+
+.node {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: transform;
+}
+
+.disc {
+  position: relative;
+  width: 92px;
+  height: 92px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* decent, glassy — NOT a bright kid-colour planet */
+  background:
+    radial-gradient(circle at 34% 30%, rgba(255, 255, 255, 0.06), transparent 60%),
+    linear-gradient(155deg, rgba(22, 26, 24, 0.92), rgba(8, 11, 9, 0.92));
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: inset 0 0 24px rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(4px);
+  transition: box-shadow 0.6s ease, border-color 0.6s ease;
+}
+
+.ring {
+  position: absolute;
+  inset: -1px;
+  border-radius: 50%;
+  border: 1px solid transparent;
+  transition: border-color 0.6s ease, box-shadow 0.6s ease;
+}
+
+.icon {
+  color: rgba(255, 255, 255, 0.55);
+  display: flex;
+  transition: color 0.6s ease, transform 0.6s ease;
+}
+
+.meta {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+}
+
+.label {
+  font-family: 'Space Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.4);
+  transition: color 0.5s ease;
+}
+
+.code {
+  font-family: 'Space Mono', monospace;
+  font-size: 8px;
+  letter-spacing: 0.16em;
+  color: rgba(255, 255, 255, 0.2);
+}
+
+/* ── Active (auto-enhanced) state ───────────────────────────── */
+.active {
+  transform: scale(1.16);
+}
+
+.active .disc {
+  border-color: color-mix(in srgb, var(--accent) 55%, transparent);
+  box-shadow:
+    inset 0 0 24px rgba(0, 0, 0, 0.5),
+    0 0 40px color-mix(in srgb, var(--accent) 45%, transparent);
+}
+
+.active .ring {
+  border-color: color-mix(in srgb, var(--accent) 70%, transparent);
+  box-shadow: 0 0 18px var(--accent);
+  animation: ringPulse 2.2s ease-in-out infinite;
+}
+
+.active .icon {
+  color: var(--accent);
+  transform: scale(1.08);
+}
+
+.active .label {
+  color: #fff;
+}
+
+@keyframes ringPulse {
+  0%, 100% { transform: scale(1);    opacity: 0.8; }
+  50%       { transform: scale(1.08); opacity: 1; }
+}
