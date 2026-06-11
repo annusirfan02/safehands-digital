@@ -1,0 +1,103 @@
+.section {
+  background: #07060a;
+  color: #fff;
+  font-family: 'Space Grotesk', sans-serif;
+  padding: 70px 24px 100px;
+}
+.inner { max-width: 1180px; margin: 0 auto; }
+
+/* ── Head ── */
+.head { margin-bottom: 50px; }
+.kicker {
+  display: block;
+  font-family: 'Space Mono', monospace; font-size: 13px; font-weight: 700;
+  letter-spacing: 0.3em; color: #ff8c1e; margin-bottom: 14px;
+}
+.heading { font-size: clamp(40px, 6.5vw, 82px); font-weight: 700; letter-spacing: -0.02em; text-transform: uppercase; color: #fff; }
+.headDot { color: #ff8c1e; }
+
+/* ── Timeline ── */
+.timeline { position: relative; }
+
+.track {
+  position: absolute;
+  left: 70px; top: 10px; bottom: 10px;
+  width: 2px;
+}
+.trackBase { position: absolute; inset: 0; background: rgba(255, 255, 255, 0.08); border-radius: 2px; }
+.trackFill {
+  position: absolute; top: 0; left: 0; width: 100%; height: 0;
+  background: var(--c); border-radius: 2px;
+  box-shadow: 0 0 12px var(--c);
+  transition: background 0.4s ease, box-shadow 0.4s ease;
+}
+
+.rocket {
+  position: absolute; left: 50%; top: 0;
+  transform: translate(-50%, -50%);
+  width: 42px;
+  z-index: 2;
+}
+.craft { width: 40px; height: auto; display: block; transform: scaleY(-1); filter: drop-shadow(0 0 10px color-mix(in srgb, var(--c) 50%, transparent)); }
+.fire {
+  position: absolute; top: -13px; left: 50%;
+  width: 16px; height: 26px;
+  transform: translateX(-50%);
+  border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+  background: radial-gradient(circle at 50% 30%, var(--c), transparent 72%);
+  filter: blur(2px);
+  animation: flicker 0.35s ease-in-out infinite alternate;
+}
+@keyframes flicker { 0% { opacity: 0.6; transform: translateX(-50%) scaleY(0.85); } 100% { opacity: 1; transform: translateX(-50%) scaleY(1.15); } }
+
+/* ── Step cards ── */
+.steps { margin-left: 140px; display: flex; flex-direction: column; gap: 90px; }
+
+.card {
+  position: relative;
+  padding: 28px 34px 30px;
+  border-radius: 18px;
+  background: linear-gradient(165deg, color-mix(in srgb, var(--sc) 7%, #0e1014), #0a0b0e 65%);
+  border: 1px solid color-mix(in srgb, var(--sc) 30%, rgba(255, 255, 255, 0.08));
+  overflow: hidden;
+}
+.topGlow {
+  position: absolute; top: 0; left: 0; right: 0; height: 2px;
+  background: var(--sc); box-shadow: 0 0 16px var(--sc); opacity: 0.9;
+}
+.stepNum {
+  display: block;
+  font-family: 'Space Mono', monospace; font-size: 12px; font-weight: 700;
+  letter-spacing: 0.24em; color: var(--sc); margin-bottom: 12px;
+}
+.title { font-size: 22px; font-weight: 700; color: #fff; margin-bottom: 12px; }
+.desc { font-size: 15px; line-height: 1.6; color: rgba(255, 255, 255, 0.5); max-width: 760px; }
+
+.tags { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 20px; }
+.tag {
+  padding: 7px 15px; border-radius: 100px;
+  border: 1px solid color-mix(in srgb, var(--sc) 45%, transparent);
+  background: color-mix(in srgb, var(--sc) 10%, transparent);
+  color: var(--sc);
+  font-family: 'Space Mono', monospace; font-size: 10px; font-weight: 700; letter-spacing: 0.08em;
+}
+
+/* ── Light theme ── */
+:global([data-theme='light']) .section { background: var(--bg); color: #101a3d; }
+:global([data-theme='light']) .heading { color: #101a3d; }
+:global([data-theme='light']) .trackBase { background: rgba(20, 33, 150, 0.12); }
+:global([data-theme='light']) .craft { filter: drop-shadow(0 0 8px color-mix(in srgb, var(--c) 55%, transparent)); }
+:global([data-theme='light']) .card {
+  background: linear-gradient(165deg, color-mix(in srgb, var(--sc) 8%, #ffffff), #ffffff 65%);
+  border-color: color-mix(in srgb, var(--sc) 28%, rgba(20, 33, 150, 0.1));
+  box-shadow: 0 16px 40px rgba(20, 33, 80, 0.06);
+}
+:global([data-theme='light']) .title { color: #101a3d; }
+:global([data-theme='light']) .desc { color: rgba(16, 26, 61, 0.58); }
+
+/* ── Responsive ── */
+@media (max-width: 720px) {
+  .track { left: 22px; }
+  .steps { margin-left: 52px; gap: 56px; }
+  .card { padding: 24px 22px 26px; }
+}

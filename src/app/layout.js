@@ -1,5 +1,5 @@
 import './globals.css';
-import ThemeToggle from '@/components/ThemeToggle';
+import Navbar from '@/components/Navbar';
 
 export const metadata = {
   title: 'Safe Hands Digital — AI-First Marketing',
@@ -19,7 +19,7 @@ export default function RootLayout({ children }) {
     <html lang="en" suppressHydrationWarning>
       <body suppressHydrationWarning>
         <script dangerouslySetInnerHTML={{ __html: themeInit }} />
-        <ThemeToggle />
+        <Navbar />
         {children}
       </body>
     </html>

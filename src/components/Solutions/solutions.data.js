@@ -18,6 +18,7 @@ export const SOLUTIONS = [
     price: 'From $1,500 / mo',
     color: '#1e9bff',
     gradient: 'linear-gradient(90deg,#1e9bff,#5bc0ff)',
+    portfolioHref: '/seo',
   },
   {
     num: '02',
@@ -86,6 +87,7 @@ export const SOLUTIONS = [
     price: '$3,000 – $15,000+',
     color: '#7c5cff',
     gradient: 'linear-gradient(90deg,#7c5cff,#a07cff)',
+    portfolioHref: '/web-development',
   },
   {
     num: '06',

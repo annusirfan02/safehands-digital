@@ -1,0 +1,82 @@
+.section {
+  background: #05070b;
+  color: #fff;
+  font-family: 'Space Grotesk', sans-serif;
+  padding: 70px 24px 90px;
+}
+.inner { max-width: 1180px; margin: 0 auto; }
+
+/* ── Head ── */
+.head { margin-bottom: 42px; }
+.kicker {
+  display: block;
+  font-family: 'Space Mono', monospace; font-size: 13px; font-weight: 700;
+  letter-spacing: 0.3em; color: #2b9fe0; margin-bottom: 14px;
+}
+.heading { display: flex; flex-direction: column; line-height: 0.9; }
+.solid { font-size: clamp(38px, 6vw, 76px); font-weight: 700; letter-spacing: -0.02em; text-transform: uppercase; color: #fff; }
+.script {
+  font-family: Georgia, 'Times New Roman', serif; font-style: italic; font-weight: 400;
+  font-size: clamp(32px, 5vw, 64px); margin-top: 2px;
+  color: transparent;
+  -webkit-text-stroke: 1.3px rgba(255, 255, 255, 0.6); text-stroke: 1.3px rgba(255, 255, 255, 0.6);
+}
+.subtitle { margin-top: 22px; max-width: 520px; font-size: clamp(15px, 1.5vw, 17px); line-height: 1.65; color: rgba(255, 255, 255, 0.5); }
+
+/* ── Grid ── */
+.grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; }
+
+.card {
+  position: relative;
+  padding: 26px 28px 28px;
+  border-radius: 18px;
+  background: linear-gradient(170deg, color-mix(in srgb, var(--c) 7%, #0e1014), #0a0b0e 62%);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  overflow: hidden;
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.3s ease, box-shadow 0.3s ease;
+}
+.card:hover {
+  transform: translateY(-6px);
+  border-color: color-mix(in srgb, var(--c) 45%, transparent);
+  box-shadow: 0 24px 56px color-mix(in srgb, var(--c) 16%, transparent);
+}
+.topGlow {
+  position: absolute; top: 0; left: 0; right: 0; height: 2px;
+  background: var(--c); box-shadow: 0 0 16px var(--c); opacity: 0.9;
+}
+
+.icon {
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 44px; height: 44px; border-radius: 12px;
+  color: var(--c);
+  background: color-mix(in srgb, var(--c) 14%, transparent);
+  border: 1px solid color-mix(in srgb, var(--c) 30%, transparent);
+  margin-bottom: 24px;
+}
+.cardKicker {
+  display: block;
+  font-family: 'Space Mono', monospace; font-size: 11px; font-weight: 700;
+  letter-spacing: 0.12em; color: var(--c); margin-bottom: 10px;
+}
+.title { font-size: 19px; font-weight: 700; color: #fff; margin-bottom: 14px; line-height: 1.2; }
+.desc { font-size: 14px; line-height: 1.65; color: rgba(255, 255, 255, 0.5); }
+
+/* ── Light theme ── */
+:global([data-theme='light']) .section { background: var(--bg); color: #101a3d; }
+:global([data-theme='light']) .solid { color: #101a3d; }
+:global([data-theme='light']) .script { -webkit-text-stroke: 1.3px rgba(16, 26, 61, 0.55); text-stroke: 1.3px rgba(16, 26, 61, 0.55); }
+:global([data-theme='light']) .subtitle { color: var(--muted); }
+:global([data-theme='light']) .card {
+  background: linear-gradient(170deg, color-mix(in srgb, var(--c) 6%, #ffffff), #ffffff 60%);
+  border-color: rgba(20, 33, 150, 0.1); box-shadow: 0 16px 40px rgba(20, 33, 80, 0.06);
+}
+:global([data-theme='light']) .title { color: #101a3d; }
+:global([data-theme='light']) .desc { color: rgba(16, 26, 61, 0.58); }
+
+/* ── Responsive ── */
+@media (max-width: 900px) {
+  .grid { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 560px) {
+  .grid { grid-template-columns: 1fr; }
+}
