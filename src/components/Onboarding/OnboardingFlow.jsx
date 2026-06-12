@@ -3,6 +3,7 @@
 import { useState, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
 import Starfield from '@/components/HeroHeader/Starfield';
+import ThemeToggle from '@/components/ThemeToggle';
 import styles from './OnboardingFlow.module.css';
 
 const INDUSTRIES = ['E-Commerce', 'Food & Beverage', 'Real Estate', 'Beauty & Wellness', 'Tech / SaaS', 'Healthcare', 'Finance', 'Other'];
@@ -125,9 +126,12 @@ export default function OnboardingFlow() {
     <section className={styles.flow} suppressHydrationWarning>
       <Starfield shooters={3} stars={12} />
 
-      <button type="button" className={styles.back2site} onClick={() => router.back()}>
-        <span className={styles.bArrow}>←</span> Back to site
-      </button>
+      <div className={styles.topBar}>
+        <button type="button" className={styles.back2site} onClick={() => router.back()}>
+          <span className={styles.bArrow}>←</span> Back to site
+        </button>
+        <ThemeToggle />
+      </div>
 
       {/* ── Right visuals ── */}
       {step >= 1 && (
