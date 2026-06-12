@@ -159,8 +159,66 @@
 @keyframes blink { 50% { opacity: 0; } }
 .fadeIn { animation: riseIn 0.5s ease both; }
 
-/* ── Light theme: keep this flow dark (it's a focused, app-like screen) ── */
-:global([data-theme='light']) .flow { background: #0a0a0a; color: #fff; }
+/* ══════════════════════════════════════════════════════════════
+   Light theme — soft blue surface with the brand navy (#142196)
+   standing in for the neon-green accent used in dark mode.
+   ══════════════════════════════════════════════════════════════ */
+:global([data-theme='light']) .flow { background: var(--bg); color: var(--text); }
+
+/* back-to-site pill */
+:global([data-theme='light']) .back2site { background: var(--surface); border-color: var(--border); color: var(--muted); }
+:global([data-theme='light']) .back2site:hover { color: var(--accent); border-color: rgba(20, 33, 150, 0.45); }
+
+/* visuals */
+:global([data-theme='light']) .rocket { filter: drop-shadow(0 0 26px rgba(20, 33, 150, 0.18)); }
+:global([data-theme='light']) .ring { border-color: rgba(20, 33, 150, 0.08); }
+:global([data-theme='light']) .orbitDot { background: var(--accent); box-shadow: 0 0 14px 2px rgba(20, 33, 150, 0.45); }
+
+/* intro */
+:global([data-theme='light']) .introScript { -webkit-text-stroke: 1.4px rgba(16, 26, 61, 0.4); text-stroke: 1.4px rgba(16, 26, 61, 0.4); }
+:global([data-theme='light']) .introAccent { color: var(--accent); text-shadow: 0 0 60px rgba(20, 33, 150, 0.25); }
+:global([data-theme='light']) .introSub { color: var(--muted); }
+:global([data-theme='light']) .kickerGreen { color: var(--accent); }
+:global([data-theme='light']) .greenDot { background: var(--accent); box-shadow: 0 0 8px rgba(20, 33, 150, 0.6); }
+:global([data-theme='light']) .cta { background: var(--accent); color: #fff; box-shadow: 0 0 44px rgba(20, 33, 150, 0.35); }
+:global([data-theme='light']) .cta:hover { box-shadow: 0 0 64px rgba(20, 33, 150, 0.5); }
+
+/* survey steps */
+:global([data-theme='light']) .stepNum { color: var(--accent); }
+:global([data-theme='light']) .stepBar { background: var(--accent); }
+:global([data-theme='light']) .stepLabel { color: var(--muted); }
+:global([data-theme='light']) .stepHint { color: var(--faint); }
+:global([data-theme='light']) .hintGreen { color: var(--accent-2); }
+:global([data-theme='light']) .head .accent { color: var(--accent); text-shadow: 0 0 50px rgba(20, 33, 150, 0.2); }
+:global([data-theme='light']) .sub { color: var(--muted); }
+
+/* inputs & pills */
+:global([data-theme='light']) .input { background: var(--surface); border-color: var(--border); color: var(--text); }
+:global([data-theme='light']) .input::placeholder { color: var(--faint); }
+:global([data-theme='light']) .input:focus { border-color: var(--accent); box-shadow: 0 0 0 3px rgba(20, 33, 150, 0.14); }
+:global([data-theme='light']) .fieldLabel { color: var(--muted); }
+:global([data-theme='light']) .pill, :global([data-theme='light']) .roundPill { background: var(--surface); border-color: var(--border); color: rgba(16, 26, 61, 0.82); }
+:global([data-theme='light']) .pill:hover, :global([data-theme='light']) .roundPill:hover { border-color: rgba(20, 33, 150, 0.5); }
+:global([data-theme='light']) .pillOn { background: rgba(20, 33, 150, 0.1); border-color: var(--accent); color: var(--text); }
+
+/* slider */
+:global([data-theme='light']) .sliderVal { color: var(--accent); }
+:global([data-theme='light']) .slider { background: linear-gradient(to right, var(--accent) var(--pct), rgba(20, 33, 150, 0.16) var(--pct)); }
+:global([data-theme='light']) .slider::-webkit-slider-thumb { background: var(--accent); box-shadow: 0 0 16px rgba(20, 33, 150, 0.5); }
+:global([data-theme='light']) .slider::-moz-range-thumb { background: var(--accent); box-shadow: 0 0 16px rgba(20, 33, 150, 0.5); }
+:global([data-theme='light']) .sliderTicks { color: var(--faint); }
+
+/* nav buttons */
+:global([data-theme='light']) .backBtn { color: var(--muted); }
+:global([data-theme='light']) .backBtn:hover { color: var(--text); }
+:global([data-theme='light']) .contBtn { background: var(--accent); color: #fff; box-shadow: 0 0 34px rgba(20, 33, 150, 0.32); }
+:global([data-theme='light']) .seeBtn { color: var(--muted); }
+:global([data-theme='light']) .seeBtn:hover { color: var(--accent); }
+
+/* strategy result */
+:global([data-theme='light']) .sNum { border-color: var(--accent); color: var(--accent); }
+:global([data-theme='light']) .sText { color: rgba(16, 26, 61, 0.82); }
+:global([data-theme='light']) .cursor { color: var(--accent); }
 
 @media (prefers-reduced-motion: reduce) {
   .orbit, .fire, .flying, .content > *, .intro > * { animation: none; opacity: 1; }
