@@ -35,7 +35,7 @@ export default function SolutionCard({ item }) {
       <div className={styles.invest}>
         <span className={styles.investLabel}>INVESTMENT</span>
         <span className={styles.price}>{price}</span>
-        <a href="/#maya" className={styles.btnPrimary}>
+        <a href="/onboarding" className={styles.btnPrimary}>
           GET STARTED <span className={styles.arrow}>→</span>
         </a>
         <a href={portfolioHref || '/#portfolio'} className={styles.btnGhost}>

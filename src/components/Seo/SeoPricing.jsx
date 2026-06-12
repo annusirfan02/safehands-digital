@@ -56,7 +56,7 @@ export default function SeoPricing() {
                 ))}
               </ul>
 
-              <a href="#contact" className={`${styles.cta} ${p.featured ? styles.ctaFilled : styles.ctaOutline}`}>
+              <a href="/onboarding" className={`${styles.cta} ${p.featured ? styles.ctaFilled : styles.ctaOutline}`}>
                 GET STARTED
               </a>
             </article>

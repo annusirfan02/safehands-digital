@@ -1,3 +1,6 @@
+/* Load the brand fonts globally so every page (even direct-loaded ones) gets them */
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Space+Mono:wght@400;700&display=swap');
+
 * {
   margin: 0;
   padding: 0;

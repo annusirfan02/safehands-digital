@@ -1,0 +1,79 @@
+.section {
+  position: relative;
+  overflow: hidden;
+  background: #060709;
+  font-family: 'Space Grotesk', sans-serif;
+  padding: 40px 24px 48px;
+}
+
+/* Neon-yellow glow that sweeps left → right across the whole section, forever */
+.glowSweep {
+  position: absolute;
+  top: -70%; bottom: -70%;
+  left: 0;
+  width: 20%;
+  background: radial-gradient(ellipse 48% 74% at center, rgba(191, 254, 3, 0.22), transparent 72%);
+  filter: blur(42px);
+  pointer-events: none;
+  animation: sweep 9s linear infinite;
+}
+@keyframes sweep {
+  0%   { transform: translateX(-70%); }
+  100% { transform: translateX(330%); }
+}
+
+.inner {
+  position: relative; z-index: 2;
+  max-width: 1180px; margin: 0 auto;
+  display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px;
+}
+
+.card {
+  padding: 22px 24px;
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(255, 255, 255, 0.015);
+  text-align: center;
+}
+
+.value {
+  font-size: clamp(24px, 2.6vw, 34px);
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  color: #BFFE03;
+  transform-origin: center;
+  animation: pulseGlow 2.6s ease-in-out infinite;
+}
+@keyframes pulseGlow {
+  0%, 100% { transform: scale(1); text-shadow: 0 0 14px rgba(191, 254, 3, 0.25); }
+  50%      { transform: scale(1.07); text-shadow: 0 0 30px rgba(191, 254, 3, 0.65); }
+}
+
+.label {
+  margin-top: 8px;
+  font-family: 'Space Mono', monospace;
+  font-size: 11px; font-weight: 700; letter-spacing: 0.1em;
+  color: rgba(255, 255, 255, 0.4);
+}
+
+/* ── Light theme ── */
+:global([data-theme='light']) .section { background: var(--bg); }
+:global([data-theme='light']) .glowSweep { background: radial-gradient(ellipse 60% 50% at center, rgba(140, 220, 40, 0.18), transparent 70%); }
+:global([data-theme='light']) .card { border-color: rgba(20, 33, 150, 0.1); background: rgba(255, 255, 255, 0.5); }
+:global([data-theme='light']) .value { color: #5aa600; }
+:global([data-theme='light']) .value { animation: pulseGlowLight 2.6s ease-in-out infinite; }
+@keyframes pulseGlowLight {
+  0%, 100% { transform: scale(1); text-shadow: 0 0 12px rgba(90, 166, 0, 0.2); }
+  50%      { transform: scale(1.07); text-shadow: 0 0 24px rgba(90, 166, 0, 0.45); }
+}
+:global([data-theme='light']) .label { color: rgba(16, 26, 61, 0.45); }
+
+/* ── Reduced motion ── */
+@media (prefers-reduced-motion: reduce) {
+  .glowSweep, .value { animation: none; }
+}
+
+/* ── Responsive ── */
+@media (max-width: 720px) {
+  .inner { grid-template-columns: repeat(2, 1fr); }
+}

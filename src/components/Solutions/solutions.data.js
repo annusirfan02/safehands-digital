@@ -36,6 +36,7 @@ export const SOLUTIONS = [
     price: 'From $2,500 / mo',
     color: '#ff4d9d',
     gradient: 'linear-gradient(90deg,#ff4d9d,#ff7ab8)',
+    portfolioHref: '/social-media',
   },
   {
     num: '03',
@@ -53,6 +54,7 @@ export const SOLUTIONS = [
     price: 'From $2,000 / mo + ad spend',
     color: '#ff8c1e',
     gradient: 'linear-gradient(90deg,#ff8c1e,#ffb14d)',
+    portfolioHref: '/paid-ads',
   },
   {
     num: '04',

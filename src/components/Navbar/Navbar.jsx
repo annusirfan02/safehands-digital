@@ -10,13 +10,19 @@ const LINKS = [
   { label: 'What we do', children: [
     { href: '/seo', label: 'AI SEO' },
     { href: '/web-development', label: 'Web Development' },
+    { href: '/social-media', label: 'Social Media' },
+    { href: '/paid-ads', label: 'Paid Ads' },
   ] },
   { href: '/solutions', label: 'Solutions' },
   { href: '/ai-employees', label: 'AI Employees' },
+  { href: '/contact', label: 'Contact' },
 ];
 
 export default function Navbar() {
   const path = usePathname();
+
+  // The onboarding flow is a standalone, distraction-free page (no nav).
+  if (path === '/onboarding') return null;
 
   return (
     <header className={styles.nav} suppressHydrationWarning>
@@ -56,7 +62,7 @@ export default function Navbar() {
               </Link>
             )
           )}
-          <a href="/#contact" className={styles.cta}>Get Started</a>
+          <Link href="/onboarding" className={styles.cta}>Get Started</Link>
           <ThemeToggle />
         </nav>
       </div>

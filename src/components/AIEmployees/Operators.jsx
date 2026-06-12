@@ -245,7 +245,7 @@ export default function Operators() {
                   </div>
                   <div className={styles.btns}>
                     <a href="#meet-maya" className={styles.btnGhost}>▶ WATCH DEMO</a>
-                    <a href="#contact" className={styles.btnPrimary}>GET STARTED →</a>
+                    <a href="/onboarding" className={styles.btnPrimary}>GET STARTED →</a>
                   </div>
                 </div>
               </div>

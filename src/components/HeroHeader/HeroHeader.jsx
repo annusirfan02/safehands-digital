@@ -44,7 +44,7 @@ export default function HeroHeader() {
           </p>
 
           <div className={styles.actions}>
-            <a href="#contact" className={styles.primaryBtn}>
+            <a href="/onboarding" className={styles.primaryBtn}>
               START YOUR PROJECT
               <span className={styles.arrow}>→</span>
             </a>

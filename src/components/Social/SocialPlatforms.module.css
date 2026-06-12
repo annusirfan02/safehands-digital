@@ -1,0 +1,65 @@
+.section {
+  background: #060709;
+  color: #fff;
+  font-family: 'Space Grotesk', sans-serif;
+  padding: 80px 24px 100px;
+}
+.inner { max-width: 1180px; margin: 0 auto; }
+
+.heading {
+  text-align: center;
+  font-size: clamp(32px, 5vw, 58px);
+  font-weight: 700; letter-spacing: -0.02em; text-transform: uppercase;
+  color: #fff; margin-bottom: 48px;
+}
+
+.grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
+
+.card {
+  position: relative;
+  padding: 34px 26px 30px;
+  border-radius: 18px;
+  text-align: center;
+  background: linear-gradient(180deg, color-mix(in srgb, var(--c) 6%, #0e0f13) 0%, #0a0b0e 55%, color-mix(in srgb, var(--c) 10%, #0a0b0e) 100%);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  overflow: hidden;
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.3s ease, box-shadow 0.3s ease;
+}
+.card:hover {
+  transform: translateY(-6px);
+  border-color: color-mix(in srgb, var(--c) 45%, transparent);
+  box-shadow: 0 24px 56px color-mix(in srgb, var(--c) 18%, transparent);
+}
+.topGlow {
+  position: absolute; top: 0; left: 0; right: 0; height: 2.5px;
+  background: var(--c); box-shadow: 0 0 16px var(--c); opacity: 0.9;
+}
+
+.icon {
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 52px; height: 52px; border-radius: 14px;
+  color: var(--c);
+  background: color-mix(in srgb, var(--c) 14%, transparent);
+  border: 1px solid color-mix(in srgb, var(--c) 30%, transparent);
+  margin-bottom: 20px;
+}
+.name { font-size: 19px; font-weight: 700; color: #fff; margin-bottom: 12px; }
+.desc { font-size: 14px; line-height: 1.6; color: rgba(255, 255, 255, 0.5); max-width: 240px; margin: 0 auto; }
+
+/* ── Light theme ── */
+:global([data-theme='light']) .section { background: var(--bg); color: #101a3d; }
+:global([data-theme='light']) .heading { color: #101a3d; }
+:global([data-theme='light']) .card {
+  background: linear-gradient(180deg, #ffffff 0%, #ffffff 55%, color-mix(in srgb, var(--c) 8%, #ffffff) 100%);
+  border-color: rgba(20, 33, 150, 0.1); box-shadow: 0 16px 40px rgba(20, 33, 80, 0.06);
+}
+:global([data-theme='light']) .name { color: #101a3d; }
+:global([data-theme='light']) .desc { color: rgba(16, 26, 61, 0.58); }
+
+/* ── Responsive ── */
+@media (max-width: 860px) {
+  .grid { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 460px) {
+  .grid { grid-template-columns: 1fr; }
+}

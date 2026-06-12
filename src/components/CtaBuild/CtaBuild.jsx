@@ -23,7 +23,7 @@ export default function CtaBuild() {
           </h2>
 
           <div className={styles.actions}>
-            <a href="#maya" className={styles.cta}>
+            <a href="/onboarding" className={styles.cta}>
               START YOUR PROJECT <span className={styles.arrow}>→</span>
             </a>
             <RotatingBadge />

@@ -49,7 +49,7 @@ export default function FindEmployee() {
             <div className={styles.result}>
               <span className={styles.resultLabel}>YOUR MATCH</span>
               <span className={styles.resultName}>{OPTIONS[picked].a}</span>
-              <a href="#contact" className={styles.resultCta}>GET STARTED →</a>
+              <a href="/onboarding" className={styles.resultCta}>GET STARTED →</a>
             </div>
           )}
         </div>

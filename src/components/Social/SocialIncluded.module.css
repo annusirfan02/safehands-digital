@@ -1,0 +1,75 @@
+.section {
+  background: #060709;
+  color: #fff;
+  font-family: 'Space Grotesk', sans-serif;
+  padding: 80px 24px 100px;
+}
+.inner { max-width: 1180px; margin: 0 auto; }
+
+.heading {
+  text-align: center;
+  font-size: clamp(32px, 5vw, 58px);
+  font-weight: 700; letter-spacing: -0.02em; text-transform: uppercase;
+  color: #fff; margin-bottom: 48px;
+}
+
+.grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; }
+
+.card {
+  position: relative;
+  padding: 22px 24px 26px;
+  border-radius: 16px;
+  background: #0d0e12;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  overflow: hidden;
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.35s ease;
+}
+/* coloured gradient that grows from the bottom-right corner on hover */
+.card::after {
+  content: '';
+  position: absolute;
+  bottom: 0; right: 0;
+  width: 75%; height: 80%;
+  background: radial-gradient(ellipse at bottom right, color-mix(in srgb, var(--c) 38%, transparent), transparent 66%);
+  opacity: 0;
+  transition: opacity 0.45s ease;
+  pointer-events: none;
+}
+.card:hover { transform: translateY(-4px); }
+.card:hover::after { opacity: 1; }
+
+/* concave (inner-curve) top accent — thin at the edges, thicker toward the centre */
+.curveTop {
+  position: absolute; top: 0; left: 0;
+  width: 100%; height: 2px;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  pointer-events: none;
+  z-index: 2;
+}
+.curveTop path { fill: var(--c); }
+.card:hover .curveTop { opacity: 1; filter: drop-shadow(0 0 7px color-mix(in srgb, var(--c) 70%, transparent)); }
+
+.check {
+  position: relative; z-index: 1;
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 32px; height: 32px; border-radius: 9px;
+  color: var(--c);
+  background: color-mix(in srgb, var(--c) 16%, transparent);
+  border: 1px solid color-mix(in srgb, var(--c) 30%, transparent);
+  margin-bottom: 18px;
+}
+.title { position: relative; z-index: 1; font-size: 16px; font-weight: 700; color: #fff; margin-bottom: 8px; }
+.desc { position: relative; z-index: 1; font-size: 13.5px; line-height: 1.55; color: rgba(255, 255, 255, 0.5); }
+
+/* ── Light theme ── */
+:global([data-theme='light']) .section { background: var(--bg); color: #101a3d; }
+:global([data-theme='light']) .heading { color: #101a3d; }
+:global([data-theme='light']) .card { background: #ffffff; border-color: rgba(20, 33, 150, 0.1); box-shadow: 0 14px 36px rgba(20, 33, 80, 0.05); }
+:global([data-theme='light']) .card::after { background: radial-gradient(ellipse at bottom right, color-mix(in srgb, var(--c) 30%, transparent), transparent 66%); }
+:global([data-theme='light']) .title { color: #101a3d; }
+:global([data-theme='light']) .desc { color: rgba(16, 26, 61, 0.58); }
+
+/* ── Responsive ── */
+@media (max-width: 900px) { .grid { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 460px) { .grid { grid-template-columns: 1fr; } }
