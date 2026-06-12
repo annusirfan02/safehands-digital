@@ -1,5 +1,6 @@
 'use client';
 
+import { useState } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import ThemeToggle from '@/components/ThemeToggle';
@@ -20,6 +21,7 @@ const LINKS = [
 
 export default function Navbar() {
   const path = usePathname();
+  const [closed, setClosed] = useState(false);
 
   // The onboarding flow is a standalone, distraction-free page (no nav).
   if (path === '/onboarding') return null;
@@ -36,7 +38,11 @@ export default function Navbar() {
         <nav className={styles.links}>
           {LINKS.map((l) =>
             l.children ? (
-              <div key={l.label} className={styles.dropdown}>
+              <div
+                key={l.label}
+                className={`${styles.dropdown} ${closed ? styles.closed : ''}`}
+                onMouseLeave={() => setClosed(false)}
+              >
                 <button type="button" className={`${styles.link} ${styles.dropToggle}`}>
                   {l.label} <span className={styles.chev}>▾</span>
                 </button>
@@ -46,6 +52,7 @@ export default function Navbar() {
                       key={c.href}
                       href={c.href}
                       className={`${styles.dropItem} ${path === c.href ? styles.dropActive : ''}`}
+                      onClick={() => setClosed(true)}
                     >
                       {c.label}
                     </Link>

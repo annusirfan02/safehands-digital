@@ -56,17 +56,12 @@
   color: rgba(255, 255, 255, 0.4);
 }
 
-/* ── Light theme ── */
-:global([data-theme='light']) .section { background: var(--bg); }
-:global([data-theme='light']) .glowSweep { background: radial-gradient(ellipse 60% 50% at center, rgba(140, 220, 40, 0.18), transparent 70%); }
-:global([data-theme='light']) .card { border-color: rgba(20, 33, 150, 0.1); background: rgba(255, 255, 255, 0.5); }
-:global([data-theme='light']) .value { color: #5aa600; }
-:global([data-theme='light']) .value { animation: pulseGlowLight 2.6s ease-in-out infinite; }
-@keyframes pulseGlowLight {
-  0%, 100% { transform: scale(1); text-shadow: 0 0 12px rgba(90, 166, 0, 0.2); }
-  50%      { transform: scale(1.07); text-shadow: 0 0 24px rgba(90, 166, 0, 0.45); }
-}
-:global([data-theme='light']) .label { color: rgba(16, 26, 61, 0.45); }
+/* ── Light theme: solid deep-blue feature band ── */
+:global([data-theme='light']) .section { background: #142196; }
+:global([data-theme='light']) .glowSweep { background: radial-gradient(ellipse 48% 74% at center, rgba(191, 254, 3, 0.22), transparent 72%); }
+:global([data-theme='light']) .card { border-color: rgba(255, 255, 255, 0.16); background: rgba(255, 255, 255, 0.06); }
+:global([data-theme='light']) .value { color: #BFFE03; animation: pulseGlow 2.6s ease-in-out infinite; }
+:global([data-theme='light']) .label { color: rgba(255, 255, 255, 0.6); }
 
 /* ── Reduced motion ── */
 @media (prefers-reduced-motion: reduce) {

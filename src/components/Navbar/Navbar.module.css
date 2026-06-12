@@ -68,6 +68,9 @@
 .dropdown:hover .dropMenu, .dropdown:focus-within .dropMenu {
   opacity: 1; visibility: visible; transform: translateY(0);
 }
+/* after a sub-item is clicked, keep it shut until the cursor leaves */
+.closed .dropMenu { opacity: 0 !important; visibility: hidden !important; transform: translateY(6px) !important; }
+.closed .chev { transform: rotate(0deg) !important; }
 .dropItem {
   display: block; padding: 9px 12px; border-radius: 8px;
   font-size: 13.5px; font-weight: 600; color: rgba(255, 255, 255, 0.75); text-decoration: none;
