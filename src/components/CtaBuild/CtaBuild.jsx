@@ -29,7 +29,7 @@ export default function CtaBuild() {
             <RotatingBadge />
           </div>
 
-          <span className={styles.locations}>MIAMI · NEW YORK</span>
+          <span className={styles.locations}>RIYADH · SAUDI ARABIA</span>
         </div>
       </div>
     </section>

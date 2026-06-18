@@ -13,13 +13,18 @@ export default function SearchResults({ results, query }) {
       <ul className={styles.list}>
         {results.map((item) => (
           <li key={item.id}>
-            <a href={item.href} className={styles.card}>
+            <a
+              href={item.href}
+              className={styles.card}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               <div className={styles.head}>
                 <span className={styles.category}>{item.category}</span>
                 <span className={styles.title}>{item.title}</span>
               </div>
               <p className={styles.desc}>{item.description}</p>
-              <span className={styles.go}>View →</span>
+              <span className={styles.go}>Read more ↗</span>
             </a>
           </li>
         ))}

@@ -53,6 +53,17 @@ export function SeoIcon() {
   );
 }
 
+// ERP (stacked database / system modules)
+export function ErpIcon() {
+  return (
+    <svg {...base}>
+      <ellipse cx="12" cy="5" rx="7.5" ry="2.8" />
+      <path d="M4.5 5v6c0 1.55 3.36 2.8 7.5 2.8s7.5-1.25 7.5-2.8V5" />
+      <path d="M4.5 11v6c0 1.55 3.36 2.8 7.5 2.8s7.5-1.25 7.5-2.8v-6" />
+    </svg>
+  );
+}
+
 // AI Content
 export function PenIcon() {
   return (

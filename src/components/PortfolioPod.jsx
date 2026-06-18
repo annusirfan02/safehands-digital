@@ -56,7 +56,7 @@ const SERVICES = [
     planetColors: ['#008888', '#00b8b8', '#00d8d8', '#005555', '#003333', '#80f0f0', '#00c0c0'],
   },
   {
-    name: 'BRANDING',
+    name: 'ERP SERVICES',
     code: 'UPD-005',
     colors: {
       main: '#BFFE03',

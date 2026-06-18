@@ -115,7 +115,7 @@ export default function Footer() {
 
         {/* Bottom bar */}
         <div className={styles.bottom}>
-          <span className={styles.copy}>© 2026 Safe Hands Digital · MIAMI · NEW YORK</span>
+          <span className={styles.copy}>© 2026 Safe Hands Digital · RIYADH · SAUDI ARABIA</span>
 
           <div className={styles.socials}>
             {SOCIALS.map((s) => (

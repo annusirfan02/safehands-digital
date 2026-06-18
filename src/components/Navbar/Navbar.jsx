@@ -13,6 +13,7 @@ const LINKS = [
     { href: '/web-development', label: 'Web Development' },
     { href: '/social-media', label: 'Social Media' },
     { href: '/paid-ads', label: 'Paid Ads' },
+    { href: '/erp-development', label: 'ERP Services & Development' },
   ] },
   { href: '/solutions', label: 'Solutions' },
   { href: '/ai-employees', label: 'AI Employees' },

@@ -1,6 +1,6 @@
 import {
   WebIcon, SocialIcon, AdsIcon, SeoIcon, AiIcon,
-  HeartIcon, BrandIcon, MailIcon, ContentIcon,
+  HeartIcon, MailIcon, ContentIcon,
 } from './icons';
 
 // ─── Services ─────────────────────────────────────────────────────────────────
@@ -63,28 +63,17 @@ export const SERVICES = [
   },
   {
     num: '06',
-    name: 'Non-Profit Management',
+    name: 'ERP Services',
     color: '#ff4d4d',
     gradient: 'linear-gradient(90deg,#ff4d4d,#ff7a7a)',
     colorLight: '#db2777',
     gradientLight: 'linear-gradient(90deg,#db2777,#f25ba0)',
-    description: 'End-to-end digital management for non-profits — campaigns, donors and impact, all handled.',
+    description: 'End-to-end SAP implementation and support — Finance, Procurement, HR, Sales and Analytics — by KSA’s leading SAP partner.',
     href: '#portfolio',
     Icon: HeartIcon,
   },
   {
     num: '07',
-    name: 'Branding & Identity',
-    color: '#14c4c4',
-    gradient: 'linear-gradient(90deg,#14c4c4,#4ee0e0)',
-    colorLight: '#0d9488',
-    gradientLight: 'linear-gradient(90deg,#0d9488,#2bb8a8)',
-    description: 'Logos, positioning and visual systems that make your brand impossible to forget.',
-    href: '#portfolio',
-    Icon: BrandIcon,
-  },
-  {
-    num: '08',
     name: 'Email Marketing',
     color: '#f5b21a',
     gradient: 'linear-gradient(90deg,#f5b21a,#ffce5c)',
@@ -95,7 +84,7 @@ export const SERVICES = [
     Icon: MailIcon,
   },
   {
-    num: '09',
+    num: '08',
     name: 'Content Creation',
     color: '#c879ff',
     gradient: 'linear-gradient(90deg,#c879ff,#dba6ff)',

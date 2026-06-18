@@ -13,7 +13,7 @@ export default function AIEHero() {
       <div className={styles.inner}>
         <span className={styles.kicker}>
           <i className={styles.kickerDot} />
-          AI OPERATIONS AGENCY · MIAMI &amp; NEW YORK
+          AI OPERATIONS AGENCY · RIYADH · SAUDI ARABIA
         </span>
 
         <h1 className={styles.headline}>

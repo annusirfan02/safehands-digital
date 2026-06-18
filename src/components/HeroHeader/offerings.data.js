@@ -1,4 +1,4 @@
-import { ChatIcon, BotIcon, StarIcon, SeoIcon, PenIcon, AnalyticsIcon } from './icons';
+import { ChatIcon, BotIcon, StarIcon, ErpIcon, PenIcon, AnalyticsIcon } from './icons';
 
 // ─── Offerings ────────────────────────────────────────────────────────────────
 // A single source of truth that drives BOTH the cycling headline word and the
@@ -32,11 +32,11 @@ export const OFFERINGS = [
     pos: { top: '40%', left: '72%' },
   },
   {
-    tech: 'SEO Website',
+    tech: 'ERP',
     word: 'visibility',
     color: '#2dd4bf',
     colorLight: '#0d9488',
-    Icon: SeoIcon,
+    Icon: ErpIcon,
     pos: { top: '56%', left: '40%' },
   },
   {
