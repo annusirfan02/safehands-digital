@@ -1,34 +1,66 @@
 // ─── Shared Web-Audio helper ──────────────────────────────────────────────────
-// A single AudioContext, created ONLY after the first genuine user gesture, so
-// we never trip Chrome's "AudioContext was not allowed to start" warning.
-// Sounds requested before that first gesture are silently skipped.
+// A single AudioContext, created/resumed on the first user interaction. Browsers
+// (Chrome, Edge, Safari) block audio until a genuine gesture — a click, tap,
+// key press, scroll or wheel. A pure mouse hover is NOT treated as a gesture by
+// the browser, so the very first hover before any interaction stays silent by
+// design; once the user does anything (even scroll), every later hover plays.
 
 let ctx = null;
 let unlocked = false;
 
-const GESTURES = ['pointerdown', 'keydown', 'touchstart'];
+// Widest practical set so audio unlocks at the earliest possible interaction.
+const GESTURES = [
+  'pointerdown', 'pointerup', 'mousedown', 'click', 'keydown',
+  'touchstart', 'touchend', 'wheel', 'scroll', 'mousemove', 'pointermove',
+];
+
+function cleanup() {
+  GESTURES.forEach((ev) => window.removeEventListener(ev, unlock));
+}
 
 function unlock() {
   try {
     const AC = window.AudioContext || window.webkitAudioContext;
-    if (!AC) return;
+    if (!AC) {
+      cleanup();
+      return;
+    }
     if (!ctx) ctx = new AC();
-    if (ctx.state === 'suspended') ctx.resume();
-    unlocked = true;
+
+    // Already running — we're done.
+    if (ctx.state === 'running') {
+      unlocked = true;
+      cleanup();
+      return;
+    }
+
+    // Try to resume. Only mark as unlocked (and stop listening) once the context
+    // actually reaches "running", so a blocked early attempt can't permanently
+    // disable sound before a real gesture arrives.
+    const p = ctx.resume && ctx.resume();
+    if (p && typeof p.then === 'function') {
+      p.then(() => {
+        if (ctx && ctx.state === 'running') {
+          unlocked = true;
+          cleanup();
+        }
+      }).catch(() => {});
+    } else if (ctx.state === 'running') {
+      unlocked = true;
+      cleanup();
+    }
   } catch {
     /* ignore */
-  } finally {
-    GESTURES.forEach((ev) => window.removeEventListener(ev, unlock));
   }
 }
 
 if (typeof window !== 'undefined') {
-  GESTURES.forEach((ev) => window.addEventListener(ev, unlock, { once: true, passive: true }));
+  GESTURES.forEach((ev) => window.addEventListener(ev, unlock, { passive: true }));
 }
 
 /**
- * Play a short tone. No-op until the user has interacted with the page
- * (so it never logs an autoplay warning).
+ * Play a short tone. No-op until the audio context is running (i.e. after the
+ * first user interaction), so it never logs an autoplay warning.
  */
 export function playTone({
   type = 'sine',

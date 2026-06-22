@@ -23,13 +23,7 @@ export default function AIEmployeesPage() {
       <FindEmployee />
       <Marquee />
       <MeetMaya />
-      <CtaBuild
-        kicker="READY TO START?"
-        line1="YOUR AI TEAM"
-        line2="WITH SAFEHANDS"
-        ctaLabel="TALK TO US"
-        ctaHref="/contact"
-      />
+      <CtaBuild />
       <Footer />
     </main>
   );

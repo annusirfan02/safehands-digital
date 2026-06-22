@@ -28,8 +28,8 @@ export default function SocialHero() {
         </p>
 
         <div className={styles.actions}>
-          <a href="/onboarding" className={styles.primaryBtn}>
-            START YOUR PROJECT <span className={styles.arrow}>→</span>
+          <a href="/contact" className={styles.primaryBtn}>
+            TALK TO US <span className={styles.arrow}>→</span>
           </a>
           <a href="#contact" className={styles.secondaryBtn}>FREE SOCIAL AUDIT</a>
         </div>
