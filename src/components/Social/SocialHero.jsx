@@ -23,8 +23,8 @@ export default function SocialHero() {
         </h1>
 
         <p className={styles.subtitle}>
-          Viral reels, UGC, influencer collabs, and full-funnel Instagram strategy
-          — built by a team that grew a creator from 4K to 427K followers.
+          Viral reels, UGC, influencer collabs, and full-funnel Instagram strategy,
+          built by a team that grew a creator from 4K to 427K followers.
         </p>
 
         <div className={styles.actions}>

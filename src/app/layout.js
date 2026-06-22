@@ -2,7 +2,7 @@ import './globals.css';
 import Navbar from '@/components/Navbar';
 
 export const metadata = {
-  title: 'Safe Hands Digital — AI-First Marketing',
+  title: 'Safe Hands Digital, AI-First Marketing',
   description: 'We bring results to brands. AI strategies, licensed experts, real results.',
 };
 

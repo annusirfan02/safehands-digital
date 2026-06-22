@@ -15,12 +15,12 @@ const Chart = () => (<svg {...ic}><path d="M3 21h18" /><rect x="5" y="11" width=
 const CARDS = [
   {
     c: '#2bb0e0', Icon: Cloud, kicker: 'THE NEW PAGE 1 IS BEING CITED BY AI.', title: 'AI Search Optimization',
-    desc: "In 2026, ranking on Google is only part of the equation. ChatGPT, Perplexity, and Google's AI Overviews are answering questions and recommending businesses. We optimize your content to be cited by LLMs — structured content, entity optimization, and llms.txt implementation.",
+    desc: "In 2026, ranking on Google is only part of the equation. ChatGPT, Perplexity, and Google's AI Overviews are answering questions and recommending businesses. We optimize your content to be cited by LLMs, structured content, entity optimization, and llms.txt implementation.",
     features: ['Google SGE / AI Overviews optimization', 'ChatGPT & Perplexity citation strategy', 'Entity optimization & knowledge graph', 'llms.txt implementation', 'Structured content for AI answer extraction'],
   },
   {
     c: '#4a8cf0', Icon: Code, kicker: 'THE FOUNDATION EVERYTHING ELSE SITS ON.', title: 'Technical SEO',
-    desc: 'We audit and fix the technical issues that silently kill rankings — slow load times, poor Core Web Vitals, crawl errors, indexation issues, canonical tags, hreflang for multilingual sites, and schema markup / structured data to help Google understand your content.',
+    desc: 'We audit and fix the technical issues that silently kill rankings, slow load times, poor Core Web Vitals, crawl errors, indexation issues, canonical tags, hreflang for multilingual sites, and schema markup / structured data to help Google understand your content.',
     features: ['Site speed & Core Web Vitals (LCP, INP, CLS)', 'Crawlability & indexation fixes', 'Canonical tags & duplicate content', 'Hreflang for multilingual sites', 'Structured data / schema markup'],
   },
   {

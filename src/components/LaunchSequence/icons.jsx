@@ -1,4 +1,4 @@
-// ─── Feature icons — clean monochrome line/solid icons (inherit currentColor) ──
+// ─── Feature icons - clean monochrome line/solid icons (inherit currentColor) ──
 const base = {
   width: 22,
   height: 22,
@@ -10,7 +10,7 @@ const base = {
   strokeLinejoin: 'round',
 };
 
-// AI-FIRST — radiating spark / core
+// AI-FIRST - radiating spark / core
 export function SparkIcon() {
   return (
     <svg {...base}>
@@ -20,7 +20,7 @@ export function SparkIcon() {
   );
 }
 
-// 24/7 — round-the-clock contrast disc
+// 24/7 - round-the-clock contrast disc
 export function ContrastIcon() {
   return (
     <svg {...base}>
@@ -30,7 +30,7 @@ export function ContrastIcon() {
   );
 }
 
-// 5× — speed / lightning bolt
+// 5× - speed / lightning bolt
 export function BoltIcon() {
   return (
     <svg {...base}>
@@ -39,7 +39,7 @@ export function BoltIcon() {
   );
 }
 
-// 320% — ROI / trending chart
+// 320% - ROI / trending chart
 export function ChartIcon() {
   return (
     <svg {...base}>
@@ -50,7 +50,7 @@ export function ChartIcon() {
   );
 }
 
-// 100% — certified / shield check
+// 100% - certified / shield check
 export function ShieldIcon() {
   return (
     <svg {...base}>

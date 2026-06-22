@@ -4,27 +4,33 @@ import Mascot from './Mascot';
 import RotatingBadge from './RotatingBadge';
 import styles from './CtaBuild.module.css';
 
-export default function CtaBuild() {
+export default function CtaBuild({
+  kicker = 'READY TO GROW?',
+  line1 = 'LET’S BUILD',
+  line2 = 'SOMETHING',
+  ctaLabel = 'START YOUR PROJECT',
+  ctaHref = '/onboarding',
+}) {
   return (
     <section id="contact" className={styles.section} suppressHydrationWarning>
       <div className={styles.inner}>
-        {/* Left — mascot */}
+        {/* Left - mascot */}
         <div className={styles.left}>
           <Mascot />
         </div>
 
-        {/* Right — copy */}
+        {/* Right - copy */}
         <div className={styles.right}>
-          <span className={styles.kicker}>READY TO GROW?</span>
+          <span className={styles.kicker}>{kicker}</span>
 
           <h2 className={styles.heading}>
-            <span className={styles.outline}>LET’S BUILD</span>
-            <span className={styles.solid}>SOMETHING<span className={styles.dot}>.</span></span>
+            <span className={styles.outline}>{line1}</span>
+            <span className={styles.solid}>{line2}<span className={styles.dot}>.</span></span>
           </h2>
 
           <div className={styles.actions}>
-            <a href="/onboarding" className={styles.cta}>
-              START YOUR PROJECT <span className={styles.arrow}>→</span>
+            <a href={ctaHref} className={styles.cta}>
+              {ctaLabel} <span className={styles.arrow}>→</span>
             </a>
             <RotatingBadge />
           </div>

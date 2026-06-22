@@ -9,14 +9,14 @@ const SUGGESTIONS = [
   'What does it cost to get started?',
 ];
 
-// No database — Maya replies with a relevant, randomly-picked answer.
+// No database - Maya replies with a relevant, randomly-picked answer.
 const REPLIES = [
-  "Great question! I'd start by auditing your funnel, then run automated outreach to your best-fit prospects — usually 30–40 qualified leads a week.",
-  "I handle lead sourcing, personalized outreach, follow-ups and weekly reporting — all on autopilot. Want me to map it to your business?",
-  "Getting started is simple: a free audit, then we build and train your operator in about 2 weeks. Plans start around $1,500/mo.",
-  "I automate the repetitive work — sourcing, messaging, scheduling and reporting — so your team only talks to leads who are ready to buy.",
+  "Great question! I'd start by auditing your funnel, then run automated outreach to your best-fit prospects, usually 30–40 qualified leads a week.",
+  "I handle lead sourcing, personalized outreach, follow-ups and weekly reporting, all on autopilot. Want me to map it to your business?",
+  "Getting started is simple: a free audit, then we build and train your operator in about 2 weeks. Pricing is custom to your scope and goals.",
+  "I automate the repetitive work, sourcing, messaging, scheduling and reporting, so your team only talks to leads who are ready to buy.",
   "Tell me your industry and I'll show you exactly which tasks I'd take off your plate first.",
-  "Absolutely — I run 24/7, never miss a follow-up, and report results every week. No payroll, no headcount.",
+  "Absolutely, I run 24/7, never miss a follow-up, and report results every week. No payroll, no headcount.",
 ];
 
 export default function MeetMaya() {
@@ -53,7 +53,7 @@ export default function MeetMaya() {
             <span className={styles.script}>Maya.</span>
           </h2>
           <p className={styles.body}>
-            Our own AI Growth Operator — trained on everything Safe Hands Digital does.
+            Our own AI Growth Operator, trained on everything Safe Hands Digital does.
             A live example of what we build for clients.
           </p>
           <p className={styles.hint}>

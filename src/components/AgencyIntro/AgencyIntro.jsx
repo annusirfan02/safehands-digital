@@ -12,7 +12,7 @@ export default function AgencyIntro() {
     <section id="about" className={styles.section} suppressHydrationWarning>
       <div className={styles.inner}>
         <div className={styles.top}>
-          {/* Left — copy */}
+          {/* Left - copy */}
           <div className={styles.copy}>
             <span className={styles.kicker}>MORE THAN AN AGENCY</span>
 
@@ -24,7 +24,7 @@ export default function AgencyIntro() {
             </h2>
           </div>
 
-          {/* Right — description + actions */}
+          {/* Right - description + actions */}
           <div className={styles.side}>
             <p className={styles.lead}>
               We&rsquo;re a forward-thinking marketing agency blending creativity

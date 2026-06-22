@@ -12,7 +12,7 @@ import styles from './Process.module.css';
 gsap.registerPlugin(ScrollTrigger, MotionPathPlugin);
 
 // The 4 dots sit on one baseline (y = 70), each centred above its card.
-// The rocket weaves: above dot 1, below dot 2, above dot 3, below dot 4 —
+// The rocket weaves: above dot 1, below dot 2, above dot 3, below dot 4 -
 // starting at the first card's left edge and ending at the last card's right edge.
 const WAVE = 'M 0 70 C 45 60 80 44 113 44 C 199 44 285 96 371 96 C 457 96 543 44 629 44 C 715 44 801 96 887 96 C 945 96 968 62 1000 56';
 
@@ -26,7 +26,7 @@ const DOTS = [
 const STEPS = [
   { num: '01', meta: 'STEP 01 · WEEK 1 · FREE AUDIT',   title: 'Discovery', desc: 'Deep dive into your business, goals, and competitors. Free audit included.',  c: '#a855f7' },
   { num: '02', meta: 'STEP 02 · WEEK 2 · ROADMAP',      title: 'Strategy',  desc: 'Custom growth plan targeting your highest-value opportunities first.',       c: '#2d80ff' },
-  { num: '03', meta: 'STEP 03 · WEEKS 3-8 · BUILD',     title: 'Execution', desc: 'AI-accelerated workflows — faster, cheaper, better results.',                c: '#10b981' },
+  { num: '03', meta: 'STEP 03 · WEEKS 3-8 · BUILD',     title: 'Execution', desc: 'AI-accelerated workflows, faster, cheaper, better results.',                c: '#10b981' },
   { num: '04', meta: 'STEP 04 · ONGOING · COMPOUND',    title: 'Optimize',  desc: 'Continuous monitoring, reporting, and optimization to compound results.',    c: '#BFFE03' },
 ];
 
@@ -81,7 +81,7 @@ export default function Process() {
         </h2>
 
         <p className={styles.subtitle}>
-          From discovery to compounding results — a proven 4-step framework
+          From discovery to compounding results, a proven 4-step framework
           that takes 8 weeks to launch and never stops optimizing.
         </p>
 
@@ -101,7 +101,7 @@ export default function Process() {
               <circle key={i} cx={d.x} cy={d.y} r="5" fill={d.c} />
             ))}
 
-            {/* Rocket — same craft as the home page hero, rotated to fly right */}
+            {/* Rocket - same craft as the home page hero, rotated to fly right */}
             <g ref={rocketRef} style={{ opacity: 0 }}>
               <ellipse cx="0" cy="0" rx="22" ry="14" fill="rgba(191,254,3,0.22)" />
               <g transform="rotate(90) scale(0.62) translate(-18 -28)">

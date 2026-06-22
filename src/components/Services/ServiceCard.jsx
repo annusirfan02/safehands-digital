@@ -18,7 +18,7 @@ export default function ServiceCard({ service }) {
         '--grad-light': gradientLight || gradient,
       }}
       onMouseEnter={playFlip}
-      aria-label={`${name} — explore service`}
+      aria-label={`${name}, explore service`}
     >
       <div className={styles.inner}>
         {/* ── Front (straight) ── */}

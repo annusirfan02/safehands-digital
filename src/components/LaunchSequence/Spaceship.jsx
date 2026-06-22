@@ -28,7 +28,7 @@ const Spaceship = forwardRef(function Spaceship(_props, ref) {
         <path d="M10 30 L3 44 L10 39 Z" fill="#7d8794" />
         <path d="M26 30 L33 44 L26 39 Z" fill="#7d8794" />
 
-        {/* Body — nose pointing down (direction of travel) */}
+        {/* Body - nose pointing down (direction of travel) */}
         <path
           d="M18 53
              C23 48 26 40 26 30

@@ -29,7 +29,7 @@ function Rocket({ step, flying }) {
           </radialGradient>
         </defs>
 
-        {/* ── TAIL (always — step 1+) ── */}
+        {/* ── TAIL (always - step 1+) ── */}
         <path d="M66 250 L40 320 L66 296 Z" fill="#7d8794" />
         <path d="M134 250 L160 320 L134 296 Z" fill="#7d8794" />
         <path d="M74 288 L62 326 H138 L126 288 Z" fill="#5a6472" />
@@ -153,7 +153,7 @@ export default function OnboardingFlow() {
               <span className={styles.introScript}>We build</span>
               <span className={styles.introAccent}>FUTURES<span className={styles.dot}>.</span></span>
             </h1>
-            <p className={styles.introSub}>Five questions.<br />One AI-powered strategy — built just for your brand.</p>
+            <p className={styles.introSub}>Five questions.<br />One AI-powered strategy, built just for your brand.</p>
             <button className={styles.cta} onClick={() => setStep(1)}>START YOUR PROJECT <span className={styles.arrow}>→</span></button>
           </div>
         </div>
@@ -188,7 +188,7 @@ export default function OnboardingFlow() {
               <div className={styles.stepRow}><span className={styles.stepNum}>02</span><span className={styles.stepBar} /><span className={styles.stepLabel}>YOUR CHALLENGES</span></div>
               <span className={styles.stepHint}>1 question left after this</span>
               <h2 className={styles.head}><span>What&rsquo;s in</span><span className={styles.accent}>your way?</span></h2>
-              <p className={styles.sub}>Select everything that applies — we&rsquo;ll tackle all of it.</p>
+              <p className={styles.sub}>Select everything that applies. We&rsquo;ll tackle all of it.</p>
 
               <div className={styles.pillWrap}>
                 {CHALLENGES.map((c) => (
@@ -205,9 +205,9 @@ export default function OnboardingFlow() {
           {step === 3 && (
             <>
               <div className={styles.stepRow}><span className={styles.stepNum}>03</span><span className={styles.stepBar} /><span className={styles.stepLabel}>YOUR GOALS</span></div>
-              <span className={`${styles.stepHint} ${styles.hintGreen}`}>Last question — strategy incoming</span>
+              <span className={`${styles.stepHint} ${styles.hintGreen}`}>Last question, strategy incoming</span>
               <h2 className={styles.head}><span>Where are</span><span className={styles.accent}>you going?</span></h2>
-              <p className={styles.sub}>Set your target — we&rsquo;ll map the route.</p>
+              <p className={styles.sub}>Set your target. We&rsquo;ll map the route.</p>
 
               <div className={styles.sliderHead}>
                 <span className={styles.fieldLabel}>REVENUE TARGET</span>

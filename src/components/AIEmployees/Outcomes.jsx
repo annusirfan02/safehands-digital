@@ -37,7 +37,7 @@ export default function Outcomes() {
         </div>
 
         <div className={styles.grid}>
-          {/* Left — what most agencies sell */}
+          {/* Left - what most agencies sell */}
           <div className={`${styles.card} ${styles.bad}`}>
             <span className={styles.badLabel}><i className={styles.badDot} /> WHAT MOST AGENCIES SELL</span>
             <ul className={styles.badList}>
@@ -49,7 +49,7 @@ export default function Outcomes() {
             </ul>
           </div>
 
-          {/* Right — what we actually deliver */}
+          {/* Right - what we actually deliver */}
           <div className={`${styles.card} ${styles.good}`}>
             <span className={styles.goodLabel}><i className={styles.goodDot} /> WHAT WE ACTUALLY DELIVER</span>
             <ul className={styles.goodList}>

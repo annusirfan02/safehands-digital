@@ -4,19 +4,19 @@ import styles from './SeoPricing.module.css';
 
 const PLANS = [
   {
-    c: '#2b9fe0', label: 'SEO STARTER', price: '$1,500', per: '/mo', featured: false,
+    c: '#2b9fe0', label: 'SEO STARTER', price: 'Custom pricing', per: '', featured: false,
     desc: 'For businesses ready to build their SEO foundation.',
     features: ['Full technical SEO audit', 'On-page optimization (up to 10 pages)', '2 blog posts / month', 'Google My Business management', 'Monthly keyword ranking report', 'Monthly strategy call'],
   },
   {
-    c: '#a855f7', label: 'SEO GROWTH', price: '$2,500', per: '/mo', featured: true,
+    c: '#a855f7', label: 'SEO GROWTH', price: 'Custom pricing', per: '', featured: true,
     desc: 'For businesses serious about outranking competitors.',
-    features: ['Everything in Starter', '4 blog posts / month', 'Link building — 5 links/mo (DR 30+)', 'Local citation building', 'AI search optimization (SGE + Perplexity)', 'Traffic & conversion analytics report', 'Competitor gap analysis (quarterly)'],
+    features: ['Everything in Starter', '4 blog posts / month', 'Link building, 5 links/mo (DR 30+)', 'Local citation building', 'AI search optimization (SGE + Perplexity)', 'Traffic & conversion analytics report', 'Competitor gap analysis (quarterly)'],
   },
   {
-    c: '#ff8c1e', label: 'SEO AUTHORITY', price: '$4,000', per: '/mo', featured: false,
+    c: '#ff8c1e', label: 'SEO AUTHORITY', price: 'Custom pricing', per: '', featured: false,
     desc: 'For brands that want to dominate their niche.',
-    features: ['Everything in Growth', '8 blog posts / month', 'Aggressive link building — 15 links/mo (DR 40+)', 'Digital PR placements', 'Full AI search strategy (all platforms)', 'Entity SEO & knowledge graph optimization', 'Weekly check-ins + priority support'],
+    features: ['Everything in Growth', '8 blog posts / month', 'Aggressive link building, 15 links/mo (DR 40+)', 'Digital PR placements', 'Full AI search strategy (all platforms)', 'Entity SEO & knowledge graph optimization', 'Weekly check-ins + priority support'],
   },
 ];
 
@@ -31,8 +31,8 @@ export default function SeoPricing() {
             <span className={styles.script}>Packages.</span>
           </h2>
           <p className={styles.subtitle}>
-            No contracts, no hidden fees. Pick the package that matches where you are —
-            upgrade any time as results come in.
+            No contracts, no hidden fees. Pick the package that matches where you are.
+            Upgrade any time as results come in.
           </p>
         </div>
 

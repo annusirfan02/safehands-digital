@@ -42,7 +42,7 @@ export default function SeoPlan() {
             <span className={styles.script}>SEO plan.</span>
           </h2>
           <p className={styles.subtitle}>
-            SEO is a long game — but that doesn&rsquo;t mean you should be in the dark.
+            SEO is a long game, but that doesn&rsquo;t mean you should be in the dark.
             Here&rsquo;s exactly what happens every month when you work with us.
           </p>
         </div>
@@ -63,7 +63,7 @@ export default function SeoPlan() {
         </div>
 
         <div className={styles.footer}>
-          Then we repeat — each month building on the last.{' '}
+          Then we repeat, each month building on the last.{' '}
           <strong>Rankings compound. Traffic compounds. Results compound.</strong>
         </div>
       </div>

@@ -81,14 +81,14 @@ const iconProps = {
 };
 
 const SERVICE_ICONS = [
-  // WEB DESIGN — browser window
+  // WEB DESIGN - browser window
   (
     <svg key="web" {...iconProps}>
       <rect x="3" y="4" width="18" height="16" rx="2" />
       <path d="M3 8.5h18M7 12.5h7M7 16h10" />
     </svg>
   ),
-  // SOCIAL MEDIA — share / broadcast nodes
+  // SOCIAL MEDIA - share / broadcast nodes
   (
     <svg key="social" {...iconProps}>
       <circle cx="6" cy="12" r="2.4" />
@@ -97,7 +97,7 @@ const SERVICE_ICONS = [
       <path d="M8.2 10.9l7.1-3.7M8.2 13.1l7.1 3.7" />
     </svg>
   ),
-  // PAID ADS — target
+  // PAID ADS - target
   (
     <svg key="ads" {...iconProps}>
       <circle cx="12" cy="12" r="8" />
@@ -105,14 +105,14 @@ const SERVICE_ICONS = [
       <path d="M12 2v3M12 19v3M2 12h3M19 12h3" />
     </svg>
   ),
-  // AI & CHATBOTS — chat bubble
+  // AI & CHATBOTS - chat bubble
   (
     <svg key="ai" {...iconProps}>
       <path d="M4 5h16a1 1 0 0 1 1 1v9a1 1 0 0 1-1 1H9l-4 4v-4H4a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1z" />
       <path d="M8.5 10.5h.01M12 10.5h.01M15.5 10.5h.01" />
     </svg>
   ),
-  // BRANDING — award / medal
+  // BRANDING - award / medal
   (
     <svg key="brand" {...iconProps}>
       <circle cx="12" cy="9" r="5" />
@@ -483,7 +483,7 @@ export default function PortfolioPod() {
 
       {/* Subtitle */}
       <p ref={subtitleRef} className={styles.subtitle}>
-        Open the pod to explore 5 service portfolios — or click anywhere to dive into the full case study library.
+        Open the pod to explore 5 service portfolios, or click anywhere to dive into the full case study library.
       </p>
 
       {/* Pod wrapper */}

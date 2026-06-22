@@ -1,4 +1,4 @@
-// ─── Service icons — clean line icons (inherit currentColor) ──────────────────
+// ─── Service icons - clean line icons (inherit currentColor) ──────────────────
 const base = {
   width: 24,
   height: 24,

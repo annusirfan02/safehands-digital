@@ -3,7 +3,7 @@
 import styles from './RotatingHeadline.module.css';
 
 /**
- * "WE BRING ___ TO BRANDS." — the middle slot cycles through service words,
+ * "WE BRING ___ TO BRANDS." - the middle slot cycles through service words,
  * each in its own colour. The `key` forces a remount so the CSS swap animation
  * replays on every change.
  */

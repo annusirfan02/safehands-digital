@@ -6,7 +6,7 @@ import CtaBuild from '@/components/CtaBuild';
 import Footer from '@/components/Footer';
 
 export const metadata = {
-  title: 'Paid Advertising — Safe Hands Digital',
+  title: 'Paid Advertising, Safe Hands Digital',
   description: 'Meta, TikTok & Google ad campaigns built on UGC-first creative, AI optimization and full-funnel strategy.',
 };
 
@@ -17,7 +17,13 @@ export default function PaidAdsPage() {
       <PaidStats />
       <PaidProcess />
       <PaidEdge />
-      <CtaBuild />
+      <CtaBuild
+        kicker="READY TO START?"
+        line1="YOUR PAID ADS JOURNEY"
+        line2="WITH SAFEHANDS"
+        ctaLabel="TALK TO US"
+        ctaHref="/contact"
+      />
       <Footer />
     </main>
   );

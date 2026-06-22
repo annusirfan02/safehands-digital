@@ -22,7 +22,7 @@ export default function Services() {
             <RevealHeading text="WHAT WE DO." />
           </div>
           <p className={styles.helper}>
-            Hover any card to see what we do — click to explore the full service.
+            Hover any card to see what we do. Click to explore the full service.
           </p>
         </div>
 

@@ -5,13 +5,12 @@ import Industries from '@/components/AIEmployees/Industries';
 import FindEmployee from '@/components/AIEmployees/FindEmployee';
 import Marquee from '@/components/AIEmployees/Marquee';
 import MeetMaya from '@/components/AIEmployees/MeetMaya';
-import GetStarted from '@/components/AIEmployees/GetStarted';
 import CtaBuild from '@/components/CtaBuild';
 import Footer from '@/components/Footer';
 
 export const metadata = {
-  title: 'AI Employees — Safe Hands Digital',
-  description: 'AI employees that run your marketing 24/7 — trained on your business, managed by licensed experts.',
+  title: 'AI Employees, Safe Hands Digital',
+  description: 'AI employees that run your marketing 24/7, trained on your business, managed by licensed experts.',
 };
 
 export default function AIEmployeesPage() {
@@ -24,8 +23,13 @@ export default function AIEmployeesPage() {
       <FindEmployee />
       <Marquee />
       <MeetMaya />
-      <GetStarted />
-      <CtaBuild />
+      <CtaBuild
+        kicker="READY TO START?"
+        line1="YOUR AI TEAM"
+        line2="WITH SAFEHANDS"
+        ctaLabel="TALK TO US"
+        ctaHref="/contact"
+      />
       <Footer />
     </main>
   );

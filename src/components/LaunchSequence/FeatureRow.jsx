@@ -36,7 +36,7 @@ export default function FeatureRow({ feature }) {
       .to(node, { scale: 1, opacity: 1, duration: 0.45, ease: 'back.out(2.6)' })
       .to(card, { opacity: 1, x: 0, y: 0, duration: 0.7, ease: 'power3.out' }, '-=0.25');
 
-    // Arrival chime — fires when the ship reaches this node, scrolling DOWN only.
+    // Arrival chime - fires when the ship reaches this node, scrolling DOWN only.
     ScrollTrigger.create({
       trigger: wrapRef.current,
       start: 'center center',

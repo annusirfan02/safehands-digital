@@ -4,7 +4,7 @@ import { useState } from 'react';
 import styles from './LeadForm.module.css';
 
 /**
- * Shown when the AI search finds nothing on the site — invites the visitor to
+ * Shown when the AI search finds nothing on the site - invites the visitor to
  * tell us what they need so we can discuss the opportunity.
  */
 export default function LeadForm({ query }) {
@@ -15,7 +15,7 @@ export default function LeadForm({ query }) {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // No backend wired up yet — acknowledge locally. Swap for an API POST later.
+    // No backend wired up yet - acknowledge locally. Swap for an API POST later.
     setSent(true);
   };
 
@@ -23,7 +23,7 @@ export default function LeadForm({ query }) {
     return (
       <div className={styles.done}>
         <span className={styles.check}>✓</span>
-        <p>Thanks — we’ve got it. A specialist will reach out about this opportunity shortly.</p>
+        <p>Thanks, we’ve got it. A specialist will reach out about this opportunity shortly.</p>
       </div>
     );
   }
@@ -31,7 +31,7 @@ export default function LeadForm({ query }) {
   return (
     <div className={styles.wrap}>
       <p className={styles.note}>
-        We couldn’t find that on our site yet — but it might be exactly what we should build for you.
+        We couldn’t find that on our site yet, but it might be exactly what we should build for you.
         <strong> Fill this out and we’ll discuss the opportunity.</strong>
       </p>
 

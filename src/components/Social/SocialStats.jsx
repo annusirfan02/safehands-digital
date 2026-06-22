@@ -4,7 +4,7 @@ import styles from './SocialStats.module.css';
 
 const STATS = [
   { v: '4K → 427K', l: '@DR.REMINA FOLLOWERS' },
-  { v: '1M+',       l: 'VIEWS — QUADRATIC AI' },
+  { v: '1M+',       l: 'VIEWS, QUADRATIC AI' },
   { v: '0 → 11K',   l: 'PONGBOT GROWTH' },
   { v: '$100K+',    l: 'REVENUE VIA SOCIAL' },
 ];

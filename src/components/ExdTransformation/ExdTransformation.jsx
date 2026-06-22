@@ -15,7 +15,7 @@ gsap.registerPlugin(ScrollTrigger);
  * Sits between the StatsBar and the Services grid on the Home page.
  */
 
-// Safehands's partner ecosystem — rendered as pills.
+// Safehands's partner ecosystem - rendered as pills.
 const PARTNERS = [
   { name: 'SAP', tag: 'Service Provider', lead: true },
   { name: 'BearingPoint', tag: 'Local Partner' },
@@ -61,7 +61,7 @@ export default function ExdTransformation() {
       scrollTrigger: { trigger: root.current, start: 'top 78%' },
     });
 
-    // Partner cards fade in together (stay aligned — no transform stagger).
+    // Partner cards fade in together (stay aligned, no transform stagger).
     gsap.from(q('[data-reveal="pill"]'), {
       opacity: 0,
       duration: 0.6,
@@ -163,7 +163,7 @@ export default function ExdTransformation() {
             We specialise in AI implementations that unlock cutting-edge
             analytics and intelligence through your <strong>SAP</strong>,{' '}
             <strong>ETM.Next</strong>, <strong>Qlik</strong> and{' '}
-            <strong>Jaggaer</strong> systems &mdash; and hold the distinct honour
+            <strong>Jaggaer</strong> systems, and hold the distinct honour
             of unveiling SAP&rsquo;s latest Generative AI,{' '}
             <strong>Joule</strong>, and Jaggaer&rsquo;s latest AI,{' '}
             <strong>JAI</strong>.

@@ -3,7 +3,7 @@
 import styles from './SolutionCard.module.css';
 
 export default function SolutionCard({ item }) {
-  const { num, tags, title, desc, features, price, color, gradient, portfolioHref } = item;
+  const { num, tags, title, desc, features, price, color, gradient, href } = item;
 
   return (
     <article
@@ -35,11 +35,8 @@ export default function SolutionCard({ item }) {
       <div className={styles.invest}>
         <span className={styles.investLabel}>INVESTMENT</span>
         <span className={styles.price}>{price}</span>
-        <a href="/onboarding" className={styles.btnPrimary}>
+        <a href={href || '/onboarding'} className={styles.btnPrimary}>
           GET STARTED <span className={styles.arrow}>→</span>
-        </a>
-        <a href={portfolioHref || '/#portfolio'} className={styles.btnGhost}>
-          VIEW PORTFOLIO <span className={styles.arrow}>→</span>
         </a>
       </div>
     </article>

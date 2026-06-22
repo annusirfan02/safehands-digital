@@ -30,7 +30,7 @@ export default function WebDevHero() {
         </h1>
 
         <p className={styles.subtitle}>
-          Shopify, WordPress, Next.js, and custom builds — 10+ years delivering
+          Shopify, WordPress, Next.js, and custom builds, 10+ years delivering
           high-converting websites for brands across the US and Europe.
         </p>
 

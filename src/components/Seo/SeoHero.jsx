@@ -39,7 +39,7 @@ export default function SeoHero() {
         </h1>
 
         <p className={styles.subtitle}>
-          Traditional SEO foundations plus AI search optimization — so your brand ranks
+          Traditional SEO foundations plus AI search optimization, so your brand ranks
           on Google and gets cited by ChatGPT, Perplexity, and Google&rsquo;s AI Overviews.
         </p>
 

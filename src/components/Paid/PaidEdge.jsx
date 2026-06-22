@@ -11,11 +11,11 @@ const Cloud = () => (<svg {...ic}><path d="M18 10a4 4 0 0 0-7.6-1.5A3.5 3.5 0 1 
 const Chart = () => (<svg {...ic}><path d="M3 21h18" /><rect x="5" y="11" width="3" height="7" rx="1" /><rect x="11" y="6" width="3" height="12" rx="1" /><rect x="16.5" y="14" width="3" height="4" rx="1" /></svg>);
 
 const CARDS = [
-  { c: '#a855f7', Icon: Users, title: 'UGC-First Creative', desc: 'Every campaign starts with user-generated-style content — raw, real, and impossible to scroll past. We produce it in-house or cast creators to match your brand voice.' },
-  { c: '#ff8c1e', Icon: Pen, title: 'Hook Engineering', desc: 'The first 2 seconds determine everything. We write, test, and iterate on hooks until we find the one that stops the scroll — then build the rest of the ad around it.' },
-  { c: '#2bb0e0', Icon: Monitor, title: 'Platform-Native Format', desc: 'TikTok ads that feel like TikToks. Instagram ads that blend into the feed. We never repurpose — every creative is built specifically for how users consume that platform.' },
+  { c: '#a855f7', Icon: Users, title: 'UGC-First Creative', desc: 'Every campaign starts with user-generated-style content, raw, real, and impossible to scroll past. We produce it in-house or cast creators to match your brand voice.' },
+  { c: '#ff8c1e', Icon: Pen, title: 'Hook Engineering', desc: 'The first 2 seconds determine everything. We write, test, and iterate on hooks until we find the one that stops the scroll, then build the rest of the ad around it.' },
+  { c: '#2bb0e0', Icon: Monitor, title: 'Platform-Native Format', desc: 'TikTok ads that feel like TikToks. Instagram ads that blend into the feed. We never repurpose, every creative is built specifically for how users consume that platform.' },
   { c: '#8fce3f', Icon: Funnel, title: 'Full-Funnel Strategy', desc: 'Awareness → consideration → conversion → retention. We map every ad to a funnel stage and build retargeting flows that recapture lost revenue.' },
-  { c: '#ff4d9d', Icon: Cloud, title: 'AI-Powered Optimization', desc: 'We pair human creative instinct with AI media-buying tools — automated bidding, lookalike expansion, and real-time budget allocation based on performance signals.' },
+  { c: '#ff4d9d', Icon: Cloud, title: 'AI-Powered Optimization', desc: 'We pair human creative instinct with AI media-buying tools, automated bidding, lookalike expansion, and real-time budget allocation based on performance signals.' },
   { c: '#2dd4bf', Icon: Chart, title: 'Weekly Reporting', desc: "No black boxes. Every Monday you get a clear report: spend, ROAS, CPM, CTR, and what we're testing next. You always know where your money is going." },
 ];
 

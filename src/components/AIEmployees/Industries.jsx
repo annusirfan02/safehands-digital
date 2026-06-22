@@ -32,99 +32,99 @@ const DOTS = ['#BFFE03', '#2d80ff', '#ff4d9d', '#ff8c1e', '#a855f7'];
 const INDUSTRIES = [
   {
     name: 'Nonprofits', Icon: Heart, color: '#ff4d9d', team: ['Nova', 'Alex', 'Max'],
-    subtitle: 'Monday morning — before your team logs in:',
+    subtitle: 'Monday morning, before your team logs in:',
     bullets: [
       'Nova responds to 7 overnight donor inquiries, books 3 consultation calls',
       'Alex sources 20 new grant opportunities matching your mission and drafts outreach',
       'Max generates your monthly impact newsletter with live stats from your CRM',
-      'Volunteer coordination emails sent to 40 signups — no copy-paste required',
+      'Volunteer coordination emails sent to 40 signups, no copy-paste required',
       "Board meeting summary drafted from last week's notes and sent for review",
     ],
   },
   {
     name: 'Startups', Icon: Rocket, color: '#2d80ff', team: ['Alex', 'Max'],
-    subtitle: 'Monday morning — before your standup:',
+    subtitle: 'Monday morning, before your standup:',
     bullets: [
       'Alex sources 40 qualified leads from LinkedIn matching your exact ICP',
-      'Personalized cold emails written for each — referencing their recent news or funding',
+      'Personalized cold emails written for each, referencing their recent news or funding',
       'Follow-up sequences fired for 12 leads who went cold last week',
       'Max publishes 2 SEO blog posts and schedules your full week of social content',
-      'Investor pipeline updated — new VC firms researched and outreach drafted',
+      'Investor pipeline updated, new VC firms researched and outreach drafted',
     ],
   },
   {
     name: 'Agencies', Icon: Bolt, color: '#BFFE03', team: ['Maya', 'Max'],
-    subtitle: 'Monday morning — before client calls:',
+    subtitle: 'Monday morning, before client calls:',
     bullets: [
       'Maya pulls campaign data from all client accounts, generates performance reports',
-      'Client Slack updates posted automatically — no manual reporting',
+      'Client Slack updates posted automatically, no manual reporting',
       'Max drafts 3 new business proposals based on your service menu + prospect research',
       'Prospecting emails sent to 20 new potential clients in your target verticals',
-      'All client deliverable deadlines tracked and flagged — nothing slips through',
+      'All client deliverable deadlines tracked and flagged, nothing slips through',
     ],
   },
   {
     name: 'Consultants', Icon: Briefcase, color: '#2d80ff', team: ['Alex', 'Nova'],
-    subtitle: 'Monday morning — before your first meeting:',
+    subtitle: 'Monday morning, before your first meeting:',
     bullets: [
-      'Alex researches every company in your pipeline — news, key hires, pain points',
+      'Alex researches every company in your pipeline, news, key hires, pain points',
       'Nova follows up with 8 prospects who opened your emails but never replied',
       'Proposal for a new prospect drafted using your template + their company data',
-      'Meeting prep brief auto-generated before each call — talking points ready',
+      'Meeting prep brief auto-generated before each call, talking points ready',
       'Post-call summary and next steps emailed to clients automatically',
     ],
   },
   {
     name: 'Real Estate', Icon: House, color: '#ff8c1e', team: ['Nova', 'Alex'],
-    subtitle: 'Monday morning — before you open Zillow:',
+    subtitle: 'Monday morning, before you open Zillow:',
     bullets: [
-      'Nova responds to every new property inquiry within 60 seconds — all weekend',
+      'Nova responds to every new property inquiry within 60 seconds, all weekend',
       'Buyers pre-qualified automatically: budget, timeline, pre-approval status',
       'Alex sources off-market seller leads from LinkedIn and sends personalized outreach',
-      'CRM updated after every interaction — no manual data entry',
+      'CRM updated after every interaction, no manual data entry',
       'Listing description drafts ready the moment a new property is entered',
     ],
   },
   {
     name: 'Finance', Icon: Trend, color: '#13c08a', team: ['Max', 'Nova'],
-    subtitle: 'Monday morning — before market open:',
+    subtitle: 'Monday morning, before market open:',
     bullets: [
       'Max generates weekly market research briefs for all client meetings',
-      'Nova handles every new client onboarding inquiry — qualifies and books calls',
+      'Nova handles every new client onboarding inquiry, qualifies and books calls',
       'Monthly portfolio summary emails sent to each client automatically',
       'Compliance document drafts prepared and flagged for your review',
-      'Prospect research pulled for every intro call — you walk in prepared',
+      'Prospect research pulled for every intro call, you walk in prepared',
     ],
   },
   {
     name: 'Law Firms', Icon: Scale, color: '#a855f7', team: ['Nova', 'Max'],
-    subtitle: 'Monday morning — before the first consultation:',
+    subtitle: 'Monday morning, before the first consultation:',
     bullets: [
-      'Nova handles all new client intake — qualifies cases, collects info, books consults',
+      'Nova handles all new client intake, qualifies cases, collects info, books consults',
       'Max researches case precedents and delivers a summary before every hearing',
       'Client follow-up emails sent on your behalf at every stage of their case',
       'Engagement letters and intake forms drafted the moment a new matter opens',
-      'Billing reminders sent automatically — no awkward manual follow-up',
+      'Billing reminders sent automatically, no awkward manual follow-up',
     ],
   },
   {
     name: 'Med Spa', Icon: Gem, color: '#ff4d9d', team: ['Zara', 'Nova'],
-    subtitle: 'Monday morning — before doors open:',
+    subtitle: 'Monday morning, before doors open:',
     bullets: [
       'Zara posts your week of content: treatment spotlights, client results, behind-the-scenes',
       'Nova responds to all weekend DMs in under 60 seconds, books 8 consultations',
       "Post-treatment review requests sent automatically to last week's clients",
       'Promo campaign pushed to your email list for any slow appointment slots',
-      'New followers nurtured with a DM sequence — warm leads before they book',
+      'New followers nurtured with a DM sequence, warm leads before they book',
     ],
   },
   {
     name: 'Local Business', Icon: Pin, color: '#ff8c1e', team: ['Nova', 'Zara'],
-    subtitle: 'Monday morning — before you unlock the door:',
+    subtitle: 'Monday morning, before you unlock the door:',
     bullets: [
-      'Nova answers every customer inquiry overnight — hours, pricing, availability',
+      'Nova answers every customer inquiry overnight, hours, pricing, availability',
       'Appointments booked automatically from your website, Google, and Instagram',
-      'Review requests sent to every customer after their visit — Google stars grow',
+      'Review requests sent to every customer after their visit, Google stars grow',
       'Negative review responses drafted immediately for your one-click approval',
       'Zara keeps your Google Business and social profiles active with fresh content',
     ],
@@ -187,7 +187,7 @@ export default function Industries() {
               </div>
             ) : (
               <div className={styles.playbook} style={{ '--c': ind.color }}>
-                <span className={styles.pbKicker}>{ind.name.toUpperCase()} — AI PLAYBOOK</span>
+                <span className={styles.pbKicker}>{ind.name.toUpperCase()} · AI PLAYBOOK</span>
                 <h3 className={styles.pbTitle}>{ind.subtitle}</h3>
                 <div className={styles.pbDivider} />
 

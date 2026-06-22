@@ -30,7 +30,7 @@ export default function OnboardingHero() {
         </h1>
         <p className={styles.subtitle}>
           Five questions.<br />
-          One AI-powered strategy — built just for your brand.
+          One AI-powered strategy, built just for your brand.
         </p>
         <a href="#start" className={styles.cta}>
           START YOUR PROJECT <span className={styles.arrow}>→</span>

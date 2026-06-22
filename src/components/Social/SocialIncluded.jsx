@@ -7,7 +7,7 @@ const ITEMS = [
   { c: '#ff4d9d', title: 'Video Production & Editing', desc: 'Professional reels and TikToks built to convert' },
   { c: '#a855f7', title: 'Influencer Collaboration', desc: 'Vetted creators, campaign management, and reporting' },
   { c: '#2dd4bf', title: 'UGC Creation', desc: 'Authentic user-generated content for ads and organic' },
-  { c: '#ff8c1e', title: 'Community Management', desc: 'Active engagement — comments, DMs, and community building' },
+  { c: '#ff8c1e', title: 'Community Management', desc: 'Active engagement, comments, DMs, and community building' },
   { c: '#10b981', title: 'Trend Research', desc: 'Weekly trend analysis to keep your content ahead' },
   { c: '#f5b21a', title: 'Copywriting & Hooks', desc: 'Platform-native captions and first 2-second hooks' },
   { c: '#ff4d4d', title: 'Analytics & Reporting', desc: 'Monthly performance report with actionable insights' },

@@ -21,7 +21,7 @@ export default function SolutionsHero() {
         </h1>
 
         <p className={styles.subtitle}>
-          Everything you need to acquire customers and grow your brand —
+          Everything you need to acquire customers and grow your brand -
           powered by AI and executed by licensed experts.
         </p>
 

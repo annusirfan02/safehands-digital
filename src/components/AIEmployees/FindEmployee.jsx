@@ -4,10 +4,10 @@ import { useState } from 'react';
 import styles from './FindEmployee.module.css';
 
 const OPTIONS = [
-  { q: 'Not enough leads coming in',        a: 'Maya — Growth Strategist' },
-  { q: 'Leads go cold before we reply',     a: 'Nova — Support & Success' },
-  { q: 'Too much manual, repetitive work',  a: 'Alex — Paid Ads Operator' },
-  { q: 'We can’t produce content fast enough', a: 'Max — Content Creator' },
+  { q: 'Not enough leads coming in',        a: 'Maya, Growth Strategist' },
+  { q: 'Leads go cold before we reply',     a: 'Nova, Support & Success' },
+  { q: 'Too much manual, repetitive work',  a: 'Alex, Paid Ads Operator' },
+  { q: 'We can’t produce content fast enough', a: 'Max, Content Creator' },
 ];
 
 export default function FindEmployee() {

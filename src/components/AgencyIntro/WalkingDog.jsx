@@ -7,7 +7,7 @@ import styles from './WalkingDog.module.css';
  * continuously from one screen corner to the other (full viewport width).
  * Legs swing in an alternating walk cycle, the tail wags, and a
  * "WOOF! WORK WITH US" speech bubble travels along with it.
- * Pure CSS animation — no JS timers.
+ * Pure CSS animation - no JS timers.
  */
 export default function WalkingDog() {
   return (

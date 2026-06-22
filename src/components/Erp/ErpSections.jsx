@@ -11,7 +11,7 @@ const SECTIONS = [
     color: '#EE4646',
     paras: [
       'As one of the emerging ERP System Integrators in the region, SafeHands has empowered businesses with transformative solutions. We have delivered bespoke solutions to our clients across Saudi Arabia & APAC.',
-      'Our ERP expertise spans the complete lifecycle of solutions, offering licensing, implementation, support, and upgrade services for both cloud and on-premise platforms. We specialize in leading ERP technologies, migrations and implementations — enabling businesses to streamline operations and unlock their full potential.',
+      'Our ERP expertise spans the complete lifecycle of solutions, offering licensing, implementation, support, and upgrade services for both cloud and on-premise platforms. We specialize in leading ERP technologies, migrations and implementations, enabling businesses to streamline operations and unlock their full potential.',
     ],
     chipsLabel: 'PLATFORMS WE SPECIALIZE IN',
     chips: ['SAP', 'ETM.Next', 'Qlik', 'Jaggaer', 'Salesforce'],
@@ -23,8 +23,8 @@ const SECTIONS = [
     title: 'Software Development',
     color: '#7c5cff',
     paras: [
-      'SafeHands brings together a multidisciplinary software development team — developers, designers, architects, and project managers — who work as one unit to turn complex business challenges into reliable, real-world products. Every solution is engineered to be innovative, scalable, and secure, and tailored to the unique needs of each client.',
-      'From customer-facing web platforms and high-performance mobile apps to embedded IoT devices and deep enterprise integrations, our engineers cover the full stack — helping businesses ship faster, reduce technical risk, and build software that keeps delivering value as they scale.',
+      'SafeHands brings together a multidisciplinary software development team, developers, designers, architects, and project managers, who work as one unit to turn complex business challenges into reliable, real-world products. Every solution is engineered to be innovative, scalable, and secure, and tailored to the unique needs of each client.',
+      'From customer-facing web platforms and high-performance mobile apps to embedded IoT devices and deep enterprise integrations, our engineers cover the full stack, helping businesses ship faster, reduce technical risk, and build software that keeps delivering value as they scale.',
     ],
     chipsLabel: 'DEVELOPMENT COMPETENCIES',
     chips: [
@@ -40,7 +40,7 @@ const SECTIONS = [
     title: 'Outsourcing',
     color: '#ff8c1e',
     paras: [
-      'Achieve operational excellence by concentrating on core competencies while entrusting specialized technical tasks to reliable partners. SafeHands offers comprehensive and efficient outsourcing solutions that handle critical domains such as IT, digital operations, data entry and processing — empowering businesses to optimize resource allocation for strategic objectives.',
+      'Achieve operational excellence by concentrating on core competencies while entrusting specialized technical tasks to reliable partners. SafeHands offers comprehensive and efficient outsourcing solutions that handle critical domains such as IT, digital operations, data entry and processing, empowering businesses to optimize resource allocation for strategic objectives.',
       'Our outsourcing portfolio includes ERP maintenance and management, social media marketing, community management, HRM, and finance. Our outsourcing services ensure that your organization’s delegated operations run seamlessly while allowing you to focus on strategic growth.',
     ],
     note: 'Partner with SafeHands for streamlined outsourcing that drives efficiency and delivers measurable results.',

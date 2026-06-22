@@ -3,7 +3,7 @@
 import styles from './Mascot.module.css';
 
 /**
- * Friendly astronaut mascot (SVG). A clean, on-brand placeholder — swap with
+ * Friendly astronaut mascot (SVG). A clean, on-brand placeholder - swap with
  * your own character illustration any time.
  */
 export default function Mascot() {

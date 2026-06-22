@@ -14,9 +14,11 @@ const LINKS = [
     { href: '/social-media', label: 'Social Media' },
     { href: '/paid-ads', label: 'Paid Ads' },
     { href: '/erp-development', label: 'ERP Services & Development' },
+    { href: '/ai-video', label: 'AI Video Production' },
   ] },
   { href: '/solutions', label: 'Solutions' },
   { href: '/ai-employees', label: 'AI Employees' },
+  { href: '/vision-2030', label: 'Vision 2030' },
   { href: '/contact', label: 'Contact' },
 ];
 
@@ -30,8 +32,8 @@ export default function Navbar() {
   return (
     <header className={styles.nav} suppressHydrationWarning>
       <div className={styles.inner}>
-        <Link href="/" className={styles.logo} aria-label="Safe Hands Digital — home">
-          {/* Your real logo — drop the files in /public (see notes). */}
+        <Link href="/" className={styles.logo} aria-label="Safe Hands Digital, home">
+          {/* Your real logo - drop the files in /public (see notes). */}
           <img src="/logo-light.png" alt="Safe Hands Digital" className={`${styles.logoImg} ${styles.logoLight}`} />
           <img src="/logo-dark.png" alt="Safe Hands Digital" className={`${styles.logoImg} ${styles.logoDark}`} />
         </Link>

@@ -3,13 +3,13 @@
 import { useState, useRef, useEffect } from 'react';
 import styles from './ContactForm.module.css';
 
-const SERVICES = ['SEO', 'Meta Ads', 'Google Ads', 'Social Media', 'AI Assistant', 'Web Design', 'Branding', 'Email Marketing'];
+const SERVICES = ['AI SEO', 'Paid Ads', 'Social Media', 'Web Development', 'AI Assistant', 'ERP Services', 'AI Video', 'Email Marketing', 'Content Creation'];
 
 const REPLIES = [
-  "Great question! Pricing depends on scope — most retainers run $1,500–$5,000/mo. Tell me your goal and I'll narrow it down.",
-  "We cover SEO, paid ads, social, web, branding and AI assistants — all under one roof. What are you focused on right now?",
+  "Great question! Pricing is custom to your scope and goals. Tell me your goal and I'll narrow it down.",
+  "We cover SEO, paid ads, social, web, ERP, AI video and AI assistants, all under one roof. What are you focused on right now?",
   "Most projects launch in 2–4 weeks after the kickoff call. Want me to map a rough timeline for your goal?",
-  "Absolutely — I can pull together a custom plan. Share your industry and biggest bottleneck and I'll outline next steps.",
+  "Absolutely, I can pull together a custom plan. Share your industry and biggest bottleneck and I'll outline next steps.",
   "We work month-to-month, no long contracts. Want me to send over a free audit to get started?",
 ];
 
@@ -84,20 +84,20 @@ export default function ContactForm() {
             </label>
 
             <button type="submit" className={styles.submit}>
-              {sent ? 'THANKS — WE’LL BE IN TOUCH ✓' : <>SEND MESSAGE <span>→</span></>}
+              {sent ? 'THANKS, WE’LL BE IN TOUCH ✓' : <>SEND MESSAGE <span>→</span></>}
             </button>
-            <p className={styles.note}>We respond ASAP — usually within the hour.</p>
+            <p className={styles.note}>We respond ASAP, usually within the hour.</p>
           </form>
         </div>
 
         {/* ── Right: chat ── */}
         <div className={styles.col}>
-          <span className={styles.aiPill}><i className={styles.aiDot} /> SKIP THE FORM — TALK TO AI</span>
+          <span className={styles.aiPill}><i className={styles.aiDot} /> SKIP THE FORM · TALK TO AI</span>
           <h2 className={styles.heading}>
             <span className={styles.solid}>CHAT WITH</span>
             <span className={styles.script}>Maya.</span>
           </h2>
-          <p className={styles.chatSub}>Get instant answers on pricing, services, and timelines — Maya knows everything.</p>
+          <p className={styles.chatSub}>Get instant answers on pricing, services, and timelines. Maya knows everything.</p>
 
           <div className={styles.chat}>
             <div className={styles.chatHead}>

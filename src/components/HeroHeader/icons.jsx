@@ -1,4 +1,4 @@
-// ─── AI technology icons — clean monochrome line icons (inherit currentColor) ──
+// ─── AI technology icons - clean monochrome line icons (inherit currentColor) ──
 const base = {
   width: 30,
   height: 30,

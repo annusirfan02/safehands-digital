@@ -6,38 +6,38 @@ import styles from './Operators.module.css';
 const OPERATORS = [
   {
     name: 'Maya', role: 'AI Growth Strategist', badge: 'FULL-STACK AI', c: '#BFFE03',
-    desc: 'Runs your entire growth engine end-to-end — sourcing leads, writing outreach, managing content, responding to inquiries, and reporting on everything.',
+    desc: 'Runs your entire growth engine end-to-end, sourcing leads, writing outreach, managing content, responding to inquiries, and reporting on everything.',
     workflow: ['Lead Sourcing', 'Personalized Outreach', 'Content Creation', 'Inbox Management', 'CRM Updates', 'Weekly Reports'],
     bestFor: ['Scaling companies', 'Agencies', 'Founders who want it all handled'],
-    price: '$2,500–$5,000', per: '/mo',
+    price: 'Custom pricing', per: '',
   },
   {
     name: 'Alex', role: 'AI Ads Operator', badge: 'PERFORMANCE AI', c: '#2d80ff',
-    desc: 'Builds and runs your Meta & Google ad campaigns — creative, targeting, bidding and round-the-clock optimization toward a measurable ROI.',
+    desc: 'Builds and runs your Meta & Google ad campaigns, creative, targeting, bidding and round-the-clock optimization toward a measurable ROI.',
     workflow: ['Audience Research', 'Creative Production', 'Campaign Launch', 'Bid Optimization', 'A/B Testing', 'ROI Reports'],
     bestFor: ['E-commerce', 'Lead-gen offers', 'High ad budgets'],
-    price: '$2,000–$4,000', per: '/mo',
+    price: 'Custom pricing', per: '',
   },
   {
     name: 'Zara', role: 'AI Social Manager', badge: 'SOCIAL AI', c: '#ff4d9d',
-    desc: 'Plans, writes and schedules scroll-stopping content across TikTok, Instagram and LinkedIn — then engages your community around the clock.',
+    desc: 'Plans, writes and schedules scroll-stopping content across TikTok, Instagram and LinkedIn, then engages your community around the clock.',
     workflow: ['Trend Research', 'Content Calendar', 'Video Production', 'Scheduling', 'Community Replies', 'Performance Reports'],
     bestFor: ['Personal brands', 'DTC brands', 'Local businesses'],
-    price: '$1,800–$3,500', per: '/mo',
+    price: 'Custom pricing', per: '',
   },
   {
     name: 'Nova', role: 'AI Support Agent', badge: 'SUPPORT AI', c: '#a855f7',
-    desc: 'Answers every lead and customer instantly — qualifying, booking calls and following up around the clock so nothing ever slips through.',
+    desc: 'Answers every lead and customer instantly, qualifying, booking calls and following up around the clock so nothing ever slips through.',
     workflow: ['Instant Replies', 'Lead Qualification', 'Call Booking', 'Follow-ups', 'CRM Sync', 'Daily Summary'],
     bestFor: ['Service businesses', 'High-volume leads', 'Clinics & agencies'],
-    price: '$1,500–$3,000', per: '/mo',
+    price: 'Custom pricing', per: '',
   },
   {
     name: 'Max', role: 'AI Content Creator', badge: 'CREATIVE AI', c: '#ff8c1e',
-    desc: 'Produces on-brand video, graphics, scripts and copy at scale — turning a single idea into a full week of content in minutes.',
+    desc: 'Produces on-brand video, graphics, scripts and copy at scale, turning a single idea into a full week of content in minutes.',
     workflow: ['Idea Generation', 'Scriptwriting', 'Video Editing', 'Graphic Design', 'Copywriting', 'Asset Delivery'],
     bestFor: ['Content brands', 'Coaches', 'Course creators'],
-    price: '$2,200–$4,500', per: '/mo',
+    price: 'Custom pricing', per: '',
   },
 ];
 
@@ -52,7 +52,7 @@ const body = <path d="M38 98 Q60 86 82 98 L79 122 Q60 132 41 122 Z" fill="var(--
 const neck = <rect x="51" y="80" width="18" height="8" rx="3" fill="var(--c)" />;
 const bodyShine = <ellipse cx="58" cy="106" rx="16" ry="9" fill="rgba(255,255,255,0.16)" />;
 
-// Green — Maya: round head, twin antennas, smile
+// Green - Maya: round head, twin antennas, smile
 const RobotGreen = () => (
   <svg {...svgProps}>
     <line x1="48" y1="32" x2="43" y2="16" stroke="var(--c)" strokeWidth="3" strokeLinecap="round" />
@@ -69,7 +69,7 @@ const RobotGreen = () => (
   </svg>
 );
 
-// Blue — Alex: visor eye, side knobs, body grille
+// Blue - Alex: visor eye, side knobs, body grille
 const RobotBlue = () => (
   <svg {...svgProps}>
     <line x1="45" y1="30" x2="41" y2="12" stroke="var(--c)" strokeWidth="2.4" strokeLinecap="round" />
@@ -90,7 +90,7 @@ const RobotBlue = () => (
   </svg>
 );
 
-// Pink — Zara: star eyes, diamond accents
+// Pink - Zara: star eyes, diamond accents
 const RobotPink = () => (
   <svg {...svgProps}>
     <line x1="60" y1="30" x2="60" y2="16" stroke="var(--c)" strokeWidth="2.6" strokeLinecap="round" />
@@ -107,7 +107,7 @@ const RobotPink = () => (
   </svg>
 );
 
-// Purple — Nova: diamond head, target eye
+// Purple - Nova: diamond head, target eye
 const RobotPurple = () => (
   <svg {...svgProps}>
     <line x1="60" y1="26" x2="60" y2="12" stroke="var(--c)" strokeWidth="2.6" strokeLinecap="round" />
@@ -123,7 +123,7 @@ const RobotPurple = () => (
   </svg>
 );
 
-// Orange — Max: boxy retro head, square eyes, grille mouth
+// Orange - Max: boxy retro head, square eyes, grille mouth
 const RobotOrange = () => (
   <svg {...svgProps}>
     <line x1="45" y1="24" x2="41" y2="12" stroke="var(--c)" strokeWidth="2.6" strokeLinecap="round" />
@@ -158,7 +158,7 @@ export default function Operators() {
     return () => clearInterval(id);
   }, []);
 
-  // 3D tilt that follows the cursor — the point under the cursor tilts away.
+  // 3D tilt that follows the cursor - the point under the cursor tilts away.
   const onMove = (e) => {
     const el = e.currentTarget;
     const r = el.getBoundingClientRect();

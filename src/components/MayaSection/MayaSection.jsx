@@ -12,12 +12,12 @@ export default function MayaSection() {
   return (
     <section id="maya" className={styles.section} suppressHydrationWarning>
       <div className={styles.inner}>
-        {/* Left — live chatbot */}
+        {/* Left - live chatbot */}
         <div className={styles.left}>
           <ChatWidget ref={chatRef} />
         </div>
 
-        {/* Right — copy + actions */}
+        {/* Right - copy + actions */}
         <div className={styles.right}>
           <span className={styles.live}>
             <i className={styles.liveDot} /> LIVE NOW

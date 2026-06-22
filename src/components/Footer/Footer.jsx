@@ -70,13 +70,13 @@ export default function Footer() {
               Safe Hands Digital
             </div>
             <p className={styles.tagline}>
-              We bring results to brands. AI strategies, licensed experts, real results — wherever
+              We bring results to brands. AI strategies, licensed experts, real results, wherever
               your customers are searching.
             </p>
 
             <form className={styles.newsletter} onSubmit={subscribe}>
               {done ? (
-                <span className={styles.subscribed}>✓ You’re in — talk soon.</span>
+                <span className={styles.subscribed}>✓ You’re in. Talk soon.</span>
               ) : (
                 <>
                   <input

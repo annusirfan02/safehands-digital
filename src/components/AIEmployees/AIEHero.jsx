@@ -25,7 +25,7 @@ export default function AIEHero() {
         <p className={styles.subtitle}>
           Your clients don&rsquo;t want &ldquo;AI.&rdquo; They want more leads, faster
           follow-up, and less manual work. We build the systems that deliver exactly
-          that — running 24/7 without payroll.
+          that, running 24/7 without payroll.
         </p>
 
         <div className={styles.actions}>

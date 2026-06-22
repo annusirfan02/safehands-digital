@@ -2,7 +2,7 @@ import { ChatIcon, BotIcon, StarIcon, ErpIcon, PenIcon, AnalyticsIcon } from './
 
 // ─── Offerings ────────────────────────────────────────────────────────────────
 // A single source of truth that drives BOTH the cycling headline word and the
-// highlighted technology node — so they stay perfectly in sync.
+// highlighted technology node - so they stay perfectly in sync.
 // `word`  → fills the "We bring ___ to brands." slot (coloured)
 // `tech`  → the AI technology shown on the right constellation
 // `pos`   → scattered position of the node (desktop)

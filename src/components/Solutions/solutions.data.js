@@ -1,12 +1,12 @@
 // ─── Solutions page service cards ─────────────────────────────────────────────
-// Colours / gradients are taken straight from the reference design — one accent
+// Colours / gradients are taken straight from the reference design - one accent
 // per service, reused for the number, tags, bullets and the "GET STARTED" pill.
 export const SOLUTIONS = [
   {
     num: '01',
     tags: 'GOOGLE · CHATGPT · PERPLEXITY · SGE',
     title: 'AI SEO',
-    desc: 'Rank everywhere people search — Google, ChatGPT, Perplexity, and Google AI Overviews. We combine traditional SEO with AI search optimization so your brand gets found and cited across every platform.',
+    desc: 'Rank everywhere people search, Google, ChatGPT, Perplexity, and Google AI Overviews. We combine traditional SEO with AI search optimization so your brand gets found and cited across every platform.',
     features: [
       'Technical SEO audit & fixes',
       'Link building',
@@ -15,10 +15,10 @@ export const SOLUTIONS = [
       'llms.txt & entity SEO',
       'Schema markup & E-E-A-T content',
     ],
-    price: 'From $1,500 / mo',
+    price: 'Custom pricing',
     color: '#1e9bff',
     gradient: 'linear-gradient(90deg,#1e9bff,#5bc0ff)',
-    portfolioHref: '/seo',
+    href: '/seo',
   },
   {
     num: '02',
@@ -33,10 +33,10 @@ export const SOLUTIONS = [
       'Community management',
       'Performance reporting',
     ],
-    price: 'From $2,500 / mo',
+    price: 'Custom pricing',
     color: '#ff4d9d',
     gradient: 'linear-gradient(90deg,#ff4d9d,#ff7ab8)',
-    portfolioHref: '/social-media',
+    href: '/social-media',
   },
   {
     num: '03',
@@ -51,16 +51,16 @@ export const SOLUTIONS = [
       'A/B testing',
       'Weekly optimization reports',
     ],
-    price: 'From $2,000 / mo + ad spend',
+    price: 'Custom pricing',
     color: '#ff8c1e',
     gradient: 'linear-gradient(90deg,#ff8c1e,#ffb14d)',
-    portfolioHref: '/paid-ads',
+    href: '/paid-ads',
   },
   {
     num: '04',
     tags: 'CLAUDE · AI · CHATBOTS',
     title: 'AI Assistants & Automations',
-    desc: 'Custom AI assistants deployed on Claude — trained on your business, live 24/7. We handle everything from strategy and build to integration and ongoing optimization.',
+    desc: 'Custom AI assistants deployed on Claude, trained on your business, live 24/7. We handle everything from strategy and build to integration and ongoing optimization.',
     features: [
       'Business needs analysis',
       'Claude / OpenAI deployment',
@@ -72,12 +72,13 @@ export const SOLUTIONS = [
     price: 'Custom pricing',
     color: '#10b981',
     gradient: 'linear-gradient(90deg,#10b981,#3ed9a4)',
+    href: '/ai-employees',
   },
   {
     num: '05',
     tags: 'NEXT.JS · WORDPRESS · CUSTOM',
     title: 'Web Design & Development',
-    desc: 'High-converting websites built on Next.js, WordPress, or fully custom code. Optimized for speed, SEO, and mobile — designed to turn visitors into customers.',
+    desc: 'High-converting websites built on Next.js, WordPress, or fully custom code. Optimized for speed, SEO, and mobile, designed to turn visitors into customers.',
     features: [
       'Custom design & UI/UX',
       'WordPress builds',
@@ -86,16 +87,16 @@ export const SOLUTIONS = [
       'SEO-ready architecture',
       'CRO & analytics setup',
     ],
-    price: '$3,000 – $15,000+',
+    price: 'Custom pricing',
     color: '#7c5cff',
     gradient: 'linear-gradient(90deg,#7c5cff,#a07cff)',
-    portfolioHref: '/web-development',
+    href: '/web-development',
   },
   {
     num: '06',
     tags: 'SAP · BEARINGPOINT · JAGGAER · SALESFORCE',
     title: 'ERP Services',
-    desc: 'End-to-end SAP implementation and support — from Finance, Procurement, Production, HR, and Sales to Business Analytics. As KSA’s leading SAP service provider and a BearingPoint partner, we tailor solutions that drive measurable success.',
+    desc: 'End-to-end SAP implementation and support, from Finance, Procurement, Production, HR, and Sales to Business Analytics. As KSA’s leading SAP service provider and a BearingPoint partner, we tailor solutions that drive measurable success.',
     features: [
       'SAP implementation & support',
       'Finance, Procurement & HR modules',
@@ -107,5 +108,24 @@ export const SOLUTIONS = [
     price: 'Custom pricing',
     color: '#EE4646',
     gradient: 'linear-gradient(90deg,#EE4646,#ff8080)',
+    href: '/erp-development',
+  },
+  {
+    num: '07',
+    tags: 'CORPORATE FILMS · AI PRESENTERS · SOCIAL',
+    title: 'AI Video Production',
+    desc: 'AI-produced corporate intros, presentations, explainers and scroll-stopping social videos. Polished, on-brand and delivered fast, in both Arabic and English.',
+    features: [
+      'Corporate intro & brand films',
+      'Presentation & explainer videos',
+      'AI presenters & spokespeople',
+      'Product & character videos',
+      'Social & ad creatives',
+      'Multilingual voiceovers (AR & EN)',
+    ],
+    price: 'Custom pricing',
+    color: '#ff4d9d',
+    gradient: 'linear-gradient(90deg,#ff4d9d,#ff7ab8)',
+    href: '/ai-video',
   },
 ];

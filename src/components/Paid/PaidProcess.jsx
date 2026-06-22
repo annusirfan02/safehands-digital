@@ -10,8 +10,8 @@ const Trend = () => (<svg {...ic}><path d="M3 17l6-6 4 4 8-8" /><path d="M17 7h4
 
 const STEPS = [
   { c: '#2bb0e0', Icon: Search, num: 'STEP 01', title: 'Research & Mapping', desc: 'We audit your competitors, study what creative is winning in your category right now, and map the full funnel before a single dollar is spent.' },
-  { c: '#a855f7', Icon: Video, num: 'STEP 02', title: 'UGC Creative Production', desc: 'Hook-first scripts, UGC-style shoots, and platform-native editing. We make ads that feel organic — because those convert 3× better than polished brand spots.' },
-  { c: '#8fce3f', Icon: Bolt, num: 'STEP 03', title: 'Launch & A/B Test', desc: 'Multi-variant launches from day one. We test audiences, hooks, visuals, and CTAs simultaneously — letting data pick winners within the first 72 hours.' },
+  { c: '#a855f7', Icon: Video, num: 'STEP 02', title: 'UGC Creative Production', desc: 'Hook-first scripts, UGC-style shoots, and platform-native editing. We make ads that feel organic, because those convert 3× better than polished brand spots.' },
+  { c: '#8fce3f', Icon: Bolt, num: 'STEP 03', title: 'Launch & A/B Test', desc: 'Multi-variant launches from day one. We test audiences, hooks, visuals, and CTAs simultaneously, letting data pick winners within the first 72 hours.' },
   { c: '#2dd4bf', Icon: Trend, num: 'STEP 04', title: 'Optimize & Scale', desc: "We kill what doesn't work and pour budget into what does. Weekly reporting, ROAS-driven decisions, and continuous creative refresh to prevent ad fatigue." },
 ];
 

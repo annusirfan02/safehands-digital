@@ -11,7 +11,7 @@ gsap.registerPlugin(ScrollTrigger);
 const PILLARS = [
   {
     c: '#8fce3f', num: '01', title: 'Funnel Building',
-    desc: 'We map every post to a stage — awareness, engagement, or conversion. Content is engineered to move followers down the funnel, not just rack up views.',
+    desc: 'We map every post to a stage, awareness, engagement, or conversion. Content is engineered to move followers down the funnel, not just rack up views.',
     items: ['Top-of-funnel viral hooks', 'Mid-funnel educational carousels', 'Bottom-funnel DM-to-sale scripts', 'Story funnels with link-in-bio CTAs'],
   },
   {
@@ -21,12 +21,12 @@ const PILLARS = [
   },
   {
     c: '#2bb0e0', num: '03', title: 'UGC Creation',
-    desc: 'Authentic user-generated content outperforms polished ads. We produce and source UGC that feels real — and converts like crazy.',
+    desc: 'Authentic user-generated content outperforms polished ads. We produce and source UGC that feels real, and converts like crazy.',
     items: ['UGC video production', 'Creator casting & briefing', 'Raw-style product demos', 'Testimonial-format reels'],
   },
   {
     c: '#ff8c1e', num: '04', title: 'Influencer Collabs',
-    desc: 'We connect brands with vetted creators who actually move the needle — nano to macro, across every niche.',
+    desc: 'We connect brands with vetted creators who actually move the needle, nano to macro, across every niche.',
     items: ['Niche influencer sourcing', 'Campaign briefing & management', 'Event activations', 'Gifting & paid partnerships'],
   },
 ];

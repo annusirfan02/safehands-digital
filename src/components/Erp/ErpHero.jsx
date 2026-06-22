@@ -25,7 +25,7 @@ export default function ErpHero() {
         </h1>
 
         <p className={styles.subtitle}>
-          Enterprise solutions, custom software, and outsourcing — built to
+          Enterprise solutions, custom software, and outsourcing, built to
           streamline operations and unlock your full potential. Bespoke delivery
           for clients across Saudi Arabia &amp; APAC.
         </p>

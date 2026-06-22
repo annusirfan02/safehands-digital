@@ -32,13 +32,13 @@ export default function HeroHeader() {
         <div className={styles.left}>
           <span className={styles.kicker}>
             <i className={styles.kickerLine} />
-            MORNING RUSH IN KSA — IS YOUR BRAND VISIBLE RIGHT NOW?
+            MORNING RUSH IN KSA, IS YOUR BRAND VISIBLE RIGHT NOW?
           </span>
 
           <RotatingHeadline word={active.word} color={wordColor} />
 
           <p className={styles.subtitle}>
-            We don’t just do marketing — we redefine it.
+            We don’t just do marketing. We redefine it.
             <br />
             AI strategies. Licensed experts. Real results.
           </p>

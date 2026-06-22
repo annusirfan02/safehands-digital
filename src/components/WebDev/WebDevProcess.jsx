@@ -9,11 +9,11 @@ import styles from './WebDevProcess.module.css';
 gsap.registerPlugin(ScrollTrigger);
 
 const STEPS = [
-  { c: '#8fce3f', num: 'STEP 01', title: 'Design & Custom Elements', desc: 'We start with discovery — brand, audience, goals. Then our designers craft custom UI, animations, and visual elements tailored to your identity. No templates, no recycled layouts.', tags: ['BRAND DISCOVERY', 'WIREFRAMES', 'UI DESIGN', 'MOTION & MICRO-INTERACTIONS'] },
-  { c: '#a855f7', num: 'STEP 02', title: 'Web Functionality & Integrations', desc: 'Development phase — we build every feature, connect every tool. CRMs, payment systems, booking engines, AI assistants, APIs, databases. Everything that makes your site work.', tags: ['FRONTEND DEVELOPMENT', 'BACKEND & APIS', 'CRM / PAYMENT / BOOKING', 'AI & AUTOMATION'] },
-  { c: '#ff8c1e', num: 'STEP 03', title: 'SEO Foundation', desc: 'Before launch, we implement technical SEO: structured data, site speed optimization, meta strategy, sitemap, canonical tags, and content architecture — so you rank from day one.', tags: ['TECHNICAL SEO', 'SCHEMA MARKUP', 'CORE WEB VITALS', 'CONTENT STRUCTURE'] },
-  { c: '#2bb0e0', num: 'STEP 04', title: 'Build, QA & Launch', desc: 'We test across devices, browsers, and connection speeds. Then we launch — with staging environments, DNS migrations handled, and zero downtime for live sites.', tags: ['CROSS-DEVICE QA', 'PERFORMANCE TESTING', 'STAGING DEPLOYMENT', 'GO-LIVE SUPPORT'] },
-  { c: '#10b981', num: 'STEP 05', title: 'Maintenance & Growth', desc: 'After launch we stay with you — monthly updates, security patches, analytics reviews, A/B testing, new feature builds. Your site gets better over time, not worse.', tags: ['MONTHLY MAINTENANCE', 'SECURITY UPDATES', 'ANALYTICS & REPORTING', 'NEW FEATURES'] },
+  { c: '#8fce3f', num: 'STEP 01', title: 'Design & Custom Elements', desc: 'We start with discovery, brand, audience, goals. Then our designers craft custom UI, animations, and visual elements tailored to your identity. No templates, no recycled layouts.', tags: ['BRAND DISCOVERY', 'WIREFRAMES', 'UI DESIGN', 'MOTION & MICRO-INTERACTIONS'] },
+  { c: '#a855f7', num: 'STEP 02', title: 'Web Functionality & Integrations', desc: 'Development phase, we build every feature, connect every tool. CRMs, payment systems, booking engines, AI assistants, APIs, databases. Everything that makes your site work.', tags: ['FRONTEND DEVELOPMENT', 'BACKEND & APIS', 'CRM / PAYMENT / BOOKING', 'AI & AUTOMATION'] },
+  { c: '#ff8c1e', num: 'STEP 03', title: 'SEO Foundation', desc: 'Before launch, we implement technical SEO: structured data, site speed optimization, meta strategy, sitemap, canonical tags, and content architecture, so you rank from day one.', tags: ['TECHNICAL SEO', 'SCHEMA MARKUP', 'CORE WEB VITALS', 'CONTENT STRUCTURE'] },
+  { c: '#2bb0e0', num: 'STEP 04', title: 'Build, QA & Launch', desc: 'We test across devices, browsers, and connection speeds. Then we launch, with staging environments, DNS migrations handled, and zero downtime for live sites.', tags: ['CROSS-DEVICE QA', 'PERFORMANCE TESTING', 'STAGING DEPLOYMENT', 'GO-LIVE SUPPORT'] },
+  { c: '#10b981', num: 'STEP 05', title: 'Maintenance & Growth', desc: 'After launch we stay with you, monthly updates, security patches, analytics reviews, A/B testing, new feature builds. Your site gets better over time, not worse.', tags: ['MONTHLY MAINTENANCE', 'SECURITY UPDATES', 'ANALYTICS & REPORTING', 'NEW FEATURES'] },
 ];
 
 export default function WebDevProcess() {
@@ -23,7 +23,7 @@ export default function WebDevProcess() {
   const rocketRef = useRef(null);
 
   useGSAP(() => {
-    // Rocket + line are scrubbed to scroll (with a little smoothing) — they only
+    // Rocket + line are scrubbed to scroll (with a little smoothing) - they only
     // move while you scroll, stop when you stop, and reverse when you scroll up.
     const tl = gsap.timeline({
       scrollTrigger: {

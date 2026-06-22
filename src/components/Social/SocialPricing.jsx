@@ -4,17 +4,17 @@ import styles from './SocialPricing.module.css';
 
 const PLANS = [
   {
-    c: '#a855f7', label: 'STARTER', price: '$2,500', per: '/month', badge: null, featured: false,
+    c: '#a855f7', label: 'STARTER', price: 'Custom pricing', per: '', badge: null, featured: false,
     features: ['Instagram + TikTok', '15 videos/month', 'Scripts & hooks', 'Full video production', 'Professional editing'],
     note: 'No posting · No UGC',
   },
   {
-    c: '#8fce3f', label: 'GROWTH', price: '$3,500', per: '/month', badge: 'MOST POPULAR', featured: true,
+    c: '#8fce3f', label: 'GROWTH', price: 'Custom pricing', per: '', badge: 'MOST POPULAR', featured: true,
     features: ['Everything in Starter', 'Content posting & scheduling', 'DM automations', 'Community management', 'Likes, comments & engagement'],
     note: null,
   },
   {
-    c: '#ff8c1e', label: 'FULL SCALE', price: '$5,500', per: '/month', badge: 'BEST VALUE', featured: false,
+    c: '#ff8c1e', label: 'FULL SCALE', price: 'Custom pricing', per: '', badge: 'BEST VALUE', featured: false,
     features: ['Everything in Growth', '5-7 UGC videos/month', 'Creator casting & briefing', 'YouTube Shorts & LinkedIn', 'Multiple creators & formats', 'Influencer-grade content', 'Priority turnaround'],
     note: null,
   },

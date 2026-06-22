@@ -1,7 +1,7 @@
 const REVENUE = ['$10K/mo', '$50K/mo', '$100K/mo', '$500K/mo', '$1M+/mo'];
 
 // Smart fallback used when no ANTHROPIC_API_KEY is configured.
-// Plain, everyday language — and it uses every answer the customer gave.
+// Plain, everyday language - and it uses every answer the customer gave.
 function template(d) {
   const ind = (d.industry || 'your').toString().toLowerCase();
   const rev = REVENUE[d.revenueIdx] ?? '$100K/mo';
@@ -13,12 +13,12 @@ function template(d) {
   const chText = ch.length ? ch.slice(0, 2).join(' and ').toLowerCase() : 'getting found online';
 
   return [
-    `First, we'll build ${name} a fast, clean website made for ${ind} customers. It will load quickly and make it easy for people to buy — so you're set up to reach ${rev}.`,
+    `First, we'll build ${name} a fast, clean website made for ${ind} customers. It will load quickly and make it easy for people to buy, so you're set up to reach ${rev}.`,
     hasTraffic
       ? `Next, we'll get more of the right people to see ${name}. We'll run simple social posts and ads that speak to your ${ind} audience, so more visitors come in every week.`
       : `Next, we'll turn more of your visitors into buyers. We'll fix the spots where people drop off and add easy steps that guide them to checkout.`,
     hasConv
-      ? `Finally, we'll add an AI assistant that answers questions and books calls for you 24/7. It handles ${chText} so you stop chasing leads — and we aim to get there in ${tl}.`
+      ? `Finally, we'll add an AI assistant that answers questions and books calls for you 24/7. It handles ${chText} so you stop chasing leads, and we aim to get there in ${tl}.`
       : `Finally, we'll set up an AI assistant and automatic follow-ups that reply to every lead day and night. This tackles ${chText}, with a plan to reach your goal in ${tl}.`,
   ];
 }

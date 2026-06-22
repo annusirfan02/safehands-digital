@@ -3,7 +3,7 @@
 import styles from './ContactMascot.module.css';
 
 /**
- * Friendly helmeted mascot for the Contact hero — glowing, on-brand.
+ * Friendly helmeted mascot for the Contact hero - glowing, on-brand.
  */
 export default function ContactMascot() {
   return (

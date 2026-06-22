@@ -108,7 +108,7 @@ export default function VoiceCall({ open, onClose }) {
 
         {!supported && (
           <p className={styles.warn}>
-            Voice input needs Chrome or Edge — Maya can still speak to you here.
+            Voice input needs Chrome or Edge. Maya can still speak to you here.
           </p>
         )}
 
