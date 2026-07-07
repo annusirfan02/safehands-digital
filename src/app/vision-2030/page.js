@@ -1,12 +1,14 @@
+import { pageMeta } from '@/lib/site';
 import VisionHero from '@/components/Vision/VisionHero';
 import VisionContent from '@/components/Vision/VisionContent';
 import CtaBuild from '@/components/CtaBuild';
 import Footer from '@/components/Footer';
 
-export const metadata = {
-  title: 'Vision 2030 Alignment, Safe Hands Digital',
-  description: 'How SafeHands, a local Saudi company, aligns with Saudi Vision 2030, powering digital transformation through the National Transformation Program and the localization of work.',
-};
+export const metadata = pageMeta({
+  title: 'Saudi Vision 2030 Digital Alignment',
+  description: 'How Safe Hands Digital, a local Saudi company, powers digital transformation aligned with Saudi Vision 2030 and the localization of work.',
+  path: '/vision-2030',
+});
 
 export default function Vision2030Page() {
   return (

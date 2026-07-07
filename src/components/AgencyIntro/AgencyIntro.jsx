@@ -27,9 +27,10 @@ export default function AgencyIntro() {
           {/* Right - description + actions */}
           <div className={styles.side}>
             <p className={styles.lead}>
-              We&rsquo;re a forward-thinking marketing agency blending creativity
-              with the power of AI. From SEO and paid advertising to viral social
-              media and custom AI assistants.
+              We&rsquo;re a forward-thinking digital marketing agency in Riyadh,
+              Saudi Arabia, blending creativity with the power of AI. From SEO and
+              paid advertising to viral social media and custom AI assistants, we
+              help brands across the Kingdom grow.
             </p>
 
             <div className={styles.actions}>

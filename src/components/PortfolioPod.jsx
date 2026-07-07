@@ -1,6 +1,7 @@
 'use client';
 
 import { useEffect, useRef, useState, useCallback } from 'react';
+import { useRouter } from 'next/navigation';
 import { useGSAP } from '@gsap/react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
@@ -12,8 +13,9 @@ gsap.registerPlugin(ScrollTrigger);
 // ─── Service Data ─────────────────────────────────────────────────────────────
 const SERVICES = [
   {
-    name: 'WEB DESIGN',
+    name: 'WEB DEVELOPMENT',
     code: 'UPD-001',
+    href: '/web-development',
     colors: {
       main: '#6378ff',
       glow: 'rgba(99,120,255,0.35)',
@@ -25,6 +27,7 @@ const SERVICES = [
   {
     name: 'SOCIAL MEDIA',
     code: 'UPD-002',
+    href: '/social-media',
     colors: {
       main: '#ff5078',
       glow: 'rgba(255,80,120,0.35)',
@@ -36,6 +39,7 @@ const SERVICES = [
   {
     name: 'PAID ADS',
     code: 'UPD-003',
+    href: '/paid-ads',
     colors: {
       main: '#ff8c1e',
       glow: 'rgba(255,140,30,0.35)',
@@ -47,6 +51,7 @@ const SERVICES = [
   {
     name: 'AI & CHATBOTS',
     code: 'UPD-004',
+    href: '/ai-employees',
     colors: {
       main: '#00c8c8',
       glow: 'rgba(0,200,200,0.35)',
@@ -58,6 +63,7 @@ const SERVICES = [
   {
     name: 'ERP SERVICES',
     code: 'UPD-005',
+    href: '/erp-development',
     colors: {
       main: '#BFFE03',
       glow: 'rgba(191, 254, 3,0.35)',
@@ -281,6 +287,7 @@ function usePlanetScene(mountRef) {
 
 // ─── Main Component ───────────────────────────────────────────────────────────
 export default function PortfolioPod() {
+  const router = useRouter();
   const sectionRef      = useRef(null);
   const podRef          = useRef(null);
   const podContainerRef = useRef(null);
@@ -346,6 +353,8 @@ export default function PortfolioPod() {
     gsap.to(labelRef.current, {
       opacity: 0, y: -8, duration: 0.16, ease: 'power2.in',
       onComplete: () => {
+        // The component may have unmounted (e.g. navigated away) before this fires.
+        if (!labelRef.current) return;
         labelRef.current.textContent = SERVICES[idx].name;
         gsap.to(labelRef.current, { opacity: 1, y: 0, duration: 0.26, ease: 'power3.out' });
       },
@@ -471,10 +480,10 @@ export default function PortfolioPod() {
 
       {/* Headline */}
       <div ref={headlineRef} className={styles.headline}>
-        <h1 className={styles.h1}>
+        <h2 className={styles.h1}>
           <span className="word">CHECK</span>{' '}
           <span className="word">OUT</span>
-        </h1>
+        </h2>
         <h2 className={styles.h2}>
           <span className="word">OUR</span>{' '}
           <span className="word">WORK.</span>
@@ -563,7 +572,8 @@ export default function PortfolioPod() {
                 ref={(el) => (serviceItemsRef.current[i] = el)}
                 className={`${styles.serviceItem} ${activeService === i ? styles.serviceItemActive : ''}`}
                 style={{ '--item-glow': svc.colors.glow }}
-                onClick={() => selectService(i)}
+                onMouseEnter={() => selectService(i)}
+                onClick={() => router.push(svc.href)}
               >
                 <div
                   className={styles.svcIcon}

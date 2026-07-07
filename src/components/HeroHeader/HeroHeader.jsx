@@ -38,7 +38,8 @@ export default function HeroHeader() {
           <RotatingHeadline word={active.word} color={wordColor} />
 
           <p className={styles.subtitle}>
-            We don’t just do marketing. We redefine it.
+            We don’t just do marketing. We redefine it — an AI-first digital
+            marketing agency in Riyadh, Saudi Arabia.
             <br />
             AI strategies. Licensed experts. Real results.
           </p>

@@ -88,6 +88,13 @@
   box-shadow: 0 0 14px #BFFE03;
 }
 
+/* Theme-aware footer logo (mirrors the navbar). Dark theme is default. */
+.logoImg { height: 40px; width: auto; display: block; }
+.logoLight { display: none; }
+.logoDark { display: block; }
+:global([data-theme='light']) .logoLight { display: block; }
+:global([data-theme='light']) .logoDark { display: none; }
+
 .tagline {
   margin-top: 18px;
   max-width: 380px;

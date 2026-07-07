@@ -23,9 +23,10 @@ export default function PaidHero() {
         </h1>
 
         <p className={styles.subtitle}>
-          Meta, TikTok &amp; Google campaigns built on UGC-first creative, AI
-          optimization, and full-funnel strategy. We don&rsquo;t just run ads -
-          we build revenue machines.
+          A paid ads agency in Riyadh running Meta, TikTok &amp; Google campaigns
+          built on UGC-first creative, AI optimization, and full-funnel strategy.
+          We don&rsquo;t just run ads - we build revenue machines for brands across
+          Saudi Arabia.
         </p>
       </div>
     </section>

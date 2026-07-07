@@ -17,6 +17,7 @@ export default function ContactForm() {
   // ── Form ──
   const [picked, setPicked] = useState([]);
   const [sent, setSent] = useState(false);
+  const [name, setName] = useState('');
   const toggle = (s) => setPicked((p) => (p.includes(s) ? p.filter((x) => x !== s) : [...p, s]));
 
   // ── Chat ──
@@ -47,11 +48,32 @@ export default function ContactForm() {
             <span className={styles.script}>Project.</span>
           </h2>
 
+          {sent ? (
+            <div className={styles.card}>
+              <div className={styles.success}>
+                <div className={styles.successIcon}>
+                  <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.6" strokeLinecap="round" strokeLinejoin="round">
+                    <path d="M20 6L9 17l-5-5" />
+                  </svg>
+                </div>
+                <h3 className={styles.successTitle}>
+                  Thank you{name.trim() ? `, ${name.trim().split(' ')[0]}` : ''}!
+                </h3>
+                <p className={styles.successText}>
+                  Your message is on its way to our team. We&rsquo;ll get back to you very soon,
+                  usually within the hour.
+                </p>
+                <button type="button" className={styles.successBtn} onClick={() => { setSent(false); setName(''); setPicked([]); }}>
+                  Send another message
+                </button>
+              </div>
+            </div>
+          ) : (
           <form className={styles.card} onSubmit={(e) => { e.preventDefault(); setSent(true); }}>
             <div className={styles.row}>
               <label className={styles.field}>
                 <span className={styles.label}>YOUR NAME *</span>
-                <input className={styles.input} placeholder="Maria Gorn" required />
+                <input className={styles.input} placeholder="Maria Gorn" value={name} onChange={(e) => setName(e.target.value)} required />
               </label>
               <label className={styles.field}>
                 <span className={styles.label}>EMAIL *</span>
@@ -84,10 +106,11 @@ export default function ContactForm() {
             </label>
 
             <button type="submit" className={styles.submit}>
-              {sent ? 'THANKS, WE’LL BE IN TOUCH ✓' : <>SEND MESSAGE <span>→</span></>}
+              SEND MESSAGE <span>→</span>
             </button>
             <p className={styles.note}>We respond ASAP, usually within the hour.</p>
           </form>
+          )}
         </div>
 
         {/* ── Right: chat ── */}
@@ -135,11 +158,16 @@ export default function ContactForm() {
           </div>
 
           <div className={styles.contactBtns}>
-            <a href="#start" className={styles.textBtn}>
+            <a
+              href="https://wa.me/966552762034?text=Hi%20Safe%20Hands%20Digital%2C%20I%27d%20like%20to%20talk%20about%20a%20project."
+              target="_blank"
+              rel="noopener noreferrer"
+              className={styles.textBtn}
+            >
               <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M21 11.5a8.4 8.4 0 0 1-11.9 7.6L3 21l1.9-6.1A8.4 8.4 0 1 1 21 11.5z" /></svg>
               TEXT US
             </a>
-            <a href="#start" className={styles.callBtn}>
+            <a href="tel:+966552762034" className={styles.callBtn}>
               <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3-8.6A2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z" /></svg>
               CALL US
             </a>

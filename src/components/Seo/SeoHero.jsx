@@ -39,8 +39,9 @@ export default function SeoHero() {
         </h1>
 
         <p className={styles.subtitle}>
-          Traditional SEO foundations plus AI search optimization, so your brand ranks
-          on Google and gets cited by ChatGPT, Perplexity, and Google&rsquo;s AI Overviews.
+          As an SEO agency in Riyadh, we combine traditional SEO foundations with AI
+          search optimization, so your brand ranks on Google and gets cited by ChatGPT,
+          Perplexity, and Google&rsquo;s AI Overviews across Saudi Arabia.
         </p>
 
         <div className={styles.tags}>

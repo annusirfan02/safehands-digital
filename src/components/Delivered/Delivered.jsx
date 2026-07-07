@@ -1,6 +1,11 @@
 'use client';
 
+import { playTone } from '@/lib/sound';
 import styles from './Delivered.module.css';
+
+// Short, bright blip on hover. Silent until the first user gesture (browser rule).
+const hoverSound = () =>
+  playTone({ type: 'sine', from: 500, to: 760, rampRatio: 0.5, dur: 0.18, gainPeak: 0.05, attack: 0.01 });
 
 // Fanned result cards. r = rotation, y = vertical offset (arc), z = stack order.
 const RESULTS = [
@@ -29,6 +34,7 @@ export default function Delivered() {
             key={i}
             className={`${styles.card} ${styles[c.variant]}`}
             style={{ '--r': `${c.r}deg`, '--y': `${c.y}px`, zIndex: c.z }}
+            onMouseEnter={hoverSound}
           >
             <span className={styles.tag}>{c.tag}</span>
             <div className={styles.body}>

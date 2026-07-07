@@ -25,9 +25,9 @@ export default function AiVideoHero() {
         </h1>
 
         <p className={styles.subtitle}>
-          Corporate intros, presentations, explainers and scroll-stopping social
-          videos, produced with AI. Polished, on-brand and ready in a fraction of
-          the time, in both Arabic and English.
+          AI video production in Saudi Arabia — corporate intros, presentations,
+          explainers and scroll-stopping social videos. Polished, on-brand and ready
+          in a fraction of the time, in both Arabic and English.
         </p>
 
         <div className={styles.tags}>

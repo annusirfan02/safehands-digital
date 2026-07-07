@@ -23,7 +23,8 @@ export default function SocialHero() {
         </h1>
 
         <p className={styles.subtitle}>
-          Viral reels, UGC, influencer collabs, and full-funnel Instagram strategy,
+          Social media marketing that works — viral reels, UGC, influencer collabs,
+          and full-funnel Instagram &amp; TikTok strategy for brands in Saudi Arabia,
           built by a team that grew a creator from 4K to 427K followers.
         </p>
 
