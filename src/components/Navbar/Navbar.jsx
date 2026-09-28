@@ -16,8 +16,16 @@ const LINKS = [
     { href: '/erp-development', label: 'ERP Services & Development' },
     { href: '/ai-video', label: 'AI Video Production' },
   ] },
+  { label: 'Engineering Services', children: [
+    { href: '/mep-engineering', label: 'MEP Engineering Services' },
+    { href: '/operations-maintenance', label: 'General Mechanical Operation & Maintenance (O&M)' },
+    { href: '/sp-ice-tes', label: 'sp.ICE TES' },
+  ] },
   { href: '/solutions', label: 'Solutions' },
   { href: '/ai-employees', label: 'AI Employees' },
+  // { href: '/mep-engineering', label: 'Engineering' },
+  // { href: '/operations-maintenance', label: 'O&M' },
+  // { href: '/sp-ice-tes', label: 'sp.ICE TES' },
   { href: '/vision-2030', label: 'Vision 2030' },
   { href: '/contact', label: 'Contact' },
 ];

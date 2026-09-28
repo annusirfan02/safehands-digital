@@ -408,7 +408,11 @@
   /* Same height as the planet viewport so the box never resizes */
   height: 290px;
   box-sizing: border-box;
-  overflow: hidden;
+  /* More services than fit: scroll inside the pod instead of resizing it */
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(128, 128, 128, 0.35) transparent;
 }
 
 .listHeader {
@@ -446,8 +450,7 @@
   cursor: pointer;
   position: relative;
   overflow: hidden;
-  flex: 1;
-  min-height: 0;
+  flex: 0 0 auto;
   will-change: opacity, transform;
   transition: border-color 0.22s ease, background 0.22s ease;
 }

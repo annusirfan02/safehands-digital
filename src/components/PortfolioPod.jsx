@@ -72,6 +72,42 @@ const SERVICES = [
     },
     planetColors: ['#5acc00', '#BFFE03', '#aaff70', '#3a8800', '#206000', '#d0ff90', '#70dd20'],
   },
+  {
+    name: 'MEP ENGINEERING',
+    code: 'UPD-006',
+    href: '/mep-engineering',
+    colors: {
+      main: '#a878ff',
+      glow: 'rgba(168,120,255,0.35)',
+      iconBg: 'rgba(168,120,255,0.15)',
+      indicator: '#a878ff',
+    },
+    planetColors: ['#6a3fcc', '#a878ff', '#c8a8ff', '#402080', '#281460', '#e4d4ff', '#8a5aee'],
+  },
+  {
+    name: 'O&M SERVICES',
+    code: 'UPD-007',
+    href: '/operations-maintenance',
+    colors: {
+      main: '#f5c518',
+      glow: 'rgba(245,197,24,0.35)',
+      iconBg: 'rgba(245,197,24,0.15)',
+      indicator: '#f5c518',
+    },
+    planetColors: ['#b88a00', '#f5c518', '#ffd95a', '#806000', '#5a4300', '#ffeaa0', '#e0b010'],
+  },
+  {
+    name: 'SP.ICE TES',
+    code: 'UPD-008',
+    href: '/sp-ice-tes',
+    colors: {
+      main: '#4fcdee',
+      glow: 'rgba(79,205,238,0.35)',
+      iconBg: 'rgba(79,205,238,0.15)',
+      indicator: '#4fcdee',
+    },
+    planetColors: ['#1f8fb0', '#4fcdee', '#8ae0f5', '#0e5a70', '#083c4a', '#c8f2fc', '#30b4d8'],
+  },
 ];
 
 // ─── Clean monochrome line icons (inherit currentColor) ──────────────────────
@@ -123,6 +159,24 @@ const SERVICE_ICONS = [
     <svg key="brand" {...iconProps}>
       <circle cx="12" cy="9" r="5" />
       <path d="M9 13.5L7.8 21 12 18.8 16.2 21 15 13.5" />
+    </svg>
+  ),
+  // MEP ENGINEERING - duct / pipework
+  (
+    <svg key="mep" {...iconProps}>
+      <path d="M3 8h10a3 3 0 1 0-3-3M3 12h15a3 3 0 1 1-3 3M3 16h7" />
+    </svg>
+  ),
+  // O&M SERVICES - wrench
+  (
+    <svg key="om" {...iconProps}>
+      <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z" />
+    </svg>
+  ),
+  // SP.ICE TES - snowflake
+  (
+    <svg key="spice" {...iconProps}>
+      <path d="M12 3v18M4.2 7.5l15.6 9M4.2 16.5l15.6-9M9.5 4.5L12 7l2.5-2.5M9.5 19.5L12 17l2.5 2.5" />
     </svg>
   ),
 ];
@@ -475,7 +529,7 @@ export default function PortfolioPod() {
       {/* Badge */}
       <div ref={badgeRef} className={styles.badge}>
         <span className={styles.badgeDot} />
-        OUR PORTFOLIO · 5 SERVICES
+        OUR PORTFOLIO · {SERVICES.length} SERVICES
       </div>
 
       {/* Headline */}
@@ -492,7 +546,7 @@ export default function PortfolioPod() {
 
       {/* Subtitle */}
       <p ref={subtitleRef} className={styles.subtitle}>
-        Open the pod to explore 5 service portfolios, or click anywhere to dive into the full case study library.
+        Open the pod to explore {SERVICES.length} service portfolios, or click anywhere to dive into the full case study library.
       </p>
 
       {/* Pod wrapper */}
@@ -562,7 +616,7 @@ export default function PortfolioPod() {
           {/* Service list */}
           <div ref={serviceListRef} className={styles.serviceList} style={{ display: 'none' }}>
             <div className={styles.listHeader}>
-              <span className={styles.listTitle}>/// PORTFOLIO · 5 ITEMS</span>
+              <span className={styles.listTitle}>/// PORTFOLIO · {SERVICES.length} ITEMS</span>
               <span className={styles.listReady}>READY</span>
             </div>
 
