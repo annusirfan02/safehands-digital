@@ -9,6 +9,21 @@ const WHY = [
   { icon: 'bolt', title: 'Solar PV Synchronization', text: 'Synchronize thermal storage with commercial rooftop solar networks and help manage changing solar production.' },
 ];
 
+const FEATURES = [
+  'Versatile Ice on Pipe Internal / External Melt design',
+  'Capillary tube technology for fastest freeze and melt rates',
+  'Space saving heat exchanger allows for large cooling capacity',
+  'Can be delivered tailormade for side assembly or as ready ‘plug and play’ container modules',
+  'Heavy Duty Containers fitted with insulating layer of rigid PIR foam and sealed with EPDM Layer',
+  'Sealed for Life (completely welded) heat exchanger allows for high operating pressure',
+];
+
+const CAPACITY = [
+  { size: '10′', kwh: '1,250 kWh' },
+  { size: '20′', kwh: '2,500 kWh' },
+  { size: '40′', kwh: '5,000 kWh' },
+];
+
 const FLOW = ['Cool night air', 'Chiller', 'sp.ICE modules', 'Thermal storage', 'Daytime peak', 'Building cooling loop'];
 
 const SECTORS = [
@@ -111,6 +126,58 @@ export default function SpIcePage() {
           <span className={styles.kicker}>Compact. Modular. Responsive.</span>
           <h2 className={styles.groupTitle}>Why sp.ICE</h2>
           <Cards items={WHY} />
+        </div>
+      </section>
+
+      {/* ── Featuring sp.ICE ── */}
+      <section className={styles.group}>
+        <div className={`${styles.container} ${styles.featGrid}`}>
+          <div className={styles.featMedia}>
+            <img
+              src="/spice/spice-module.jpg"
+              alt="sp.ICE Eisspeichertechnik ice storage heat exchanger module"
+              className={styles.featImgMain}
+              loading="lazy"
+            />
+            <div className={styles.featImgSub}>
+              <img
+                src="/spice/spice-container.jpg"
+                alt="sp.ICE container ice storage installation at Kältezentrale Europaplatz"
+                loading="lazy"
+              />
+            </div>
+          </div>
+
+          <div>
+            <span className={styles.kicker}>Featuring sp.ICE</span>
+            <h2 className={styles.h2}>Ultra-fast and powerful<br />ice storage system</h2>
+
+            <ul className={styles.featList}>
+              {FEATURES.map((f) => (
+                <li key={f} className={styles.featItem}>
+                  <span className={styles.featTick} aria-hidden="true">
+                    <svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5" /></svg>
+                  </span>
+                  {f}
+                </li>
+              ))}
+            </ul>
+
+            <span className={styles.featCapLabel}>Capacity of standard size containers</span>
+            <div className={styles.featCaps}>
+              {CAPACITY.map((c) => (
+                <div key={c.size} className={styles.featCap}>
+                  <strong className={styles.featCapSize}>{c.size}</strong>
+                  <span className={styles.featCapKwh}>{c.kwh}</span>
+                </div>
+              ))}
+            </div>
+
+            <div className={styles.featBadges}>
+              <span className={styles.featBadge}>Maintenance free</span>
+              <span className={styles.featBadge}>Made in Germany</span>
+            </div>
+          </div>
         </div>
       </section>
 

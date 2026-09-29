@@ -367,3 +367,83 @@
   .dynGrid { grid-template-columns: 1fr; }
   .dynCard { padding: 36px 28px 56px; }
 }
+
+/* ── sp.ICE: Featuring sp.ICE (images + spec list) ── */
+.featGrid { display: grid; grid-template-columns: 0.9fr 1fr; gap: 80px; align-items: center; }
+.featMedia { position: relative; padding: 0 18% 70px 0; }
+.featImgMain {
+  display: block;
+  width: 100%;
+  aspect-ratio: 3 / 4;
+  object-fit: cover;
+  object-position: right center; /* hides the white diagonal on the left of the photo */
+  border: 1px solid var(--line);
+}
+.featImgSub {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 52%;
+  aspect-ratio: 1 / 1;
+  overflow: hidden;
+  border: 6px solid var(--ink);
+  outline: 1px solid var(--line);
+  background: var(--ink);
+}
+.featImgSub img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transform: scale(1.06); /* trims the photo's rounded white corners */
+}
+.featList { display: grid; gap: 14px; margin: 34px 0 36px; list-style: none; }
+.featItem { display: flex; gap: 14px; font-size: 15px; line-height: 1.6; color: rgba(255, 255, 255, 0.72); }
+.featTick {
+  display: grid;
+  flex: 0 0 auto;
+  place-items: center;
+  width: 22px;
+  height: 22px;
+  margin-top: 1px;
+  border: 1px solid var(--line);
+  color: var(--lime);
+}
+.featCapLabel {
+  display: block;
+  margin-bottom: 12px;
+  font-family: 'Space Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.45);
+}
+.featCaps { display: grid; grid-template-columns: repeat(3, 1fr); border: 1px solid var(--line); background: var(--panel); }
+.featCap { display: flex; flex-direction: column; gap: 8px; padding: 22px 24px; border-right: 1px solid var(--line); }
+.featCap:last-child { border-right: 0; }
+.featCapSize { font-size: 34px; font-weight: 700; line-height: 1; color: var(--lime); }
+.featCapKwh { font-family: 'Space Mono', monospace; font-size: 12px; letter-spacing: 0.06em; color: rgba(255, 255, 255, 0.7); }
+.featBadges { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 24px; }
+.featBadge {
+  padding: 9px 16px;
+  border: 1px solid var(--lime);
+  border-radius: 999px;
+  font-family: 'Space Mono', monospace;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--lime);
+}
+:global([data-theme='light']) .featItem { color: rgba(16, 26, 61, 0.75); }
+:global([data-theme='light']) .featCapLabel { color: rgba(16, 26, 61, 0.5); }
+:global([data-theme='light']) .featCapKwh { color: rgba(16, 26, 61, 0.7); }
+@media (max-width: 1000px) {
+  .featGrid { grid-template-columns: 1fr; gap: 56px; }
+  .featMedia { max-width: 560px; }
+}
+@media (max-width: 800px) {
+  .featMedia { padding: 0 14% 50px 0; }
+  .featCap { padding: 18px 16px; }
+  .featCapSize { font-size: 26px; }
+}
