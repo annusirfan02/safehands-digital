@@ -376,7 +376,7 @@
   width: 100%;
   aspect-ratio: 3 / 4;
   object-fit: cover;
-  object-position: right center; /* hides the white diagonal on the left of the photo */
+  object-position: 85% center; /* keeps the sp.ICE container in frame */
   border: 1px solid var(--line);
 }
 .featImgSub {

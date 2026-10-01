@@ -134,8 +134,8 @@ export default function SpIcePage() {
         <div className={`${styles.container} ${styles.featGrid}`}>
           <div className={styles.featMedia}>
             <img
-              src="/spice/spice-module.jpg"
-              alt="sp.ICE Eisspeichertechnik ice storage heat exchanger module"
+              src="/spice/spice-solar.jpg"
+              alt="sp.ICE ice storage container connected to a solar PV array"
               className={styles.featImgMain}
               loading="lazy"
             />
