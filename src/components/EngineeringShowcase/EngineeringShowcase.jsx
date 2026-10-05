@@ -32,13 +32,13 @@ export default function EngineeringShowcase() {
           <div>
             <span className={styles.label}>ENGINEERING SERVICES</span>
             <h2 className={styles.heading}>
-              Beyond digital.<br />
-              <span className={styles.outline}>Built for the Kingdom.</span>
+              Engineered for real-world performance.
+              <span className={styles.outline}>Built for complex facilities.</span>
             </h2>
           </div>
           <p className={styles.helper}>
-            Safe Hands Engineering delivers MEP infrastructure and thermal energy storage for
-            high-ambient, mission-critical facilities across Saudi Arabia.
+            Integrated MEP engineering and infrastructure solutions, engineered and delivered for
+            complex, high-performance facilities across Saudi Arabia.
           </p>
         </div>
 
