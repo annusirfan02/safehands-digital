@@ -5,6 +5,7 @@ import AgencyIntro from '@/components/AgencyIntro';
 import StatsBar from '@/components/StatsBar';
 import ExdTransformation from '@/components/ExdTransformation';
 import Services from '@/components/Services';
+import EngineeringShowcase from '@/components/EngineeringShowcase';
 import PortfolioPod from '@/components/PortfolioPod';
 import Delivered from '@/components/Delivered';
 import LaunchSequence from '@/components/LaunchSequence';
@@ -40,6 +41,8 @@ export default function Home() {
       <ExdTransformation />
 
       <Services />
+
+      <EngineeringShowcase />
 
       <div id="portfolio">
         <PortfolioPod />
