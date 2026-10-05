@@ -36,13 +36,13 @@ export default function Home() {
 
       <AgencyIntro />
 
+      <EngineeringShowcase />
+
       <StatsBar />
 
       <ExdTransformation />
 
       <Services />
-
-      <EngineeringShowcase />
 
       <div id="portfolio">
         <PortfolioPod />
