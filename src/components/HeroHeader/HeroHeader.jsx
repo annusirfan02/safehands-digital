@@ -32,16 +32,23 @@ export default function HeroHeader() {
         <div className={styles.left}>
           <span className={styles.kicker}>
             <i className={styles.kickerLine} />
-            MORNING RUSH IN KSA, IS YOUR BRAND VISIBLE RIGHT NOW?
+            ENGINEERING &amp; AI SOLUTIONS
           </span>
 
-          <RotatingHeadline word={active.word} color={wordColor} />
+          <RotatingHeadline
+            word={active.word}
+            color={wordColor}
+            top="WE&nbsp;BUILD"
+            bottom={['SYSTEMS THAT', 'MOVE BUSINESS.']}
+          />
+          <p className={styles.headOutline}>
+            Engineered for performance.<br />Built for growth.
+          </p>
 
           <p className={styles.subtitle}>
-            We don’t just do marketing. We redefine it — an AI-first digital
-            marketing agency in Riyadh, Saudi Arabia.
-            <br />
-            AI strategies. Licensed experts. Real results.
+            From physical engineering infrastructure to intelligent AI and business
+            systems, Safe Hands builds practical solutions that help organizations
+            operate smarter, perform better, and scale with confidence.
           </p>
 
           <div className={styles.actions}>

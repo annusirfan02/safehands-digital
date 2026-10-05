@@ -166,3 +166,20 @@
 @media (max-width: 767px) {
   .right { display: none; }
 }
+
+/* ── Outline tagline under the rotating headline ── */
+.headOutline {
+  margin-top: 18px;
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: clamp(20px, 2.6vw, 36px);
+  font-weight: 700;
+  line-height: 1.05;
+  text-transform: uppercase;
+  color: transparent;
+  -webkit-text-stroke: 1.1px rgba(255, 255, 255, 0.55);
+  text-stroke: 1.1px rgba(255, 255, 255, 0.55);
+}
+:global([data-theme='light']) .headOutline {
+  -webkit-text-stroke: 1.1px rgba(16, 26, 61, 0.5);
+  text-stroke: 1.1px rgba(16, 26, 61, 0.5);
+}
