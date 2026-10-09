@@ -1,6 +1,6 @@
 'use client';
 
-import WalkingDog from './WalkingDog';
+// import WalkingDog from './WalkingDog'; // hidden, see below
 import styles from './AgencyIntro.module.css';
 
 /**
@@ -14,35 +14,37 @@ export default function AgencyIntro() {
         <div className={styles.top}>
           {/* Left - copy */}
           <div className={styles.copy}>
-            <span className={styles.kicker}>MORE THAN AN AGENCY</span>
+            <span className={styles.kicker}>TWO DISCIPLINES · ONE PARTNER</span>
 
             <h2 className={styles.heading}>
               <span className={styles.solid}>WE ARE YOUR</span>
               <span className={styles.accent}>IN-HOUSE</span>
-              <span className={styles.outline}>MARKETING</span>
-              <span className={styles.outline}>TEAM<span className={styles.dot}>.</span></span>
+              <span className={styles.outline}>ENGINEERING</span>
+              <span className={styles.outline}>&amp; AI TEAM<span className={styles.dot}>.</span></span>
             </h2>
           </div>
 
           {/* Right - description + actions */}
           <div className={styles.side}>
             <p className={styles.lead}>
-              We&rsquo;re a forward-thinking digital marketing agency in Riyadh,
-              Saudi Arabia, blending creativity with the power of AI. From SEO and
-              paid advertising to viral social media and custom AI assistants, we
-              help brands across the Kingdom grow.
+              We&rsquo;re a Riyadh-based engineering and AI automation company. We
+              design, build and maintain the MEP, cooling and thermal-storage
+              infrastructure behind high-performance facilities, and we build custom
+              AI automation systems that take repetitive work off your team, like
+              turning 100 daily emails into the few that matter, sorted, with replies
+              ready.
             </p>
 
             <div className={styles.actions}>
               <a href="#services" className={styles.ctaPrimary}>OUR SERVICES</a>
-              <a href="#maya" className={styles.ctaLink}>MEET THE TEAM</a>
+              <a href="/contact" className={styles.ctaLink}>TALK TO THE TEAM</a>
             </div>
           </div>
         </div>
       </div>
 
-      {/* Dog walks corner-to-corner across the full screen width */}
-      <WalkingDog />
+      {/* Hidden: walking dog ("WOOF! WORK WITH US"). Uncomment to bring it back. */}
+      {/* <WalkingDog /> */}
     </section>
   );
 }

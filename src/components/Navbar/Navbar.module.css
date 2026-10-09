@@ -81,6 +81,34 @@
 .dropItem:hover { background: rgba(255, 255, 255, 0.07); color: #fff; }
 .dropActive { color: #BFFE03; }
 
+/* ── Nested sub-dropdown (flyout to the right) ── */
+.subDropdown { position: relative; }
+.subToggle {
+  display: flex; align-items: center; justify-content: space-between; gap: 12px;
+  width: 100%; font-family: inherit; text-align: left;
+  background: none; border: none; cursor: pointer;
+}
+.subChev { font-size: 10px; opacity: 0.7; transition: transform 0.2s ease; }
+.subMenu {
+  position: absolute; top: -8px; left: 100%; margin-left: 10px;
+  width: 300px; padding: 8px;
+  background: rgba(10, 12, 16, 0.96);
+  backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px);
+  border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 14px;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+  opacity: 0; visibility: hidden; transform: translateX(-6px);
+  transition: opacity 0.2s ease, transform 0.2s ease, visibility 0.2s;
+}
+/* invisible bridge across the gap between the two menus */
+.subMenu::before { content: ''; position: absolute; top: 0; bottom: 0; left: -12px; width: 12px; }
+.subDropdown:hover .subMenu, .subDropdown:focus-within .subMenu {
+  opacity: 1; visibility: visible; transform: translateX(0);
+}
+.subDropdown:hover .subToggle { background: rgba(255, 255, 255, 0.07); color: #fff; }
+.subDropdown:hover .subChev { transform: translateX(2px); }
+.subMenu .dropItem { line-height: 1.4; }
+.closed .subMenu { opacity: 0 !important; visibility: hidden !important; }
+
 .cta {
   margin-left: 8px;
   padding: 9px 18px;
@@ -115,6 +143,12 @@
 :global([data-theme='light']) .dropItem { color: rgba(16, 26, 61, 0.72); }
 :global([data-theme='light']) .dropItem:hover { background: rgba(20, 33, 150, 0.06); color: #142196; }
 :global([data-theme='light']) .dropActive { color: #142196; }
+:global([data-theme='light']) .subMenu {
+  background: rgba(255, 255, 255, 0.97);
+  border-color: rgba(20, 33, 150, 0.12);
+  box-shadow: 0 20px 50px rgba(20, 33, 80, 0.15);
+}
+:global([data-theme='light']) .subDropdown:hover .subToggle { background: rgba(20, 33, 150, 0.06); color: #142196; }
 
 /* ── Mobile controls (hamburger + toggle), hidden on desktop ── */
 .mobileActions { display: none; align-items: center; gap: 10px; }
@@ -180,6 +214,12 @@
   transition: background 0.15s ease, color 0.15s ease;
 }
 .mobileSubLink:hover { background: rgba(255, 255, 255, 0.05); color: #fff; }
+.mobileSubToggle {
+  display: flex; align-items: center; justify-content: space-between; gap: 12px;
+  width: 100%; font-family: inherit; text-align: left;
+  background: none; border: none; cursor: pointer;
+}
+.mobileSubSubLink { padding-left: 40px; font-size: 14px; line-height: 1.4; }
 
 .mobileCta {
   margin-top: 12px; padding: 15px;

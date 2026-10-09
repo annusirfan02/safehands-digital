@@ -17,7 +17,7 @@ const SECTIONS = [
   {
     heading: 'Our Services',
     body: [
-      'Safe Hands Digital provides digital marketing, web development, SEO, paid advertising, social media, ERP, AI video production, and related services. The specific scope, deliverables, timelines, and fees for any engagement will be set out in a separate proposal or agreement between you and us.',
+      'Safe Hands Digital provides engineering services (including MEP engineering, mechanical operation & maintenance, and sp.ICE thermal energy storage), AI assistant and automation solutions, ERP services, AI video production, and related services. The specific scope, deliverables, timelines, and fees for any engagement will be set out in a separate proposal or agreement between you and us.',
       'We reserve the right to modify or discontinue any service, or any part of our website, at any time without prior notice.',
     ],
   },

@@ -19,8 +19,8 @@ export default function ContactHero() {
             <span className={styles.script}>Great.</span>
           </h1>
           <p className={styles.subtitle}>
-            Every great project begins with a conversation. Tell us about your goals
-            and we&rsquo;ll build a custom strategy.
+            Every great project begins with a conversation. Tell us about your facility
+            or your workflow and we&rsquo;ll engineer the right solution.
           </p>
           <div className={styles.actions}>
             <a href="/onboarding" className={styles.primaryBtn}>

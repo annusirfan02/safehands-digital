@@ -1,23 +1,23 @@
 @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Space+Mono:wght@400;700&display=swap');
 
-/* ── Light theme: soft-lavender version of the purple section ────── */
-:global([data-theme='light']) .section { background: #F4ECFF; color: #2e1065; }
-:global([data-theme='light']) .badge { color: #7c3aed; }
-:global([data-theme='light']) .badgeDot { background: #7c3aed; box-shadow: 0 0 10px rgba(124, 58, 237, 0.5); }
-:global([data-theme='light']) .title { color: #2e1065; }
-:global([data-theme='light']) .sub { color: rgba(46, 16, 101, 0.62); }
-:global([data-theme='light']) .barOuter { box-shadow: 0 14px 40px rgba(124, 58, 237, 0.22); }
+/* ── Light theme: soft brand-blue tint ────── */
+:global([data-theme='light']) .section { background: #F3F6FE; color: #101a3d; }
+:global([data-theme='light']) .badge { color: #142196; }
+:global([data-theme='light']) .badgeDot { background: #142196; box-shadow: 0 0 10px rgba(20, 33, 150, 0.5); }
+:global([data-theme='light']) .title { color: #101a3d; }
+:global([data-theme='light']) .sub { color: rgba(16, 26, 61, 0.65); }
+:global([data-theme='light']) .barOuter { box-shadow: 0 14px 40px rgba(20, 33, 150, 0.2); }
 :global([data-theme='light']) .bar { background: #ffffff; }
-:global([data-theme='light']) .searchIcon { color: rgba(46, 16, 101, 0.5); }
-:global([data-theme='light']) .input { color: #2e1065; }
-:global([data-theme='light']) .input::placeholder { color: rgba(46, 16, 101, 0.4); }
+:global([data-theme='light']) .searchIcon { color: rgba(16, 26, 61, 0.5); }
+:global([data-theme='light']) .input { color: #101a3d; }
+:global([data-theme='light']) .input::placeholder { color: rgba(16, 26, 61, 0.4); }
 :global([data-theme='light']) .panel {
   background: var(--surface);
   border-color: var(--border);
   box-shadow: 0 20px 60px var(--shadow);
 }
 :global([data-theme='light']) .thinkingText { color: rgba(46, 16, 101, 0.6); }
-:global([data-theme='light']) .dot { background: #7c3aed; }
+:global([data-theme='light']) .dot { background: #142196; }
 
 .section {
   position: relative;
@@ -25,7 +25,7 @@
   flex-direction: column;
   align-items: center;
   padding: 32px 24px 48px;
-  background: #A855F7;
+  background: #030805; /* site dark (was purple #A855F7) */
   color: #fff;
   font-family: 'Space Grotesk', sans-serif;
   overflow: hidden;
@@ -84,7 +84,7 @@
   padding: 3px;                 /* = animated border thickness */
   overflow: hidden;
   isolation: isolate;
-  box-shadow: 0 14px 50px rgba(60, 10, 100, 0.5);
+  box-shadow: 0 14px 50px rgba(5, 10, 60, 0.5);
 }
 
 /* The spinning conic gradient that becomes the visible outline */
@@ -122,7 +122,7 @@
   width: 100%;
   padding: 13px 20px;
   border-radius: 100px;
-  background: #1c0b33;          /* deep-purple inner — leaves only the 2px border glowing */
+  background: #0b110d;          /* near-black inner — leaves only the 2px border glowing */
 }
 
 .searchIcon {

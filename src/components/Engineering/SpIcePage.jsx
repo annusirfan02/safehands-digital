@@ -1,13 +1,27 @@
 import Link from 'next/link';
-import { Icon } from './EngineeringPage';
+import { Icon, Media } from './EngineeringPage';
 import styles from './EngineeringPage.module.css';
 
-const WHY = [
-  { icon: 'duct', title: '60% Reduction in Footprint', text: 'Advanced internal heat-exchanger spacing achieves high energy density per cubic meter, requiring less area than traditional steel or concrete tanks.' },
-  { icon: 'shield', title: 'Modular ISO Container Form Factor', text: 'Pre-tested 10′, 20′, or 40′ ISO container structures support rapid deployment and avoid major foundation excavation.' },
-  { icon: 'snow', title: 'High-Rate Thermal Discharge', text: 'Release stored cooling energy to buffer sudden manufacturing heat loads or midday data center cooling demand without drawing grid power.' },
-  { icon: 'bolt', title: 'Solar PV Synchronization', text: 'Synchronize thermal storage with commercial rooftop solar networks and help manage changing solar production.' },
+// Client copy: Page 3, "Strategic Financial & Engineering Benefits".
+const BENEFITS = [
+  { icon: 'chart', title: 'Drastic Operational Cost Reduction', text: 'Lowers peak demand charges by up to 40% by shifting heavy power consumption to nighttime electricity rates.' },
+  { icon: 'duct', title: 'Equipment Capital Expenditure Savings', text: 'Allows for the installation of smaller chillers and cooling towers, as the system designs for average thermal loads rather than peak worst-case scenario loads.' },
+  { icon: 'shield', title: 'Built-in Infrastructure Redundancy', text: 'The SP.ICE storage tanks function as an immediate backup cooling source, protecting critical infrastructure during primary chiller maintenance or sudden grid blackouts.' },
 ];
+
+// Client copy: Page 3, "System Configurations Built to Fit Your Footprint".
+const CONFIGS = [
+  { icon: 'snow', title: 'Full Storage Configuration', text: 'The SP.ICE array bears 100% of the peak daytime cooling load. The primary chillers are completely shut down during peak hours, yielding maximum financial savings.' },
+  { icon: 'gauge', title: 'Partial Storage (Load Leveling)', text: 'The chillers operate all day at a steady, optimized baseline rate. The SP.ICE tanks kick in to absorb any afternoon spikes or peak demand surges, enabling a smaller initial chiller footprint.' },
+];
+
+// Previous "Why sp.ICE" cards, replaced by the client's benefits above.
+// const WHY = [
+//   { icon: 'duct', title: '60% Reduction in Footprint', text: 'Advanced internal heat-exchanger spacing achieves high energy density per cubic meter, requiring less area than traditional steel or concrete tanks.' },
+//   { icon: 'shield', title: 'Modular ISO Container Form Factor', text: 'Pre-tested 10′, 20′, or 40′ ISO container structures support rapid deployment and avoid major foundation excavation.' },
+//   { icon: 'snow', title: 'High-Rate Thermal Discharge', text: 'Release stored cooling energy to buffer sudden manufacturing heat loads or midday data center cooling demand without drawing grid power.' },
+//   { icon: 'bolt', title: 'Solar PV Synchronization', text: 'Synchronize thermal storage with commercial rooftop solar networks and help manage changing solar production.' },
+// ];
 
 const FEATURES = [
   'Versatile Ice on Pipe Internal / External Melt design',
@@ -33,9 +47,9 @@ const SECTORS = [
   { icon: 'snow', title: 'Logistics & Cold Warehouses', text: 'Securing SFDA-compliant thermal envelopes against high-ambient infiltration, moisture ingress, and compressor short-cycling.' },
 ];
 
-function Cards({ items }) {
+function Cards({ items, layout = styles.cards4 }) {
   return (
-    <div className={`${styles.cards} ${styles.cards4}`}>
+    <div className={`${styles.cards} ${layout}`}>
       {items.map((it, i) => (
         <article key={it.title} className={styles.card}>
           <div className={styles.cardTop}>
@@ -62,15 +76,14 @@ export default function SpIcePage() {
         />
         <div className={styles.heroGrid} aria-hidden="true" />
         <div className={styles.container}>
-          <span className={styles.heroKicker}>Exclusive German Technology for KSA</span>
+          <span className={styles.heroKicker}>German Technology Focus</span>
           <h1 className={styles.heroTitle}>
-            Shift cooling load.<br />
-            <span className={styles.cyan}>Reduce peak demand.</span>
+            SP.ICE encapsulated<br />
+            <span className={styles.cyan}>thermal storage systems</span>
           </h1>
           <div className={styles.heroRow}>
             <p className={styles.heroText}>
-              Next-generation thermal energy storage designed to shift heavy cooling loads from
-              expensive daytime peaks to cooler night-time operation.
+              High-density energy shifting powered by German thermodynamics.
             </p>
             <span className={styles.sysTag}>SYS / TES-03</span>
           </div>
@@ -89,43 +102,59 @@ export default function SpIcePage() {
         <div className={styles.container}>
           <div className={styles.sectionHead}>
             <div>
-              <span className={styles.kicker}>Thermal Load Shifting</span>
-              <h2 className={styles.h2}>The sp.ICE dynamic</h2>
+              <span className={styles.kicker}>The Technology Breakdown</span>
+              <h2 className={styles.h2}>From passive consumer<br />to energy manager</h2>
             </div>
             <p className={styles.deliveryText}>
-              Running heavy central chillers during hot afternoon peaks is inefficient and expensive
-              under SEC Time-of-Use pricing. sp.ICE shifts the cooling workload to cooler night hours.
+              As electricity grids move toward complex time-of-use (TOU) pricing structures, static
+              cooling systems become financial liabilities. The SP.ICE Thermal Storage System
+              represents advanced German Technology, transforming your facility from a passive
+              utility consumer into an active, strategic energy manager. The system centers around
+              high-efficiency, German-engineered polymer capsules containing engineered
+              phase-change materials (PCM) or high-purity water.
             </p>
           </div>
           <div className={styles.dynGrid}>
             <article className={`${styles.dynCard} ${styles.dynNight}`}>
-              <span className={styles.dynLabel}>01 / Night · 8 hours</span>
+              <span className={styles.dynLabel}>01 / Off-peak · Night</span>
               <span className={styles.dynIcon}><Icon name="snow" size={34} /></span>
-              <h3 className={styles.dynTitle}>Charge the thermal reserve</h3>
+              <h3 className={styles.dynTitle}>The charging cycle</h3>
               <p className={styles.dynText}>
-                Chillers operate in cooler ambient conditions, freezing high-density sp.ICE modules
-                inside a dedicated loop.
+                During off-peak night hours when electricity rates are lowest, chillers pump a
+                sub-zero glycol mixture through an insulated tank filled with SP.ICE cells,
+                converting the liquid inside into high-density latent ice matrices.
               </p>
             </article>
             <article className={`${styles.dynCard} ${styles.dynDay}`}>
-              <span className={styles.dynLabel}>02 / Day · 8 hours</span>
+              <span className={styles.dynLabel}>02 / On-peak · Day</span>
               <span className={styles.dynIcon}><Icon name="bolt" size={34} /></span>
-              <h3 className={styles.dynTitle}>Discharge at peak load</h3>
+              <h3 className={styles.dynTitle}>The discharging cycle</h3>
               <p className={styles.dynText}>
-                Heavy chillers are throttled down or turned off while stored thermal energy supplies
-                chilled water into building headers.
+                During daytime peak utility hours, the chillers are turned off or scaled back. Warm
+                returning fluid from the building passes directly through the SP.ICE tank, cooling
+                down instantaneously as it melts the encapsulated matrices.
               </p>
             </article>
           </div>
         </div>
       </section>
 
-      {/* ── Why sp.ICE ── */}
-      <section id="why-spice" className={`${styles.group} ${styles.groupAlt}`}>
+      {/* ── System configurations ── */}
+      <section className={`${styles.group} ${styles.groupAlt}`}>
         <div className={styles.container}>
-          <span className={styles.kicker}>Compact. Modular. Responsive.</span>
-          <h2 className={styles.groupTitle}>Why sp.ICE</h2>
-          <Cards items={WHY} />
+          <span className={styles.kicker}>System Configurations</span>
+          <h2 className={styles.groupTitle}>Built to fit<br />your footprint</h2>
+          <Cards items={CONFIGS} layout={styles.cardsPair} />
+        </div>
+      </section>
+
+      {/* ── Benefits ── */}
+      <section id="why-spice" className={styles.group}>
+        <div className={styles.container}>
+          <span className={styles.kicker}>Strategic Financial &amp; Engineering Benefits</span>
+          <h2 className={styles.groupTitle}>Why SP.ICE</h2>
+          <Media images={[{ src: '/services/spice-container-studio.jpg', alt: 'sp.ICE speedy & powerful ice storage container next to a chiller unit' }]} />
+          <Cards items={BENEFITS} layout="" />
         </div>
       </section>
 
@@ -203,6 +232,7 @@ export default function SpIcePage() {
               </li>
             ))}
           </ol>
+          <Media images={[{ src: '/services/spice-solar-wide.jpg', alt: 'sp.ICE container storing solar-charged cooling energy for the city' }]} />
         </div>
       </section>
 

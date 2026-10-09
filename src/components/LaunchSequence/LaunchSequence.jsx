@@ -76,18 +76,21 @@ export default function LaunchSequence() {
 
   return (
     <section ref={sectionRef} className={styles.section} suppressHydrationWarning>
-      <div className={styles.bgText} aria-hidden="true">DIFFERENT</div>
+      <div className={styles.bgText} aria-hidden="true">PILLARS</div>
 
       {/* Header */}
       <header ref={headerRef} className={styles.header}>
         <span className={styles.label}>
           <i className={styles.labelDot} />
-          LAUNCH SEQUENCE
+          FOUR CORE PILLARS
         </span>
         <h2 className={styles.heading}>
-          <span className={styles.headingSolid}>WHAT MAKES</span>
-          <span className={styles.headingOutline}>US DIFFERENT?</span>
+          <span className={styles.headingSolid}>WHY CHOOSE</span>
+          <span className={styles.headingOutline}>SAFE HANDS?</span>
         </h2>
+        <p className={styles.intro}>
+          Our service delivery framework is built on four core pillars of operational excellence.
+        </p>
       </header>
 
       {/* Scroll-driven timeline */}

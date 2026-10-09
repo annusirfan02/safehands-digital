@@ -1,7 +1,9 @@
 import Link from 'next/link';
 import styles from './EngineeringShowcase.module.css';
 
-const ITEMS = [
+// Default content = the Engineering Services showcase. The same component is
+// reused for the AI Assistant & Automation showcase by passing props (50/50).
+const ENGINEERING_ITEMS = [
   {
     code: 'SYS / MEP-01',
     kicker: 'MEP Engineering',
@@ -24,32 +26,64 @@ const ITEMS = [
   },
 ];
 
-export default function EngineeringShowcase() {
+export const AI_ITEMS = [
+  {
+    code: 'SYS / AI-01',
+    kicker: 'AI Assistant & Automation',
+    title: ['100 emails in.', 'Only what matters out.'],
+    text: 'A custom AI system that reads your inbox, filters out the noise, sorts what is important and drafts the replies, so your team only handles the work that counts.',
+    tags: ['Email triage', 'Priority sorting', 'Drafted replies', 'Arabic & English'],
+    href: '/ai-automation',
+    image: '/showcase/AI-Assistant.jpg',
+    accentColor: '#a878ff',
+  },
+  {
+    code: 'SYS / ERP-02',
+    kicker: 'ERP Services & Development',
+    title: ['Systems that run the business.', 'Built to scale.'],
+    text: 'End-to-end SAP implementation and support across Finance, Procurement, HR, Sales and Analytics, connected to the automations that save your team hours.',
+    tags: ['SAP', 'Finance & HR', 'Procurement', 'Analytics'],
+    href: '/erp-development',
+    image: '/showcase/ERP.jpg',
+    accentColor: '#2dd4bf',
+  },
+];
+
+export default function EngineeringShowcase({
+  id = 'engineering',
+  label = 'ENGINEERING SERVICES',
+  heading = 'Engineered for real-world performance.',
+  outline = 'Built for complex facilities.',
+  helper = 'Integrated MEP engineering and infrastructure solutions, engineered and delivered for complex, high-performance facilities across Saudi Arabia.',
+  items = ENGINEERING_ITEMS,
+}) {
   return (
-    <section id="engineering" className={styles.section}>
+    <section id={id} className={styles.section}>
       <div className={styles.inner}>
         <div className={styles.head}>
           <div>
-            <span className={styles.label}>ENGINEERING SERVICES</span>
+            <span className={styles.label}>{label}</span>
             <h2 className={styles.heading}>
-              Engineered for real-world performance.
-              <span className={styles.outline}>Built for complex facilities.</span>
+              {heading}
+              <span className={styles.outline}>{outline}</span>
             </h2>
           </div>
-          <p className={styles.helper}>
-            Integrated MEP engineering and infrastructure solutions, engineered and delivered for
-            complex, high-performance facilities across Saudi Arabia.
-          </p>
+          <p className={styles.helper}>{helper}</p>
         </div>
 
         <div className={styles.grid}>
-          {ITEMS.map((it) => (
+          {items.map((it) => (
             <Link
               key={it.href}
               href={it.href}
               className={`${styles.card} ${it.accent === 'cyan' ? styles.cyan : ''}`}
+              style={it.accentColor ? { '--acc': it.accentColor } : undefined}
             >
-              <span className={styles.cardBg} style={{ backgroundImage: `url('${it.image}')` }} aria-hidden="true" />
+              {it.image ? (
+                <span className={styles.cardBg} style={{ backgroundImage: `url('${it.image}')` }} aria-hidden="true" />
+              ) : (
+                <span className={`${styles.cardBg} ${styles.cardArt}`} aria-hidden="true" />
+              )}
               <span className={styles.cardShade} aria-hidden="true" />
 
               <span className={styles.cardTop}>

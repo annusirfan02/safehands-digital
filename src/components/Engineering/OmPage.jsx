@@ -1,19 +1,21 @@
 import Link from 'next/link';
-import { Icon } from './EngineeringPage';
+import { Icon, Media } from './EngineeringPage';
 import styles from './EngineeringPage.module.css';
 
+// Client copy: "Our Deep Technical Scope" (HVAC & Chiller System O&M).
 const CHILLER = [
-  { icon: 'gauge', title: 'Thermodynamic Diagnostic Auditing', text: 'Continuous tracking of LTD, approach profiles, and compressor polytropic efficiency to stop hidden energy leaks.' },
-  { icon: 'duct', title: 'Condenser & Tube Remediation', text: 'High-pressure mechanical tube brushing and descaling to combat fouling caused by water mineral density and sand storms.' },
-  { icon: 'chip', title: 'Vibration Analysis & Laser Alignment', text: 'Precision dynamic shaft alignment of multi-stage pumps and screw or centrifugal compressors.' },
-  { icon: 'snow', title: 'Refrigerant & Oil Management', text: 'Spectrographic oil lab analysis, system dehydration, and certified leak-detection tracking under severe weather stress.' },
+  { icon: 'gauge', title: 'Centrifugal, Screw, & Scroll Chiller Overhauls', text: 'Comprehensive inspections covering compressor tolerance testing, oil acid analysis, and variable frequency drive (VFD) tuning.' },
+  { icon: 'duct', title: 'Evaporator & Condenser Tube Descaling', text: 'Utilizing precise mechanical and chemical cleaning methods to eliminate calcium scaling and biofilm accumulation, restoring optimal heat exchange metrics.' },
+  { icon: 'snow', title: 'Water Chemistry Management', text: 'Constant micro-biological testing, biocide dosing, and corrosion inhibition within cooling tower circuits to prevent scale and rust formation.' },
+  { icon: 'air', title: 'Air-Side Distribution Optimization', text: 'Static pressure testing, precision air balancing, and variable air volume (VAV) adjustments to maintain flawless indoor air quality (IAQ).' },
 ];
 
+// Client copy (Page 2) — full detail lives on /industrial-refrigeration.
 const COLD_CHAIN = [
-  { icon: 'duct', title: 'Compressor Rack Rebuilding', text: 'On-site tear-downs, valve plate swaps, and step-control calibration for heavy semi-hermetic or screw setups.' },
-  { icon: 'gauge', title: 'Thermal Envelope Integrity Scanning', text: 'Infrared thermography to locate insulation gaps, thermal bridging, and structural seal failures.' },
-  { icon: 'snow', title: 'Refrigeration Loop Optimization', text: 'EEV fine-tuning and multi-compressor sequencing configured to match real thermal inventory loads.' },
-  { icon: 'clock', title: '24/7 Mission-Critical Dispatch', text: 'Industrial technical response equipped with specialized rigging tools to protect temperature-sensitive stock during plant failures.' },
+  { icon: 'gauge', title: 'Multi-Stage & Cascade Compression Systems', text: 'Complete field servicing and rebuilds of open-drive screw compressors, semi-hermetic units, and low-temperature booster pumps.' },
+  { icon: 'shield', title: 'Refrigerant Containment & Leak Detection', text: 'Fixed automated leak detection arrays and electronic sniffing protocols covering ammonia (NH3), CO2, and eco-friendly HFC blends.' },
+  { icon: 'snow', title: 'Evaporator Defrost Loop Calibration', text: 'Optimizing hot gas, electric, or water defrost cycles to prevent ice bridging on coils while avoiding heat bleed into the refrigerated space.' },
+  { icon: 'door', title: 'Thermal Boundary Envelope Inspection', text: 'Testing the physical integrity of cold-storage doors, air curtains, and floor-heaving mitigation systems.' },
 ];
 
 const LOOP = ['Inspect', 'Diagnose', 'Optimize', 'Repair', 'Monitor'];
@@ -47,14 +49,13 @@ export default function OmPage() {
         />
         <div className={styles.heroGrid} aria-hidden="true" />
         <div className={styles.container}>
-          <span className={styles.heroKicker}>General Mechanical Operation &amp; Maintenance</span>
+          <span className={styles.heroKicker}>HVAC &amp; Chiller System O&amp;M Specialist</span>
           <h1 className={styles.heroTitle}>
-            Keep critical cooling assets performing at <span className={styles.lime}>their peak</span>
+            Heavy-duty HVAC &amp; central <span className={styles.lime}>chiller plant O&amp;M</span>
           </h1>
           <div className={styles.heroRow}>
             <p className={styles.heroText}>
-              Field engineering and high-ambient maintenance for advanced cooling assets,
-              industrial refrigeration, and continuous cold-chain networks.
+              Maximizing Coefficient of Performance (COP) and eliminating plant downtime.
             </p>
             <span className={styles.sysTag}>SYS / O&amp;M-02</span>
           </div>
@@ -75,13 +76,21 @@ export default function OmPage() {
             <div className={styles.sectionHead}>
               <div>
                 <span className={styles.kicker}>Precision Field Engineering</span>
-                <h2 className={styles.h2}>Chiller plant<br />overhauls &amp;<br />maintenance</h2>
+                <h2 className={styles.h2}>Our deep<br />technical<br />scope</h2>
               </div>
               <p className={styles.deliveryText}>
-                A technical, measurement-led maintenance framework for complex chiller plants
-                operating under the Kingdom&apos;s severe ambient and water conditions.
+                Central chiller plants are the heartbeat of large facility infrastructure. Minor
+                system deviations can spike energy bills by 20% or trigger catastrophic
+                building-wide shutdowns. Safe Hands applies strict technical auditing to ensure
+                your primary cooling plants run at peak design efficiency.
               </p>
             </div>
+            <Media
+              images={[
+                { src: '/services/om-ahu-team.jpg', alt: 'O&M engineers servicing air handling units' },
+                { src: '/services/mep-hvac-rooftop.jpg', alt: 'Rooftop HVAC plant and ductwork' },
+              ]}
+            />
             <Cards items={CHILLER} />
           </div>
         </section>
@@ -92,6 +101,11 @@ export default function OmPage() {
             <span className={styles.kicker}>Continuous Cold Integrity</span>
             <h2 className={styles.groupTitle}>Industrial &amp; cold<br />chain refrigeration<br />O&amp;M</h2>
             <Cards items={COLD_CHAIN} />
+            <div className={styles.heroActions}>
+              <Link href="/industrial-refrigeration" className={styles.btnGhost}>
+                View industrial refrigeration O&amp;M <span aria-hidden="true">→</span>
+              </Link>
+            </div>
           </div>
         </section>
       </div>

@@ -26,12 +26,12 @@ export default function MayaSection() {
           <h2 className={styles.heading}>
             MEET MAYA,
             <br />
-            YOUR AI MARKETING STRATEGIST<span className={styles.dot}>.</span>
+            YOUR AI SOLUTIONS ADVISOR<span className={styles.dot}>.</span>
           </h2>
 
           <p className={styles.sub}>
             Available 24/7. Trained on everything Safe Hands Digital knows. Get instant
-            strategy for SEO, social growth, paid ads, and more.
+            answers on MEP engineering, sp.ICE thermal storage, ERP, AI automation, and more.
           </p>
 
           <div className={styles.actions}>

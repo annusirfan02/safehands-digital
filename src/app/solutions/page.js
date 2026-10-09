@@ -5,8 +5,8 @@ import Process from '@/components/Solutions/Process';
 import Footer from '@/components/Footer';
 
 export const metadata = pageMeta({
-  title: 'Digital Marketing Solutions',
-  description: 'Full-stack digital marketing solutions — AI SEO, paid ads, social media, web development, branding and PR, all under one roof in Riyadh.',
+  title: 'AI & Business Solutions',
+  description: 'AI assistants & automations, ERP services and AI video production, all under one roof in Riyadh.',
   path: '/solutions',
 });
 

@@ -9,20 +9,25 @@ import styles from './Navbar.module.css';
 const LINKS = [
   { href: '/', label: 'Home' },
   { label: 'What we do', children: [
-    { href: '/seo', label: 'AI SEO' },
-    { href: '/web-development', label: 'Web Development' },
-    { href: '/social-media', label: 'Social Media' },
-    { href: '/paid-ads', label: 'Paid Ads' },
+    // Hidden: services no longer offered.
+    // { href: '/seo', label: 'AI SEO' },
+    // { href: '/web-development', label: 'Web Development' },
+    // { href: '/social-media', label: 'Social Media' },
+    // { href: '/paid-ads', label: 'Paid Ads' },
+    // Nested sub-dropdown (flyout on desktop, accordion on mobile).
+    { label: 'Engineering Services', children: [
+      { href: '/mep-engineering', label: 'MEP Engineering Service' },
+      { href: '/operations-maintenance', label: 'General Mechanical Operation & Maintenance (O&M) Engineering Service' },
+      { href: '/industrial-refrigeration', label: 'Industrial & Commercial Refrigeration O&M' },
+      { href: '/sp-ice-tes', label: 'sp.ICE TES Engineering Service' },
+      { href: '/fire-life-safety', label: 'Firefighting & Life Safety Services' },
+    ] },
     { href: '/erp-development', label: 'ERP Services & Development' },
+    { href: '/ai-automation', label: 'AI Assistant & Automation' },
     { href: '/ai-video', label: 'AI Video Production' },
   ] },
-  { label: 'Engineering Services', children: [
-    { href: '/mep-engineering', label: 'MEP Engineering Services' },
-    { href: '/operations-maintenance', label: 'General Mechanical Operation & Maintenance (O&M)' },
-    { href: '/sp-ice-tes', label: 'sp.ICE TES' },
-  ] },
-  { href: '/solutions', label: 'Solutions' },
-  { href: '/ai-employees', label: 'AI Employees' },
+  // { href: '/solutions', label: 'Solutions' }, // hidden page
+  // { href: '/ai-employees', label: 'AI Employees' }, // hidden page (redirects to /ai-automation)
   // { href: '/mep-engineering', label: 'Engineering' },
   // { href: '/operations-maintenance', label: 'O&M' },
   // { href: '/sp-ice-tes', label: 'sp.ICE TES' },
@@ -35,11 +40,13 @@ export default function Navbar() {
   const [closed, setClosed] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
   const [openGroup, setOpenGroup] = useState(null);
+  const [openSub, setOpenSub] = useState(null);
 
   // Close the mobile menu whenever the route changes.
   useEffect(() => {
     setMenuOpen(false);
     setOpenGroup(null);
+    setOpenSub(null);
   }, [path]);
 
   // Lock body scroll while the mobile menu is open.
@@ -73,16 +80,39 @@ export default function Navbar() {
                   {l.label} <span className={styles.chev}>▾</span>
                 </button>
                 <div className={styles.dropMenu}>
-                  {l.children.map((c) => (
-                    <Link
-                      key={c.href}
-                      href={c.href}
-                      className={`${styles.dropItem} ${path === c.href ? styles.dropActive : ''}`}
-                      onClick={() => setClosed(true)}
-                    >
-                      {c.label}
-                    </Link>
-                  ))}
+                  {l.children.map((c) =>
+                    c.children ? (
+                      <div key={c.label} className={styles.subDropdown}>
+                        <button
+                          type="button"
+                          className={`${styles.dropItem} ${styles.subToggle} ${c.children.some((s) => s.href === path) ? styles.dropActive : ''}`}
+                        >
+                          {c.label} <span className={styles.subChev}>▸</span>
+                        </button>
+                        <div className={styles.subMenu}>
+                          {c.children.map((s) => (
+                            <Link
+                              key={s.href}
+                              href={s.href}
+                              className={`${styles.dropItem} ${path === s.href ? styles.dropActive : ''}`}
+                              onClick={() => setClosed(true)}
+                            >
+                              {s.label}
+                            </Link>
+                          ))}
+                        </div>
+                      </div>
+                    ) : (
+                      <Link
+                        key={c.href}
+                        href={c.href}
+                        className={`${styles.dropItem} ${path === c.href ? styles.dropActive : ''}`}
+                        onClick={() => setClosed(true)}
+                      >
+                        {c.label}
+                      </Link>
+                    )
+                  )}
                 </div>
               </div>
             ) : (
@@ -133,16 +163,44 @@ export default function Navbar() {
                 </button>
                 <div className={`${styles.mobileSub} ${openGroup === l.label ? styles.mobileSubOpen : ''}`}>
                   <div className={styles.mobileSubInner}>
-                    {l.children.map((c) => (
-                      <Link
-                        key={c.href}
-                        href={c.href}
-                        className={`${styles.mobileSubLink} ${path === c.href ? styles.mobileActive : ''}`}
-                        onClick={() => setMenuOpen(false)}
-                      >
-                        {c.label}
-                      </Link>
-                    ))}
+                    {l.children.map((c) =>
+                      c.children ? (
+                        <div key={c.label}>
+                          <button
+                            type="button"
+                            className={`${styles.mobileSubLink} ${styles.mobileSubToggle}`}
+                            aria-expanded={openSub === c.label}
+                            onClick={() => setOpenSub((s) => (s === c.label ? null : c.label))}
+                          >
+                            {c.label}
+                            <span className={`${styles.chev} ${openSub === c.label ? styles.chevUp : ''}`}>▾</span>
+                          </button>
+                          <div className={`${styles.mobileSub} ${openSub === c.label ? styles.mobileSubOpen : ''}`}>
+                            <div className={styles.mobileSubInner}>
+                              {c.children.map((s) => (
+                                <Link
+                                  key={s.href}
+                                  href={s.href}
+                                  className={`${styles.mobileSubLink} ${styles.mobileSubSubLink} ${path === s.href ? styles.mobileActive : ''}`}
+                                  onClick={() => setMenuOpen(false)}
+                                >
+                                  {s.label}
+                                </Link>
+                              ))}
+                            </div>
+                          </div>
+                        </div>
+                      ) : (
+                        <Link
+                          key={c.href}
+                          href={c.href}
+                          className={`${styles.mobileSubLink} ${path === c.href ? styles.mobileActive : ''}`}
+                          onClick={() => setMenuOpen(false)}
+                        >
+                          {c.label}
+                        </Link>
+                      )
+                    )}
                   </div>
                 </div>
               </div>

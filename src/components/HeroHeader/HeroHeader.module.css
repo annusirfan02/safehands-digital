@@ -167,19 +167,52 @@
   .right { display: none; }
 }
 
-/* ── Outline tagline under the rotating headline ── */
-.headOutline {
-  margin-top: 18px;
+/* ── Hero headline (client copy): outline / accent / solid ── */
+.heroTitle {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
   font-family: 'Space Grotesk', sans-serif;
-  font-size: clamp(20px, 2.6vw, 36px);
   font-weight: 700;
-  line-height: 1.05;
+  line-height: 0.98;
+  letter-spacing: -0.02em;
   text-transform: uppercase;
+}
+/* Same outlined italic serif as the old "WE BRING" line */
+.titleOutline {
+  font-family: Georgia, 'Times New Roman', serif;
+  font-style: italic;
+  font-weight: 400;
+  font-size: clamp(30px, 4.2vw, 60px);
+  letter-spacing: 0.01em;
   color: transparent;
-  -webkit-text-stroke: 1.1px rgba(255, 255, 255, 0.55);
-  text-stroke: 1.1px rgba(255, 255, 255, 0.55);
+  -webkit-text-stroke: 1.2px rgba(255, 255, 255, 0.5);
+  text-stroke: 1.2px rgba(255, 255, 255, 0.5);
 }
-:global([data-theme='light']) .headOutline {
-  -webkit-text-stroke: 1.1px rgba(16, 26, 61, 0.5);
-  text-stroke: 1.1px rgba(16, 26, 61, 0.5);
+.titleAccent {
+  font-size: clamp(32px, 4.4vw, 64px);
+  color: #BFFE03;
+  text-shadow: 0 0 30px rgba(191, 254, 3, 0.35);
 }
+.titleSolid {
+  font-size: clamp(34px, 5vw, 72px);
+  color: #fff;
+}
+.subtitleNote {
+  margin-top: 14px;
+  padding-left: 14px;
+  border-left: 2px solid #BFFE03;
+  font-size: 15px;
+  line-height: 1.65;
+  color: rgba(255, 255, 255, 0.62);
+}
+.subtitleNote strong { color: #fff; font-weight: 600; }
+
+:global([data-theme='light']) .titleOutline {
+  -webkit-text-stroke: 1.2px rgba(16, 26, 61, 0.5);
+  text-stroke: 1.2px rgba(16, 26, 61, 0.5);
+}
+:global([data-theme='light']) .titleAccent { color: #142196; text-shadow: 0 0 22px rgba(20, 33, 150, 0.2); }
+:global([data-theme='light']) .titleSolid { color: var(--text); }
+:global([data-theme='light']) .subtitleNote { color: var(--muted); border-left-color: #142196; }
+:global([data-theme='light']) .subtitleNote strong { color: var(--text); }

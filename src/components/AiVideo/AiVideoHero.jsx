@@ -13,7 +13,7 @@ export default function AiVideoHero() {
       <span className={styles.watermark} aria-hidden="true">VIDEO</span>
 
       <div className={styles.inner}>
-        <Link href="/solutions" className={styles.back}>
+        <Link href="/#services" className={styles.back}>
           <span className={styles.backArrow}>←</span> Services
         </Link>
 

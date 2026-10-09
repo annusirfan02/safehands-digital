@@ -7,32 +7,24 @@
 const INTENTS = [
   {
     keys: ['hi', 'hello', 'hey', 'salam', 'salaam', 'assalam', 'hola', 'مرحبا', 'السلام', 'هلا', 'اهلا', 'أهلا'],
-    en: "Hi! I'm Maya, your AI marketing strategist. Ask me about SEO, paid ads, web design, social media, or pricing.",
-    ar: 'أهلاً وسهلاً بك. أنا مايا، خبيرتك في التسويق بالذكاء الاصطناعي. كيف يمكنني مساعدتك اليوم؟ يمكنك سؤالي عن تحسين محركات البحث، أو الإعلانات المدفوعة، أو تصميم المواقع.',
+    en: "Hi! I'm Maya, your AI solutions advisor. Ask me about MEP engineering, sp.ICE thermal storage, ERP, AI automation, or pricing.",
+    ar: 'أهلاً وسهلاً بك. أنا مايا، خبيرتك الاستراتيجية بالذكاء الاصطناعي. كيف يمكنني مساعدتك اليوم؟ يمكنك سؤالي عن الهندسة الكهروميكانيكية، أو تخزين الطاقة الحرارية sp.ICE، أو أنظمة ERP، أو الأتمتة بالذكاء الاصطناعي.',
+  },
+  // Hidden: intents for services no longer offered (SEO, paid ads, web design, social media).
+  {
+    keys: ['mep', 'engineering', 'hvac', 'electrical', 'plumbing', 'fire', 'maintenance', 'chiller', 'هندسة', 'تكييف', 'صيانة'],
+    en: 'Safe Hands Engineering delivers turnkey MEP (mechanical, electrical, plumbing and fire protection) plus chiller and cold-chain O&M for high-ambient facilities across Saudi Arabia.',
+    ar: 'تقدّم سيف هاندز للهندسة حلولاً متكاملة للأعمال الكهروميكانيكية من تكييف وكهرباء وسباكة وأنظمة مكافحة الحريق، إضافةً إلى تشغيل وصيانة المبرّدات وسلاسل التبريد للمنشآت في أجواء المملكة الحارّة.',
   },
   {
-    keys: ['seo', 'rank', 'google search', 'organic', 'search engine', 'سيو', 'بحث', 'ظهور'],
-    en: 'Our AI SEO gets you ranking on Google, ChatGPT and Perplexity. We blend traditional SEO with AI-search optimization so you get found wherever people search.',
-    ar: 'في خدمة تحسين محركات البحث، نعمل على رفع ترتيب موقعك في جوجل، وفي محركات الذكاء الاصطناعي مثل تشات جي بي تي وبيربلكسيتي. نجمع بين الأساليب التقليدية والحديثة لكي تظهر أينما يبحث عملاؤك.',
-  },
-  {
-    keys: ['ad', 'ads', 'paid', 'google ads', 'meta', 'facebook', 'ppc', 'campaign', 'اعلان', 'إعلان', 'حملة'],
-    en: 'We run performance ad campaigns on Meta and Google engineered for measurable ROI, our average client sees a 320% return.',
-    ar: 'ندير حملات إعلانية مدفوعة على منصتي ميتا وجوجل، ومصممة لتحقيق عائد واضح وقابل للقياس. متوسط العائد لدى عملائنا يصل إلى ثلاثمئة وعشرين بالمئة.',
-  },
-  {
-    keys: ['web', 'website', 'design', 'landing', 'redesign', 'موقع', 'تصميم', 'الموقع'],
-    en: 'We build conversion-first websites and landing pages designed to turn visitors into paying customers, fast, modern and on-brand.',
-    ar: 'نُصمّم مواقع وصفحات هبوط تركّز على تحويل الزوار إلى عملاء يدفعون. مواقع سريعة وعصرية ومتوافقة تماماً مع هوية علامتك التجارية.',
-  },
-  {
-    keys: ['social', 'tiktok', 'instagram', 'content', 'reels', 'سوشيال', 'محتوى', 'تيك توك', 'انستقرام'],
-    en: 'Our social team creates scroll-stopping content and manages your community across every platform to grow a real, engaged audience.',
-    ar: 'يُنشئ فريق التواصل الاجتماعي لدينا محتوى جذّاباً يوقف التمرير، ويدير مجتمعك على جميع المنصّات لبناء جمهور حقيقي ومتفاعل.',
+    // Matching is substring-based, so avoid short keys like 'ice' (price/service) or 'tes' (rates).
+    keys: ['sp.ice', 'spice', 'ice storage', 'thermal', 'energy storage', 'peak demand', 'تخزين', 'ثلج', 'الذروة'],
+    en: 'sp.ICE is German-made ice thermal energy storage: it charges at night and discharges during the afternoon peak, cutting cooling costs and peak demand.',
+    ar: 'نظام sp.ICE هو تقنية ألمانية لتخزين الطاقة الحرارية بالثلج، يُشحن ليلاً ويُفرَّغ وقت ذروة الظهيرة، فيخفّض تكاليف التبريد والأحمال وقت الذروة.',
   },
   {
     keys: ['price', 'pricing', 'cost', 'budget', 'how much', 'سعر', 'تكلفة', 'الاسعار', 'الأسعار', 'ميزانية'],
-    en: 'Pricing depends on your goals and scope. Tell me your niche and what you need, or hit “Start your project” and a strategist will prepare a tailored quote.',
+    en: 'Pricing depends on your goals and scope. Tell me your facility or workflow and what you need, or hit “Start your project” and our engineers or AI team will prepare a tailored quote.',
     ar: 'تعتمد الأسعار على أهدافك وحجم العمل المطلوب. أخبرني عن مجال نشاطك وما تحتاجه، أو اضغط على زر بدء المشروع وسيقوم أحد خبرائنا بإعداد عرض سعر مخصّص لك.',
   },
   {
@@ -48,8 +40,8 @@ const INTENTS = [
 ];
 
 const FALLBACK = {
-  en: "Great question. I can help with SEO, paid ads, web design, social media, AI automation and pricing, which one matters most to you right now?",
-  ar: 'سؤال ممتاز. يمكنني مساعدتك في تحسين محركات البحث، والإعلانات المدفوعة، وتصميم المواقع، والتواصل الاجتماعي، والأتمتة بالذكاء الاصطناعي، والأسعار. أيٌّ من هذه الخدمات يهمّك أكثر في الوقت الحالي؟',
+  en: "Great question. I can help with MEP engineering, O&M, sp.ICE thermal storage, ERP, AI automation and pricing, which one matters most to you right now?",
+  ar: 'سؤال ممتاز. يمكنني مساعدتك في الهندسة الكهروميكانيكية، والتشغيل والصيانة، وتخزين الطاقة الحرارية sp.ICE، وأنظمة ERP، والأتمتة بالذكاء الاصطناعي، والأسعار. أيٌّ من هذه الخدمات يهمّك أكثر في الوقت الحالي؟',
 };
 
 export function getReply(text, lang = 'en') {
@@ -60,7 +52,7 @@ export function getReply(text, lang = 'en') {
 
 // First message Maya shows when the chat opens.
 export const GREETING_EN =
-  "Hey! I'm Maya 👋 your AI marketing strategist. I'm trained on everything Safe Hands Digital does, ask me about SEO, paid ads, web design, social growth or pricing and I'll point you the right way.";
+  "Hey! I'm Maya 👋 your AI solutions advisor. I'm trained on everything Safe Hands Digital does, ask me about MEP engineering, sp.ICE thermal storage, ERP, AI automation or pricing and I'll point you the right way.";
 
 // Saudi-Arabic greeting spoken at the start of a voice call.
 export const GREETING_AR =

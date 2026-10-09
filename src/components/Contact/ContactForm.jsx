@@ -3,11 +3,12 @@
 import { useState, useRef, useEffect } from 'react';
 import styles from './ContactForm.module.css';
 
-const SERVICES = ['AI SEO', 'Paid Ads', 'Social Media', 'Web Development', 'AI Assistant', 'ERP Services', 'AI Video', 'Email Marketing', 'Content Creation'];
+// Hidden (no longer offered): 'AI SEO', 'Paid Ads', 'Social Media', 'Web Development', 'Email Marketing', 'Content Creation'
+const SERVICES = ['MEP Engineering', 'O&M Services', 'sp.ICE TES', 'AI Assistant', 'ERP Services', 'AI Video'];
 
 const REPLIES = [
   "Great question! Pricing is custom to your scope and goals. Tell me your goal and I'll narrow it down.",
-  "We cover SEO, paid ads, social, web, ERP, AI video and AI assistants, all under one roof. What are you focused on right now?",
+  "We cover MEP engineering, O&M, sp.ICE thermal storage, ERP, AI video and AI assistants, all under one roof. What are you focused on right now?",
   "Most projects launch in 2–4 weeks after the kickoff call. Want me to map a rough timeline for your goal?",
   "Absolutely, I can pull together a custom plan. Share your industry and biggest bottleneck and I'll outline next steps.",
   "We work month-to-month, no long contracts. Want me to send over a free audit to get started?",
@@ -22,7 +23,7 @@ export default function ContactForm() {
 
   // ── Chat ──
   const [messages, setMessages] = useState([
-    { from: 'bot', text: "Hi! I'm Maya, Safe Hands Digital's AI marketing strategist. How can I help grow your business today?" },
+    { from: 'bot', text: "Hi! I'm Maya, Safe Hands' AI solutions advisor. Are you looking at an engineering project or an AI automation for your team?" },
   ]);
   const [input, setInput] = useState('');
   const bodyRef = useRef(null);
@@ -131,7 +132,7 @@ export default function ContactForm() {
               <span className={styles.avatar}>M</span>
               <div>
                 <div className={styles.chatName}>Maya</div>
-                <div className={styles.chatStatus}><i /> Online · AI Marketing Strategist</div>
+                <div className={styles.chatStatus}><i /> Online · AI Solutions Advisor</div>
               </div>
             </div>
             <div className={styles.chatBody} ref={bodyRef}>

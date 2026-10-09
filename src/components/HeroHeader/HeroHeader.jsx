@@ -1,27 +1,21 @@
 'use client';
 
 import { useEffect, useState } from 'react';
-import RotatingHeadline from './RotatingHeadline';
 import TechConstellation from './TechConstellation';
 import Starfield from './Starfield';
 import { OFFERINGS, CYCLE_MS } from './offerings.data';
-import { useTheme } from '@/lib/useTheme';
 import styles from './HeroHeader.module.css';
 
 export default function HeroHeader() {
   const [activeIndex, setActiveIndex] = useState(0);
-  const theme = useTheme();
 
-  // One timer drives BOTH the headline word and the highlighted technology.
+  // Cycles the highlighted service in the constellation (Engineering first).
   useEffect(() => {
     const id = setInterval(() => {
       setActiveIndex((prev) => (prev + 1) % OFFERINGS.length);
     }, CYCLE_MS);
     return () => clearInterval(id);
   }, []);
-
-  const active = OFFERINGS[activeIndex];
-  const wordColor = theme === 'light' ? active.colorLight : active.color;
 
   return (
     <section className={styles.hero} suppressHydrationWarning>
@@ -32,23 +26,28 @@ export default function HeroHeader() {
         <div className={styles.left}>
           <span className={styles.kicker}>
             <i className={styles.kickerLine} />
-            ENGINEERING &amp; AI SOLUTIONS
+            MEP · HVAC · THERMAL STORAGE O&amp;M
           </span>
 
-          <RotatingHeadline
-            word={active.word}
-            color={wordColor}
-            top="WE&nbsp;BUILD"
-            bottom={['SYSTEMS THAT', 'MOVE BUSINESS.']}
-          />
-          <p className={styles.headOutline}>
-            Engineered for performance.<br />Built for growth.
-          </p>
+          {/* Client copy. The previous rotating headline ("WE BUILD “___” SYSTEMS
+              THAT MOVE BUSINESS.") lives in RotatingHeadline.jsx if needed again. */}
+          <h1 className={styles.heroTitle}>
+            <span className={styles.titleOutline}>Elite MEP, HVAC &amp;</span>
+            <span className={styles.titleAccent}>Specialized Thermal Storage</span>
+            <span className={styles.titleSolid}>O&amp;M Services.</span>
+          </h1>
 
           <p className={styles.subtitle}>
-            From physical engineering infrastructure to intelligent AI and business
-            systems, Safe Hands builds practical solutions that help organizations
-            operate smarter, perform better, and scale with confidence.
+            At Safe Hands, we deliver data-driven engineering, operations, and maintenance
+            (O&amp;M) methodologies to maximize facility uptime, reduce energy usage, and
+            extend the lifespan of critical equipment. From advanced industrial cooling
+            plants to complex life safety networks, we keep your buildings running safely
+            and efficiently.
+          </p>
+          <p className={styles.subtitleNote}>
+            We are proud to feature proprietary <strong>German Technology</strong> within our
+            specialized <strong>SP.ICE Thermal Storage</strong> systems, bringing world-class
+            thermodynamic innovation directly to your bottom line.
           </p>
 
           <div className={styles.actions}>

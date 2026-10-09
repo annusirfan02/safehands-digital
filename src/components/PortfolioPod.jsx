@@ -11,47 +11,49 @@ import styles from './PortfolioPod.module.css';
 gsap.registerPlugin(ScrollTrigger);
 
 // ─── Service Data ─────────────────────────────────────────────────────────────
+// Hidden: services no longer offered. If you bring one back, also uncomment its
+// icon in SERVICE_ICONS below (icons are matched to services by position).
 const SERVICES = [
+  // {
+  //   name: 'WEB DEVELOPMENT',
+  //   code: 'UPD-001',
+  //   href: '/web-development',
+  //   colors: {
+  //     main: '#6378ff',
+  //     glow: 'rgba(99,120,255,0.35)',
+  //     iconBg: 'rgba(99,120,255,0.15)',
+  //     indicator: '#6378ff',
+  //   },
+  //   planetColors: ['#4a5fcc', '#6378ff', '#8a9dff', '#2a3580', '#1a2060', '#c8d0ff', '#5568ee'],
+  // },
+  // {
+  //   name: 'SOCIAL MEDIA',
+  //   code: 'UPD-002',
+  //   href: '/social-media',
+  //   colors: {
+  //     main: '#ff5078',
+  //     glow: 'rgba(255,80,120,0.35)',
+  //     iconBg: 'rgba(255,80,120,0.15)',
+  //     indicator: '#ff5078',
+  //   },
+  //   planetColors: ['#cc2050', '#ff4070', '#ff7090', '#801030', '#600820', '#ffb0c0', '#ee3060'],
+  // },
+  // {
+  //   name: 'PAID ADS',
+  //   code: 'UPD-003',
+  //   href: '/paid-ads',
+  //   colors: {
+  //     main: '#ff8c1e',
+  //     glow: 'rgba(255,140,30,0.35)',
+  //     iconBg: 'rgba(255,140,30,0.15)',
+  //     indicator: '#ff8c1e',
+  //   },
+  //   planetColors: ['#cc5500', '#e06020', '#e8803a', '#a34200', '#873300', '#f0a070', '#d46030'],
+  // },
   {
-    name: 'WEB DEVELOPMENT',
+    name: 'AI ASSISTANT & AUTOMATION',
     code: 'UPD-001',
-    href: '/web-development',
-    colors: {
-      main: '#6378ff',
-      glow: 'rgba(99,120,255,0.35)',
-      iconBg: 'rgba(99,120,255,0.15)',
-      indicator: '#6378ff',
-    },
-    planetColors: ['#4a5fcc', '#6378ff', '#8a9dff', '#2a3580', '#1a2060', '#c8d0ff', '#5568ee'],
-  },
-  {
-    name: 'SOCIAL MEDIA',
-    code: 'UPD-002',
-    href: '/social-media',
-    colors: {
-      main: '#ff5078',
-      glow: 'rgba(255,80,120,0.35)',
-      iconBg: 'rgba(255,80,120,0.15)',
-      indicator: '#ff5078',
-    },
-    planetColors: ['#cc2050', '#ff4070', '#ff7090', '#801030', '#600820', '#ffb0c0', '#ee3060'],
-  },
-  {
-    name: 'PAID ADS',
-    code: 'UPD-003',
-    href: '/paid-ads',
-    colors: {
-      main: '#ff8c1e',
-      glow: 'rgba(255,140,30,0.35)',
-      iconBg: 'rgba(255,140,30,0.15)',
-      indicator: '#ff8c1e',
-    },
-    planetColors: ['#cc5500', '#e06020', '#e8803a', '#a34200', '#873300', '#f0a070', '#d46030'],
-  },
-  {
-    name: 'AI & CHATBOTS',
-    code: 'UPD-004',
-    href: '/ai-employees',
+    href: '/ai-automation',
     colors: {
       main: '#00c8c8',
       glow: 'rgba(0,200,200,0.35)',
@@ -62,7 +64,7 @@ const SERVICES = [
   },
   {
     name: 'ERP SERVICES',
-    code: 'UPD-005',
+    code: 'UPD-002',
     href: '/erp-development',
     colors: {
       main: '#BFFE03',
@@ -74,7 +76,7 @@ const SERVICES = [
   },
   {
     name: 'MEP ENGINEERING',
-    code: 'UPD-006',
+    code: 'UPD-003',
     href: '/mep-engineering',
     colors: {
       main: '#a878ff',
@@ -86,7 +88,7 @@ const SERVICES = [
   },
   {
     name: 'O&M SERVICES',
-    code: 'UPD-007',
+    code: 'UPD-004',
     href: '/operations-maintenance',
     colors: {
       main: '#f5c518',
@@ -98,7 +100,7 @@ const SERVICES = [
   },
   {
     name: 'SP.ICE TES',
-    code: 'UPD-008',
+    code: 'UPD-005',
     href: '/sp-ice-tes',
     colors: {
       main: '#4fcdee',
@@ -123,30 +125,28 @@ const iconProps = {
 };
 
 const SERVICE_ICONS = [
-  // WEB DESIGN - browser window
-  (
-    <svg key="web" {...iconProps}>
-      <rect x="3" y="4" width="18" height="16" rx="2" />
-      <path d="M3 8.5h18M7 12.5h7M7 16h10" />
-    </svg>
-  ),
-  // SOCIAL MEDIA - share / broadcast nodes
-  (
-    <svg key="social" {...iconProps}>
-      <circle cx="6" cy="12" r="2.4" />
-      <circle cx="17.5" cy="6" r="2.4" />
-      <circle cx="17.5" cy="18" r="2.4" />
-      <path d="M8.2 10.9l7.1-3.7M8.2 13.1l7.1 3.7" />
-    </svg>
-  ),
-  // PAID ADS - target
-  (
-    <svg key="ads" {...iconProps}>
-      <circle cx="12" cy="12" r="8" />
-      <circle cx="12" cy="12" r="3.5" />
-      <path d="M12 2v3M12 19v3M2 12h3M19 12h3" />
-    </svg>
-  ),
+  // Hidden with their services above (WEB DESIGN, SOCIAL MEDIA, PAID ADS).
+  // (
+  //   <svg key="web" {...iconProps}>
+  //     <rect x="3" y="4" width="18" height="16" rx="2" />
+  //     <path d="M3 8.5h18M7 12.5h7M7 16h10" />
+  //   </svg>
+  // ),
+  // (
+  //   <svg key="social" {...iconProps}>
+  //     <circle cx="6" cy="12" r="2.4" />
+  //     <circle cx="17.5" cy="6" r="2.4" />
+  //     <circle cx="17.5" cy="18" r="2.4" />
+  //     <path d="M8.2 10.9l7.1-3.7M8.2 13.1l7.1 3.7" />
+  //   </svg>
+  // ),
+  // (
+  //   <svg key="ads" {...iconProps}>
+  //     <circle cx="12" cy="12" r="8" />
+  //     <circle cx="12" cy="12" r="3.5" />
+  //     <path d="M12 2v3M12 19v3M2 12h3M19 12h3" />
+  //   </svg>
+  // ),
   // AI & CHATBOTS - chat bubble
   (
     <svg key="ai" {...iconProps}>
@@ -598,7 +598,7 @@ export default function PortfolioPod() {
                   <div ref={planetMountRef} className={styles.planetMount} />
                 </div>
               </div>
-              <div ref={labelRef} className={styles.planetLabel}>PAID ADS</div>
+              <div ref={labelRef} className={styles.planetLabel}>{SERVICES[2].name}</div>
 
               {[
                 { top: '18px', left: '55px',  animationDelay: '0s'   },

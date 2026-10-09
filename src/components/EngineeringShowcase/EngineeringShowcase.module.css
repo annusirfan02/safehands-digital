@@ -81,6 +81,16 @@
   transition: transform 0.7s ease;
 }
 .card:hover .cardBg { transform: scale(1.06); }
+/* Cards without a photo (AI side): accent glow + fine grid */
+.cardArt {
+  background-color: #070b0c;
+  background-image:
+    radial-gradient(circle at 78% 18%, color-mix(in srgb, var(--acc) 38%, transparent), transparent 55%),
+    radial-gradient(circle at 12% 70%, color-mix(in srgb, var(--acc) 14%, transparent), transparent 50%),
+    linear-gradient(rgba(255, 255, 255, 0.045) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.045) 1px, transparent 1px);
+  background-size: auto, auto, 26px 26px, 26px 26px;
+}
 .cardShade {
   position: absolute;
   inset: 0;

@@ -18,8 +18,8 @@ export default function Services() {
         {/* Header */}
         <div className={styles.head}>
           <div className={styles.headLeft}>
-            <span className={styles.label}>SERVICES</span>
-            <RevealHeading text="WHAT WE DO." />
+            <span className={styles.label}>SERVICE PORTFOLIOS</span>
+            <RevealHeading text="CORE SERVICES." />
           </div>
           <p className={styles.helper}>
             Hover any card to see what we do. Click to explore the full service.

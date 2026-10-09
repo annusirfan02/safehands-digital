@@ -4,8 +4,8 @@ import OmPage from '@/components/Engineering/OmPage';
 import Footer from '@/components/Footer';
 
 export const metadata = pageMeta({
-  title: 'Chiller & Cold Chain O&M Services in Saudi Arabia',
-  description: 'Field engineering and high-ambient maintenance for chiller plants, industrial refrigeration and continuous cold-chain networks across Saudi Arabia.',
+  title: 'HVAC & Central Chiller Plant O&M in Saudi Arabia',
+  description: 'Heavy-duty HVAC and central chiller plant O&M: chiller overhauls, tube descaling, water chemistry and air balancing to maximize COP and eliminate plant downtime.',
   path: '/operations-maintenance',
 });
 

@@ -447,3 +447,37 @@
   .featCap { padding: 18px 16px; }
   .featCapSize { font-size: 26px; }
 }
+
+/* ── Section image banners (service pages) ── */
+.media {
+  display: grid;
+  grid-template-columns: repeat(var(--n, 1), 1fr);
+  gap: 12px;
+  margin-bottom: 28px;
+}
+.mediaImg {
+  display: block;
+  width: 100%;
+  aspect-ratio: 21 / 8;
+  object-fit: cover;
+  border: 1px solid var(--line);
+  filter: saturate(0.92);
+  transition: filter 0.4s ease;
+}
+.mediaTwo .mediaImg { aspect-ratio: 16 / 9; }
+.mediaImg:hover { filter: saturate(1.05); }
+.delivery .media { margin: 0 0 0; padding-top: 34px; }
+@media (max-width: 800px) {
+  .media { grid-template-columns: 1fr; }
+  .mediaImg { aspect-ratio: 16 / 9; }
+}
+
+/* Two cards side by side (sp.ICE system configurations) */
+.cardsPair { grid-template-columns: repeat(2, 1fr); }
+.cardsPair .card:nth-child(2) { border-right: 0; }
+@media (max-width: 800px) {
+  .cardsPair { grid-template-columns: 1fr; }
+}
+/* Ghost button inside light-theme content sections (hero keeps its dark style) */
+:global([data-theme='light']) .group .btnGhost { color: #101a3d; border-color: rgba(16, 26, 61, 0.25); }
+:global([data-theme='light']) .group .btnGhost:hover { border-color: var(--lime); color: var(--lime); }

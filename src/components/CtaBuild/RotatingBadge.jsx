@@ -14,7 +14,7 @@ export default function RotatingBadge() {
         </defs>
         <text className={styles.text}>
           <textPath href="#cta-circle" startOffset="0">
-            AI AGENCY ★ SAFEHANDSDIGITAL.COM ★&nbsp;
+            ENGINEERING ★ AI AUTOMATION ★ KSA ★&nbsp;
           </textPath>
         </text>
       </svg>

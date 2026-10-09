@@ -4,8 +4,8 @@ import EngineeringPage from '@/components/Engineering/EngineeringPage';
 import Footer from '@/components/Footer';
 
 export const metadata = pageMeta({
-  title: 'MEP Engineering Services in Saudi Arabia',
-  description: 'Turnkey mechanical, electrical, plumbing and fire protection design and execution for complex, high-ambient facilities across Saudi Arabia.',
+  title: 'Comprehensive MEP Services in Saudi Arabia',
+  description: 'Comprehensive mechanical, electrical & plumbing (MEP) services: LV switchgear, hydronic balancing, building automation (BMS) and DWV networks, managed by senior field engineers.',
   path: '/mep-engineering',
 });
 

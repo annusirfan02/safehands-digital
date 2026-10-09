@@ -95,3 +95,49 @@ export function GearIcon() {
     </svg>
   );
 }
+
+// AI Automation (lightning bolt)
+export function BoltIcon() {
+  return (
+    <svg {...base}>
+      <path d="M13 2.5L4.5 13.5h6.5l-1 8 8.5-11h-6.5z" />
+    </svg>
+  );
+}
+
+// AI Animated Videos (play inside a screen)
+export function VideoIcon() {
+  return (
+    <svg {...base}>
+      <rect x="3" y="5" width="18" height="14" rx="2.5" />
+      <path d="M10 9.2v5.6l4.6-2.8z" />
+    </svg>
+  );
+}
+
+// MEP Engineering (duct / pipework)
+export function PipeIcon() {
+  return (
+    <svg {...base}>
+      <path d="M3 8h10a3 3 0 1 0-3-3M3 12h15a3 3 0 1 1-3 3M3 16h7" />
+    </svg>
+  );
+}
+
+// O&M Engineering (wrench)
+export function WrenchIcon() {
+  return (
+    <svg {...base}>
+      <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z" />
+    </svg>
+  );
+}
+
+// sp.ICE TES (snowflake)
+export function SnowIcon() {
+  return (
+    <svg {...base}>
+      <path d="M12 3v18M4.2 7.5l15.6 9M4.2 16.5l15.6-9M9.5 4.5L12 7l2.5-2.5M9.5 19.5L12 17l2.5 2.5" />
+    </svg>
+  );
+}

@@ -49,7 +49,7 @@ const ChatWidget = forwardRef(function ChatWidget(_props, ref) {
         <div className={styles.who}>
           <span className={styles.name}>Maya</span>
           <span className={styles.status}>
-            <i className={styles.statusDot} /> Online · AI Marketing Strategist
+            <i className={styles.statusDot} /> Online · AI Solutions Advisor
           </span>
         </div>
       </div>

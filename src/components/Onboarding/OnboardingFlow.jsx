@@ -254,7 +254,7 @@ export default function OnboardingFlow() {
               {done && (
                 <div className={`${styles.nav} ${styles.fadeIn}`}>
                   <button className={styles.contBtn} onClick={() => router.push('/contact')}>BOOK YOUR STRATEGY CALL →</button>
-                  <button className={styles.seeBtn} onClick={() => router.push('/solutions')}>SEE OUR WORK</button>
+                  <button className={styles.seeBtn} onClick={() => router.push('/#portfolio')}>SEE OUR WORK</button>
                 </div>
               )}
             </>

@@ -6,15 +6,19 @@ import styles from './Footer.module.css';
 
 const LINKS = {
   Services: [
-    { label: 'Web Design', href: '/web-development' },
-    { label: 'AI SEO', href: '/seo' },
-    { label: 'Meta & Google Ads', href: '/paid-ads' },
-    { label: 'AI Assistants', href: '/ai-employees' },
+    // Hidden: services no longer offered.
+    // { label: 'Web Design', href: '/web-development' },
+    // { label: 'AI SEO', href: '/seo' },
+    // { label: 'Meta & Google Ads', href: '/paid-ads' },
+    { label: 'MEP Engineering', href: '/mep-engineering' },
+    { label: 'sp.ICE TES', href: '/sp-ice-tes' },
+    { label: 'ERP Services', href: '/erp-development' },
+    { label: 'AI Assistant & Automation', href: '/ai-automation' },
   ],
   Company: [
     { label: 'What We Do', href: '#services' },
     { label: 'Why Us', href: '#different' },
-    { label: 'Meet Maya', href: '#maya' },
+    // { label: 'Meet Maya', href: '#maya' }, // hidden: Maya section removed from home
     { label: 'Portfolio', href: '#portfolio' },
   ],
   Connect: [
@@ -71,8 +75,8 @@ export default function Footer() {
               <img src="/logo-dark.png" alt="Safe Hands Digital" className={`${styles.logoImg} ${styles.logoDark}`} />
             </div>
             <p className={styles.tagline}>
-              We bring results to brands. AI strategies, licensed experts, real results, wherever
-              your customers are searching.
+              Engineering services and AI assistant &amp; automation, built for organizations
+              across Saudi Arabia. Infrastructure that performs, systems that work.
             </p>
 
             <form className={styles.newsletter} onSubmit={subscribe}>

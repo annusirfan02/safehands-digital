@@ -5,7 +5,7 @@ import RotatingBadge from './RotatingBadge';
 import styles from './CtaBuild.module.css';
 
 export default function CtaBuild({
-  kicker = 'READY TO GROW?',
+  kicker = 'READY TO BUILD?',
   line1 = 'LET’S BUILD',
   line2 = 'SOMETHING',
   ctaLabel = 'START YOUR PROJECT',

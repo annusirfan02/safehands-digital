@@ -65,7 +65,9 @@
   font-size: 10px;
   letter-spacing: 0.14em;
   text-transform: uppercase;
-  text-align: center; /* longer labels (e.g. Engineering Services) wrap neatly on small screens */
+  text-align: center; /* longer labels (e.g. ERP Services & Development) wrap neatly */
+  max-width: 150px;
+  line-height: 1.4;
   color: rgba(255, 255, 255, 0.4);
   transition: color 0.5s ease;
 }

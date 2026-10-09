@@ -4,8 +4,8 @@ import SpIcePage from '@/components/Engineering/SpIcePage';
 import Footer from '@/components/Footer';
 
 export const metadata = pageMeta({
-  title: 'sp.ICE Thermal Energy Storage in Saudi Arabia',
-  description: 'sp.ICE thermal energy storage shifts heavy cooling loads from expensive daytime peaks to night-time operation, cutting peak demand across Saudi Arabia.',
+  title: 'SP.ICE Encapsulated Thermal Storage Systems in Saudi Arabia',
+  description: 'German-engineered SP.ICE encapsulated thermal storage shifts peak cooling load to off-peak night hours, lowering peak demand charges by up to 40%.',
   path: '/sp-ice-tes',
 });
 

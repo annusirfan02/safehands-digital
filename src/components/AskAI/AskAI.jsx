@@ -47,7 +47,7 @@ export default function AskAI() {
         </span>
         <h2 className={styles.title}>Ask About Safehands</h2>
         <p className={styles.sub}>
-          Search across everything Safe Hands Digital does: services, technologies and results.
+          Search across everything Safe Hands does: engineering services, AI automation and technologies.
         </p>
       </div>
 

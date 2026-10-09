@@ -4,9 +4,9 @@
 
 export const SITE_URL = 'https://safehandsksa.com';
 export const SITE_NAME = 'Safe Hands Digital';
-export const SITE_TAGLINE = 'AI-First Marketing Agency in Riyadh';
+export const SITE_TAGLINE = 'Engineering Services & AI Automation in Riyadh';
 export const SITE_DESCRIPTION =
-  'Safe Hands Digital is an AI-first marketing agency in Riyadh, Saudi Arabia. AI SEO, web development, paid ads, social media, ERP and AI video — real results, licensed experts.';
+  'Safe Hands Digital delivers engineering services and AI automation in Riyadh, Saudi Arabia: MEP engineering, mechanical O&M and sp.ICE thermal energy storage, plus custom AI assistants, automation and ERP built around your workflows.';
 
 export const BUSINESS = {
   name: SITE_NAME,
